@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%97%88%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#070b14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YR Signal — Trade Log, Market Research & Economic Analysis">
+<meta property="og:description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="YR Signal — Trade Log, Market Research & Economic Analysis">
+<meta name="twitter:description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
+<title>YR Signal — Trade Log, Market Research &amp; Economic Analysis</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#070b14;--bg2:#170a10;--card:#190f14;--border:#3a1620;
+  --accent:#fb3a4a;--accent2:#38bdf8;--green:#10b981;--red:#f43f5e;--yellow:#fbbf24;
+  --text:#f1f7ff;--muted:#b08a91;--dim:#301820;
+  --glow-g:rgba(16,185,129,0.15);--glow-r:rgba(251,58,74,0.18);--glow-b:rgba(56,189,248,0.12);
+}
+body{background:var(--bg);color:var(--text);font-family:'Consolas','Courier New',monospace;font-weight:400;min-height:100vh;overflow-x:hidden}
+
+/* ── Aurora (red nebula) ── */
+.aurora{position:fixed;top:0;left:0;width:100%;height:260px;pointer-events:none;z-index:0;overflow:hidden}
+.aurora-band{position:absolute;width:200%;height:120px;border-radius:50%;opacity:0;filter:blur(60px)}
+.a1{background:linear-gradient(90deg,#f43f5e00,#f43f5e55,#f43f5e00);top:20px;animation:drift 10s ease-in-out infinite}
+.a2{background:linear-gradient(90deg,#ec489900,#ec489940,#ec489900);top:60px;animation:drift 14s ease-in-out infinite reverse;animation-delay:-4s}
+.a3{background:linear-gradient(90deg,#f9731600,#f9731630,#f9731600);top:100px;animation:drift 18s ease-in-out infinite;animation-delay:-8s}
+.a4{background:linear-gradient(90deg,#38bdf800,#38bdf818,#38bdf800);top:40px;animation:drift 22s ease-in-out infinite reverse;animation-delay:-12s}
+@keyframes drift{0%{transform:translateX(-50%);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(0%);opacity:0}}
+
+/* ── Stars ── */
+#stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d) ease-in-out infinite var(--delay)}
+@keyframes twinkle{0%,100%{opacity:.05}50%{opacity:var(--o)}}
+
+.container{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:36px 20px 90px;font-size:16px}
+
+/* ── Header ── */
+.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.logo{font-size:26px;font-weight:800;color:var(--accent);letter-spacing:3px;text-shadow:0 0 20px rgba(251,58,74,.4)}
+.logo span{color:var(--text);text-shadow:none}
+.logo-sub{font-size:12.5px;color:var(--muted);letter-spacing:1.5px;margin-top:7px;text-transform:uppercase;font-weight:700}
+.header-right{text-align:right}
+.live-badge{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--green);letter-spacing:1.5px;margin-bottom:5px;text-transform:uppercase}
+.updated-line{font-size:11px;color:var(--muted);letter-spacing:.5px}
+.pulse-ring{width:8px;height:8px;position:relative;display:inline-block}
+.pulse-ring::before,.pulse-ring::after{content:'';position:absolute;border-radius:50%}
+.pulse-ring::before{width:100%;height:100%;background:var(--green);top:0;left:0}
+.pulse-ring::after{width:200%;height:200%;border:1px solid var(--green);top:-50%;left:-50%;animation:ring 1.8s ease-out infinite}
+@keyframes ring{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.5);opacity:0}}
+
+/* ── Disclaimer banner ── */
+.disclaimer{
+  display:flex;align-items:flex-start;gap:8px;background:var(--card);
+  border:1px solid var(--border);border-radius:8px;padding:9px 14px;margin-bottom:24px;font-size:11px;color:var(--muted)
+}
+.disclaimer strong{color:var(--text)}
+.disclaimer span{color:var(--accent)}
+
+/* ── Tabs ── */
+nav.tabs{display:flex;gap:6px;margin-bottom:24px;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{
+  background:none;border:none;color:var(--muted);font-family:inherit;font-size:13px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;padding:10px 4px;margin-right:24px;cursor:pointer;
+  border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;
+}
+nav.tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
+nav.tabs button[data-panel="watchlist"].active{color:var(--accent2);border-bottom-color:var(--accent2)}
+
+section.panel{display:none}
+section.panel.active{display:block}
+
+/* ── Section Title ── */
+.stitle{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.stitle::before{content:'◈';color:var(--accent)}
+.stitle:first-child{margin-top:0}
+
+/* ── Trade cards ── */
+.feed{display:flex;flex-direction:column;gap:12px}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:16px 20px;position:relative;overflow:hidden;transition:border-color .15s
+}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.card.buy::before{background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.card.sell::before{background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.card.trim::before{background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
+.card:hover{border-color:var(--accent)}
+.card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:5px}
+.badge.buy{background:var(--glow-g);color:var(--green)}
+.badge.sell{background:var(--glow-r);color:var(--red)}
+.badge.trim{background:rgba(251,191,36,.15);color:var(--yellow)}
+.badge.conviction{background:none;border:1px solid var(--border);color:var(--muted);font-weight:700}
+.ticker{font-weight:700;font-size:16.5px;letter-spacing:.5px;color:var(--text)}
+.date{color:var(--muted);font-size:13px;margin-left:auto;letter-spacing:.5px}
+.thesis{color:var(--muted);font-size:14.5px;line-height:1.7}
+
+.perf-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:12.5px}
+.perf-item{color:var(--muted)}
+.perf-item strong{font-weight:800}
+.perf-item.up strong{color:var(--green)}
+.perf-item.down strong{color:var(--red)}
+.perf-status{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;margin-left:auto;white-space:nowrap}
+
+/* ── Glossary / primer ── */
+.primer{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:20px;overflow:hidden}
+.primer summary{padding:14px 18px;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--accent2);list-style:none;display:flex;align-items:center;gap:8px;user-select:none}
+.primer summary::-webkit-details-marker{display:none}
+.primer summary::before{content:'◈';color:var(--accent2)}
+.primer summary::after{content:'+';margin-left:auto;font-size:16px;color:var(--muted)}
+.primer[open] summary::after{content:'–'}
+.primer-body{padding:0 18px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px 20px}
+.primer-term{font-size:13.5px;color:var(--text);font-weight:700;margin-bottom:3px}
+.primer-def{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ── History table ── */
+table.history{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+table.history th{text-align:left;background:var(--bg2);color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:10px 14px;border-bottom:1px solid var(--border)}
+table.history td{padding:10px 14px;border-bottom:1px solid var(--dim);color:var(--muted)}
+table.history tr:last-child td{border-bottom:none}
+table.history td.tkr{color:var(--text);font-weight:700}
+table.history td.side-buy{color:var(--green);font-weight:700}
+table.history td.side-sell{color:var(--red);font-weight:700}
+
+/* ── Watchlist ── */
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.watch-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;transition:border-color .15s}
+.watch-card:hover{border-color:var(--accent2)}
+.watch-card .tkr{font-weight:700;font-size:15px;margin-bottom:6px;display:block;letter-spacing:.5px;color:var(--text)}
+.watch-card p{color:var(--muted);font-size:14px;line-height:1.6}
+.watch-status{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent2);background:var(--glow-b);padding:3px 8px;border-radius:5px;margin-bottom:8px}
+
+/* ── About ── */
+.about p{color:var(--muted);margin-bottom:14px;font-size:14.5px;line-height:1.7}
+.about strong{color:var(--text)}
+
+/* ── Chart card (shared) ── */
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px}
+.chart-note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+.chart-legend{display:flex;gap:18px;margin-bottom:12px;font-size:12px;color:var(--muted);letter-spacing:.3px}
+.legend-key{display:inline-flex;align-items:center;gap:7px}
+.legend-swatch{width:14px;height:2px;display:inline-block;border-radius:1px}
+.chart-wrap{position:relative}
+.chart-tooltip{
+  position:absolute;background:var(--bg2);border:1px solid var(--border);border-radius:7px;
+  padding:8px 11px;font-size:11.5px;color:var(--muted);pointer-events:none;opacity:0;
+  transition:opacity .12s;z-index:5;white-space:nowrap;line-height:1.6
+}
+.chart-tooltip.show{opacity:1}
+.chart-tooltip .tt-date{color:var(--text);font-weight:700;margin-bottom:3px;display:block}
+.chart-tooltip .tt-val{font-weight:700}
+.chart-svg{width:100%;height:auto;display:block;overflow:visible}
+.chart-svg .grid-line{stroke:var(--dim);stroke-width:1}
+.chart-svg .axis-label{fill:var(--muted);font-size:9px;font-family:inherit}
+.chart-svg .crosshair{stroke:var(--muted);stroke-width:1;opacity:0;pointer-events:none}
+.chart-svg .end-label{font-size:10px;font-weight:700;font-family:inherit}
+
+/* ── Stat tiles ── */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stat-tile{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.stat-label{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.stat-value{font-size:23px;font-weight:800;color:var(--text)}
+.stat-delta{font-size:12.5px;margin-top:5px;font-weight:700}
+.stat-delta.up{color:var(--green)}.stat-delta.down{color:var(--red)}.stat-delta.flat{color:var(--muted)}
+.stat-spark{margin-top:8px;height:24px}
+.stat-spark svg{width:100%;height:100%;overflow:visible}
+
+/* ── Sector performance chart ── */
+.sector-chart-outer{position:relative;height:210px;margin:6px 0 0}
+.sector-zero{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--dim)}
+.sector-bars{display:flex;height:100%;position:relative;z-index:1}
+.sector-col{flex:1;position:relative;height:100%;cursor:pointer}
+.sector-bar{position:absolute;left:50%;transform:translateX(-50%);width:22px;transition:opacity .1s}
+.sector-bar.pos{border-radius:4px 4px 0 0}
+.sector-bar.neg{border-radius:0 0 4px 4px}
+.sector-col:hover .sector-bar{opacity:.75}
+.sector-bar-label{position:absolute;left:50%;transform:translateX(-50%);font-size:10.5px;font-weight:700;white-space:nowrap}
+.sector-ticks{display:flex;margin-top:8px}
+.sector-ticks span{flex:1;text-align:center;font-size:10px;color:var(--muted);letter-spacing:.5px}
+
+/* ── Blog / Insights posts ── */
+.post-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:5px}
+.post-meta{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.post p{color:var(--muted);font-size:14.5px;line-height:1.75;margin-bottom:12px}
+.post p:last-child{margin-bottom:0}
+.post + .post{margin-top:30px;padding-top:26px;border-top:1px solid var(--border)}
+
+footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-spacing:1.5px;padding-top:18px;border-top:1px solid var(--border);position:relative;z-index:1}
+</style>
+</head>
+<body>
+
+<div class="aurora">
+  <div class="aurora-band a1"></div>
+  <div class="aurora-band a2"></div>
+  <div class="aurora-band a3"></div>
+  <div class="aurora-band a4"></div>
+</div>
+<div id="stars"></div>
+
+<div class="container">
+
+  <div class="header">
+    <div>
+      <div class="logo">◈ YR <span>SIGNAL</span></div>
+      <div class="logo-sub">Trade Log · Market Research · Economic Analysis</div>
+    </div>
+    <div class="header-right">
+      <div class="live-badge"><span class="pulse-ring"></span>Public Log</div>
+      <div class="updated-line" id="updated-line">Updated Jul 2, 2026</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <span>◈</span>
+    <div><strong>Not financial advice.</strong> Personal log of trades and research, shared for anyone who wants to follow along.
+    No position sizes or dollar amounts are posted — only ticker, direction, date, and the reasoning behind each move. Past performance doesn't guarantee future results. Do your own research.</div>
+  </div>
+
+  <nav class="tabs">
+    <button class="active" data-panel="feed">Trade Log</button>
+    <button data-panel="insights">Insights</button>
+    <button data-panel="econ">Econ Briefing</button>
+    <button data-panel="watchlist">Watchlist</button>
+    <button data-panel="about">About</button>
+  </nav>
+
+  <details class="primer">
+    <summary>New here? Quick glossary of terms used on this site</summary>
+    <div class="primer-body">
+      <div><div class="primer-term">Thesis</div><div class="primer-def">The specific reason behind a trade — what has to be true for it to work out, not just "I think it'll go up."</div></div>
+      <div><div class="primer-term">Buy / Sell / Trim</div><div class="primer-def">Buy = starting or adding to a position. Sell = exiting it fully. Trim = selling only part of it, usually to lock in gains while keeping the rest.</div></div>
+      <div><div class="primer-term">Starter / Building / Core</div><div class="primer-def">How much conviction a position carries relative to everything else — a new idea starts small (Starter), grows as the thesis proves out (Building), and becomes a long-term holding once it has (Core). No dollar amounts, just relative sizing.</div></div>
+      <div><div class="primer-term">Sector ETF</div><div class="primer-def">A single fund that holds many companies in one industry (e.g. XLV = healthcare, XLE = energy) — a way to invest in a whole sector at once instead of picking individual stocks.</div></div>
+      <div><div class="primer-term">Yield curve / "2s10s"</div><div class="primer-def">The gap between short-term and long-term government bond interest rates. When short-term rates rise faster than long-term ones (the curve "flattens"), it usually means investors expect less near-term Fed rate-cutting than before.</div></div>
+      <div><div class="primer-term">DCA (dollar-cost averaging)</div><div class="primer-def">Buying a fixed amount on a regular schedule (weekly, biweekly) instead of all at once — smooths out the effect of short-term price swings.</div></div>
+      <div><div class="primer-term">CPI / Inflation</div><div class="primer-def">A measure of how much prices for everyday goods are rising. Higher CPI growth = inflation running hotter, which affects Fed rate decisions.</div></div>
+      <div><div class="primer-term">Earnings</div><div class="primer-def">The quarterly report where a public company reveals actual revenue/profit — often the single biggest price-moving event for a stock.</div></div>
+      <div><div class="primer-term">"Since entry / since sold"</div><div class="primer-def">How much the stock's price has moved from the date of the trade to today — pure public price data, not tied to how much money was actually invested.</div></div>
+    </div>
+  </details>
+
+  <section class="panel active" id="feed">
+    <div class="stitle">Recent Moves</div>
+    <div class="feed">
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">GOOGL</span><span class="date">Jun 26, 2026</span></div>
+        <p class="thesis">New position — the last Mag7 name I didn't hold. Cloud growing ~63% YoY, reasonable multiple for the growth rate, and Gemini is showing up in the numbers, not just the keynote. Building this slowly over a few months rather than going in all at once.</p>
+        <div class="perf-line"><span class="perf-item up">GOOGL <strong>+5.2%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card sell">
+        <div class="card-top"><span class="badge sell">Sell</span><span class="ticker">WMT · F · QQQ · SMH</span><span class="date">Jun 23, 2026</span></div>
+        <p class="thesis">Cleaned out four small, low-conviction positions I'd accumulated without a real thesis behind any of them. Redeployed straight into names I actually wanted to be bigger in (see MSFT/META below, same day).</p>
+        <div class="perf-line"><span class="perf-item down">WMT <strong>-6.7%</strong></span><span class="perf-item down">F <strong>-3.3%</strong></span><span class="perf-item down">QQQ <strong>-0.4%</strong></span><span class="perf-item down">SMH <strong>-5.3%</strong></span><span class="perf-status">Closed — since sold</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">MSFT · META</span><span class="date">Jun 23, 2026</span></div>
+        <p class="thesis">Adding to my two most underwater quality holdings ahead of their late-July earnings. Both pulled back hard on broad tech weakness this year with no change to the underlying growth story — Azure and AI ad-load are still doing the work.</p>
+        <div class="perf-line"><span class="perf-item up">MSFT <strong>+4.6%</strong></span><span class="perf-item up">META <strong>+3.7%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">PLTR</span><span class="date">Jun 23, 2026</span></div>
+        <p class="thesis">New position. Federal AI/data contracts (Army, and increasingly defense-adjacent "Golden Dome" work) are becoming a real revenue line, not just a narrative. Starting small.</p>
+        <div class="perf-line"><span class="perf-item up">PLTR <strong>+8.5%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">RTX</span><span class="date">Jun 23, 2026</span></div>
+        <p class="thesis">New defense position. Missile/interceptor demand tied to the same Golden Dome buildout as PLTR above — pairing a hardware prime with a software integrator.</p>
+        <div class="perf-line"><span class="perf-item up">RTX <strong>+7.5%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card sell">
+        <div class="card-top"><span class="badge sell">Sell</span><span class="ticker">AAPL · META</span><span class="date">Jun 23, 2026</span></div>
+        <p class="thesis">Small rebalance in a satellite account, same cleanup day as the WMT/F/QQQ/SMH sells above — trimming a couple of tiny, low-conviction odd-lot positions to concentrate further into the names getting added that day (MSFT, GOOGL, PLTR, RTX).</p>
+        <div class="perf-line"><span class="perf-item up">AAPL <strong>+3.6%</strong></span><span class="perf-item up">META <strong>+3.8%</strong></span><span class="perf-status">Closed — since sold</span></div>
+      </div>
+
+      <div class="card trim">
+        <div class="card-top"><span class="badge trim">Trim</span><span class="ticker">BE</span><span class="date">Jun 16, 2026</span></div>
+        <p class="thesis">Partial trim after a sharp one-day drop tied to a competitor (fuel cells) losing out on a gas-turbine deal, plus some insider selling. Kept half the position — the AI-power-demand thesis isn't broken, but the news changed my sizing, not my direction.</p>
+        <div class="perf-line"><span class="perf-item down">BE <strong>-1.3%</strong> since trim</span><span class="perf-status">Open — remainder held</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">XLV</span><span class="date">Jun 12 &amp; 16, 2026</span></div>
+        <p class="thesis">New healthcare sector position — this was a real gap in the book. Low correlation to the AI trade, defensive characteristics, decent momentum in 2026.</p>
+        <div class="perf-line"><span class="perf-item up">XLV <strong>+6.7%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card trim">
+        <div class="card-top"><span class="badge trim">Trim</span><span class="ticker">PANW · GLD · AMD</span><span class="date">Jun 12, 2026</span></div>
+        <p class="thesis">Locking in some gains across three big winners in one session — PANW and AMD were both up well over 50% from cost, GLD had run hard too. Kept the core of each; this was profit-taking, not an exit.</p>
+        <div class="perf-line"><span class="perf-item up">PANW <strong>+24.4%</strong></span><span class="perf-item down">GLD <strong>-2.6%</strong></span><span class="perf-item up">AMD <strong>+3.5%</strong></span><span class="perf-item">since trim</span><span class="perf-status">Open — remainder held</span></div>
+      </div>
+
+      <div class="card sell">
+        <div class="card-top"><span class="badge sell">Sell</span><span class="ticker">AMC</span><span class="date">Jun 12, 2026</span></div>
+        <p class="thesis">Full exit on a legacy meme-stock position from years ago. No fundamental thesis was ever attached to this one — just cleaning it out.</p>
+        <div class="perf-line"><span class="perf-item down">AMC <strong>-16.4%</strong> since sold</span><span class="perf-status">Closed</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">JPM</span><span class="date">Jun 12, 2026</span></div>
+        <p class="thesis">New financials position — another sector gap. Steeper yield curve and an active M&amp;A environment both favor big banks here.</p>
+        <div class="perf-line"><span class="perf-item up">JPM <strong>+4.3%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">DELL</span><span class="date">Jun 7, 2026</span></div>
+        <p class="thesis">AI infrastructure hardware exposure alongside NVDA/AMD — a different part of the same buildout (servers, not just chips).</p>
+        <div class="perf-line"><span class="perf-item down">DELL <strong>-0.8%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">TSLA · BE · AMD</span><span class="date">Jun 5, 2026</span></div>
+        <p class="thesis">Adds across existing positions on a pullback — no new thesis, just buying more of what I already believed in at a better price.</p>
+        <div class="perf-line"><span class="perf-item up">TSLA <strong>+0.7%</strong></span><span class="perf-item up">BE <strong>+2.3%</strong></span><span class="perf-item up">AMD <strong>+12.7%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">CVX · XOM</span><span class="date">Mar 23–24, 2026</span></div>
+        <p class="thesis">Built out a dual-major energy position (both CVX and XOM, deliberately, not either/or). Straightforward hedge against oil-price and inflation surprises the rest of the book doesn't cover.</p>
+        <div class="perf-line"><span class="perf-item down">CVX <strong>-18.0%</strong></span><span class="perf-item down">XOM <strong>-15.6%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">LMT · PANW</span><span class="date">Mar 24, 2026</span></div>
+        <p class="thesis">Defense budget tailwinds (LMT) and continued conviction in the security name ahead of what turned into a big run (PANW).</p>
+        <div class="perf-line"><span class="perf-item down">LMT <strong>-11.1%</strong></span><span class="perf-item up">PANW <strong>+114.9%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">ANET</span><span class="date">Jan 27, 2026</span></div>
+        <p class="thesis">Networking hardware for AI data centers — same buildout as DELL/NVDA, different layer of the stack.</p>
+        <div class="perf-line"><span class="perf-item up">ANET <strong>+10.7%</strong> since entry</span><span class="perf-status">Open</span></div>
+      </div>
+
+      <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">GLD</span><span class="date">Jan 24–31, 2026</span></div>
+        <p class="thesis">Building a gold hedge in three tranches. Simple macro hedge against real-rate surprises and dollar weakness — not a trade on gold going up, a hedge for if everything else goes down.</p>
+        <div class="perf-line"><span class="perf-item down">GLD <strong>-17.8%</strong> since entry</span><span class="perf-status">Open — held as hedge</span></div>
+      </div>
+
+    </div>
+
+    <div class="chart-note" style="margin:16px 0 0"><strong style="color:var(--text)">Also running in the background:</strong> small recurring dollar-cost-average buys into the core positions (MSFT, META, VOO, AAPL) on a roughly biweekly cadence. These aren't listed individually above since there's no fresh thesis behind each one beyond "keep building the position" — the standalone cards above are the moves that actually changed something.</div>
+
+    <div class="stitle">Earlier History <span style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px">— portfolio origin, Sep 2024–Oct 2025</span></div>
+    <table class="history">
+      <tr><th>Date</th><th>Ticker</th><th>Side</th><th>Note</th></tr>
+      <tr><td>Oct 2025</td><td class="tkr">MSFT · META · AMD · AAPL · AMZN · NVDA</td><td class="side-buy">Buy</td><td>Building out the initial Mag7 + semis core</td></tr>
+      <tr><td>Sep 2025</td><td class="tkr">NVDA · META · MSFT</td><td class="side-buy">Buy</td><td>Early AI-buildout conviction adds</td></tr>
+      <tr><td>Jan 2025</td><td class="tkr">NVDA</td><td class="side-buy">Buy</td><td>Extended-hours add on a pullback</td></tr>
+      <tr><td>Dec 2024</td><td class="tkr">AAPL</td><td class="side-buy">Buy</td><td>Starter position</td></tr>
+      <tr><td>Sep 2024</td><td class="tkr">F · WMT · AMC · AMZN</td><td class="side-buy">Buy</td><td>Very first trades — portfolio origin</td></tr>
+    </table>
+  </section>
+
+  <section class="panel" id="insights">
+    <div class="stitle">Upcoming Earnings</div>
+    <table class="history" style="margin-bottom:16px">
+      <tr><th>Ticker</th><th>Date</th><th>What to Watch</th></tr>
+      <tr><td class="tkr">JPM</td><td>Week of Jul 13</td><td>Kicks off Q2 bank earnings — sets the risk tone for the season</td></tr>
+      <tr><td class="tkr">MSFT</td><td>Jul 27–31</td><td>Azure AI revenue growth — the key number since the stock's pullback</td></tr>
+      <tr><td class="tkr">META</td><td>Jul 29 (after close)</td><td>Ad-revenue trend + AI capex guidance</td></tr>
+      <tr><td class="tkr">NVDA</td><td>Aug 26 (after close)</td><td>Data-center demand commentary — the print the whole AI trade watches</td></tr>
+    </table>
+
+    <div class="stitle">Sector Performance <span style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px">— H1 2026, total return</span></div>
+    <div class="chart-card">
+      <div class="sector-chart-outer">
+        <div class="sector-zero"></div>
+        <div class="sector-bars" id="sector-chart"></div>
+      </div>
+      <div class="sector-ticks" id="sector-ticks"></div>
+      <div class="chart-note">Sector SPDR ETFs (XLK, XLI, XLE, XLP, XLU, XLV, XLF, XLY), Dec 29, 2025 close → Jul 2, 2026 intraday. Public market data — not portfolio-weighted.</div>
+    </div>
+
+    <div class="stitle">Market Notes</div>
+
+    <div class="post">
+      <div class="post-title">H1 2026 Sector Rotation: What Actually Moved</div>
+      <div class="post-meta">Jul 2, 2026 · Market Analysis</div>
+      <p>Tech (XLK) led the market by a wide margin in H1 2026, up roughly 25% — but it wasn't a straight line. The sector round-tripped through a sharp February–March drawdown (AI-capex jitters, a broader growth-stock de-rating) before the recovery accelerated hard into Q2 on strong hyperscaler earnings and reaccelerating AI infrastructure spend.</p>
+      <p>The more interesting story is who else showed up. Energy (XLE, +16.6%) and Industrials (XLI, +16.4%) both nearly matched tech's pace — a reminder that "AI trade" and "old economy" aren't mutually exclusive right now. Industrials in particular has quietly been a second-order AI-infrastructure play: data centers need power, cooling, and physical buildout, and that shows up in the industrial base before it shows up in the chip numbers.</p>
+      <p>Consumer Discretionary (XLY) was the lone red sector for the half, down about 1%. Everything else — Staples, Utilities, Healthcare, Financials — posted positive but unremarkable single-digit gains, the kind of steady grind that doesn't make headlines but does the job in a diversified book.</p>
+    </div>
+
+    <div class="post">
+      <div class="post-title">AI's Power Bottleneck: Why Compute Isn't the Constraint Anymore</div>
+      <div class="post-meta">Jun 2026 · Market Analysis</div>
+      <p>The AI buildout narrative has quietly shifted. Through 2023–2025 the gating constraint was compute — GPU supply, fab capacity, chip yields. Heading into H2 2026, the constraint is increasingly electricity: data center power demand is projected to keep climbing sharply through 2030, and US data center capacity is set to nearly triple over the same window. Nvidia itself has started explicitly linking future AI growth projections to power availability, not chip supply.</p>
+      <p>That reframing matters for how the AI trade gets played. It's no longer just semiconductors and hyperscalers — it's the power producers and grid-adjacent names sitting behind them. Unregulated power producers with direct long-term supply agreements to hyperscalers are a cleaner, more contracted way to get AI-adjacent exposure than chasing valuation on the chip names directly. Same logic applies to grid buildout, cooling infrastructure, and anything that turns electrons into usable data-center capacity.</p>
+      <p>The risk to watch: this is now a crowded, well-understood thesis. The "power is the bottleneck" trade has been running for a while, and the names most levered to it can move sharply on single-day news — a lost contract, a competing technology announcement, insider selling — even when the multi-year thesis hasn't changed at all.</p>
+    </div>
+
+    <div class="post">
+      <div class="post-title">The 2s10s Curve and What It's Telling Us</div>
+      <div class="post-meta">Jul 2, 2026 · Market Analysis</div>
+      <p>The 2-Year Treasury yield has climbed faster than the 10-Year through H1 2026 — a flattening move in the yield curve. That's a market signal about the *path* of rates, not the level: the 2-year reflects where traders expect the Fed to be over the next couple of years, while the effective Fed funds rate itself has barely moved. When the 2-year rises while the policy rate sits still, it means the market is pricing in less near-term easing than it previously expected — not that policy has tightened.</p>
+      <p>See the chart in the Econ Briefing tab for the actual data. The practical read for equities: long-duration, high-multiple growth names are the most exposed to this kind of repricing, since their valuations lean more heavily on cash flows far in the future getting discounted at whatever rate the market settles on. It's a slower, quieter risk than a Fed rate hike — but it shows up in exactly the kind of pullback tech saw earlier this year before the H1 rally resumed.</p>
+    </div>
+
+    <div class="post">
+      <div class="post-title">How I Think About Risk</div>
+      <div class="post-meta">Jul 2, 2026 · Methodology</div>
+      <p>A few ground rules that shape every move on this log, independent of any single ticker's story:</p>
+      <p><strong>Conviction sets position size, not price.</strong> A brand-new idea starts as a small starter position — enough to track it seriously, not enough to hurt if the thesis is wrong. It only grows into a core holding after the thesis has actually played out for a while, not because the stock went up fast.</p>
+      <p><strong>A thesis break is a sell signal; a price drop alone isn't.</strong> The BE trim and the PANW/AMD/GLD profit-taking in the log are both examples: sizing changed because something about the setup changed (a lost contract, a valuation that ran ahead of itself), not because the position was simply down or simply up. Noise gets held through; a broken thesis gets acted on.</p>
+      <p><strong>Diversify across what actually drives returns, not just ticker count.</strong> Ten AI-adjacent tickers isn't diversification if they all move on the same headline. The sector-gap fills on this log (Healthcare, Financials, Energy, Defense, Utilities) exist specifically to reduce correlation to the AI trade, not to check a box.</p>
+      <p><strong>Earnings are a hold decision, not a trade decision, unless something's actually broken.</strong> Positions built on a multi-quarter thesis get held through the print that thesis depends on — MSFT and META both get held through their July earnings for exactly this reason. Exiting right before the event that's supposed to prove the thesis defeats the point of having one.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="econ">
+    <div class="stitle">Macro Snapshot</div>
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="stat-label">Fed Funds Rate</div>
+        <div class="stat-value">3.63%</div>
+        <div class="stat-delta down">-0.48pp vs 1yr ago</div>
+        <div class="stat-spark" data-spark="dff"></div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">10-Year Yield</div>
+        <div class="stat-value">4.48%</div>
+        <div class="stat-delta up">+0.14pp vs 3mo ago</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">2-Year Yield</div>
+        <div class="stat-value">4.17%</div>
+        <div class="stat-delta up">+0.35pp vs 3mo ago</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">CPI (YoY)</div>
+        <div class="stat-value">~4.2%</div>
+        <div class="stat-delta up">Still elevated</div>
+        <div class="stat-spark" data-spark="cpi"></div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Unemployment</div>
+        <div class="stat-value">4.2%</div>
+        <div class="stat-delta down">-0.10pp vs 3mo ago</div>
+        <div class="stat-spark" data-spark="unrate"></div>
+      </div>
+    </div>
+
+    <div class="stitle">Treasury Yields <span style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px">— H1 2026</span></div>
+    <div class="chart-card">
+      <div class="chart-legend">
+        <span class="legend-key"><span class="legend-swatch" style="background:#0284c7"></span>2-Year</span>
+        <span class="legend-key"><span class="legend-swatch" style="background:#fb3a4a"></span>10-Year</span>
+      </div>
+      <div class="chart-wrap" id="yield-chart-wrap">
+        <svg class="chart-svg" id="yield-chart" viewBox="0 0 700 220" preserveAspectRatio="none"></svg>
+        <div class="chart-tooltip" id="yield-tooltip"></div>
+      </div>
+      <div class="chart-note">Daily close, FRED (DGS2, DGS10), Jan 2 – Jul 1, 2026. Hover the chart for exact values.</div>
+    </div>
+
+    <div class="post">
+      <div class="post-title">Reading Today's Data</div>
+      <div class="post-meta">Jul 2, 2026 · Economic Briefing</div>
+      <p>The 2-Year Treasury yield is up 0.35 points over the last three months — a much sharper move than the effective Fed funds rate, which actually ticked down slightly over the same span. That gap matters: the 2-year is the market's read on where rates are headed over the next cycle, and it's climbing faster than the 10-year (+0.14 over 3mo). That's a flattening move — traders pricing in less near-term Fed easing than they expected three months ago, not a change in where rates sit today.</p>
+      <p>Behind that repricing: a still-tightening labor market (unemployment ticked down to 4.2%) alongside inflation that keeps running hot (CPI up roughly 4.2% year-over-year, and accelerating over the last quarter). That combination — resilient jobs, sticky inflation — gives the Fed less room to cut than markets previously assumed, which is exactly the kind of backdrop that pressures long-duration, high-multiple growth stocks the hardest.</p>
+      <p><strong>What to watch:</strong> the next CPI print (June data, due mid-July) and whether the 2yr/10yr spread keeps compressing. A full re-inversion would be the clearer signal that the market has genuinely stopped pricing near-term cuts.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="watchlist">
+    <div class="stitle">On The Radar</div>
+    <div class="watch-grid">
+      <div class="watch-card">
+        <span class="watch-status">Q3 starter</span>
+        <span class="tkr">TSM</span>
+        <p>Chip manufacturer behind NVDA/AMD/AAPL. AI chip demand tailwind — waiting for the right entry point rather than chasing.</p>
+      </div>
+      <div class="watch-card">
+        <span class="watch-status">Watching</span>
+        <span class="tkr">VST</span>
+        <p>Largest unregulated US power producer (nuclear + gas). Long-term power agreements with Amazon and Meta specifically — a direct play on AI's power constraint.</p>
+      </div>
+      <div class="watch-card">
+        <span class="watch-status">Aug–Sept</span>
+        <span class="tkr">VXUS</span>
+        <p>Total international ETF. International diversification once the domestic sector gaps are filled — not in a rush on this one.</p>
+      </div>
+      <div class="watch-card">
+        <span class="watch-status">Wait for pullback</span>
+        <span class="tkr">MU</span>
+        <p>Strong fundamentals, but currently trading above the analyst target after a big earnings-driven spike. Already have semi exposure via NVDA/AMD — waiting for a real pullback, not chasing the move.</p>
+      </div>
+      <div class="watch-card">
+        <span class="watch-status">Sector gap</span>
+        <span class="tkr">VNQ</span>
+        <p>Real estate ETF — a sector currently missing from the book entirely.</p>
+      </div>
+      <div class="watch-card">
+        <span class="watch-status">Sector gap</span>
+        <span class="tkr">XLU</span>
+        <p>Utilities ETF — another missing sector, and one with direct AI-power-demand relevance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel about" id="about">
+    <div class="stitle">About This Log</div>
+    <p><strong>What this is:</strong> a public log of the trades I'm making and the reasoning behind them — buy, sell, or trim, with the date and the "why." No dollar amounts or position sizes are posted, ever; the goal is to share ideas, not to let anyone reverse-engineer account size.</p>
+    <p><strong>Style:</strong> mostly long-term positioning around AI infrastructure, a handful of sector-diversification adds (healthcare, financials, energy, defense), and the occasional opportunistic trim when a position runs hard. Not day-trading, not options — just a real portfolio's real decisions.</p>
+    <p><strong>What's here beyond the log:</strong> Insights has longer market-analysis posts plus an upcoming-earnings calendar and sector-performance data; Econ Briefing tracks the macro picture (rates, inflation, jobs) and what it means for a portfolio like this one; Watchlist is what's being researched but not bought yet. All of it uses public market data — nothing here comes from private account details.</p>
+    <p><strong>Why public:</strong> writing the thesis down for someone else to read is a good forcing function for actually having one. If it's useful to you too, that's a bonus.</p>
+    <p><strong>Direction and reasoning are mine. Sizing is yours.</strong> Every trade shows what I bought or sold, when, and why — plus a rough conviction level (Starter / Building / Core, see the glossary on the Trade Log tab) so you know how much weight I'm putting behind an idea relative to my other positions. What I'm never going to tell you is how many dollars to put behind it. That depends on your own risk tolerance, timeline, and what else you hold — things a stranger's trade log can't know about you. Use this as a source of ideas and reasoning, not a sizing template.</p>
+  </section>
+
+  <footer>YR SIGNAL · UPDATED AS TRADES HAPPEN · NOT FINANCIAL ADVICE</footer>
+</div>
+
+<script>
+/* ─────────────────── STARS ─────────────────── */
+const starsEl = document.getElementById('stars');
+for(let i=0;i<180;i++){
+  const s=document.createElement('div');s.className='star';
+  const sz=Math.random()*2+.4;
+  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*5}s;--o:${.2+Math.random()*.8};--delay:-${Math.random()*6}s`;
+  starsEl.appendChild(s);
+}
+
+document.querySelectorAll('nav.tabs button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('section.panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.panel).classList.add('active');
+    // charts inside a display:none panel report zero size on first paint —
+    // (re)build once the panel that owns them actually becomes visible
+    if(btn.dataset.panel==='insights') buildSectorChart();
+    if(btn.dataset.panel==='econ') buildYieldChart();
+  });
+});
+
+/* ─────────────────── SECTOR PERFORMANCE CHART ─────────────────── */
+const sectorData = [
+  {sym:'XLK', name:'Technology',        pct:25.1},
+  {sym:'XLE', name:'Energy',            pct:16.6},
+  {sym:'XLI', name:'Industrials',       pct:16.4},
+  {sym:'XLP', name:'Consumer Staples',  pct:9.4},
+  {sym:'XLU', name:'Utilities',         pct:6.0},
+  {sym:'XLV', name:'Healthcare',        pct:5.3},
+  {sym:'XLF', name:'Financials',        pct:1.2},
+  {sym:'XLY', name:'Consumer Disc.',    pct:-1.1},
+];
+let sectorChartBuilt = false;
+function buildSectorChart(){
+  const wrap = document.getElementById('sector-chart');
+  const ticks = document.getElementById('sector-ticks');
+  if(!wrap || !ticks || sectorChartBuilt) return;
+  if(wrap.clientHeight === 0) return; // panel not visible yet
+  sectorChartBuilt = true;
+  const maxAbs = Math.max(...sectorData.map(d=>Math.abs(d.pct)));
+  const half = wrap.clientHeight/2 - 20;
+  sectorData.forEach(d=>{
+    const col = document.createElement('div');
+    col.className='sector-col';
+    const bar = document.createElement('div');
+    bar.className = 'sector-bar ' + (d.pct>=0?'pos':'neg');
+    bar.style.background = d.pct>=0 ? 'var(--green)' : 'var(--red)';
+    const h = Math.max(4, Math.abs(d.pct)/maxAbs * half);
+    bar.style.height = h+'px';
+    if(d.pct>=0){ bar.style.bottom='50%'; } else { bar.style.top='50%'; }
+    const label = document.createElement('span');
+    label.className='sector-bar-label';
+    label.style.color = d.pct>=0 ? 'var(--green)' : 'var(--red)';
+    label.textContent = (d.pct>=0?'+':'')+d.pct.toFixed(1)+'%';
+    if(d.pct>=0){ label.style.bottom = (h+6)+'px'; } else { label.style.top = (h+6)+'px'; }
+    bar.appendChild(label);
+    col.appendChild(bar);
+    col.title = `${d.name}: ${d.pct>=0?'+':''}${d.pct.toFixed(1)}% H1 2026`;
+    wrap.appendChild(col);
+
+    const tick = document.createElement('span');
+    tick.textContent = d.sym;
+    ticks.appendChild(tick);
+  });
+}
+
+/* ─────────────────── TREASURY YIELD CHART ─────────────────── */
+const yieldData = [["2026-01-02",3.47,4.19],["2026-01-07",3.47,4.15],["2026-01-12",3.54,4.19],["2026-01-15",3.56,4.17],["2026-01-21",3.6,4.26],["2026-01-26",3.56,4.22],["2026-01-29",3.53,4.24],["2026-02-03",3.57,4.28],["2026-02-06",3.5,4.22],["2026-02-11",3.52,4.18],["2026-02-17",3.43,4.05],["2026-02-20",3.48,4.08],["2026-02-25",3.45,4.05],["2026-03-02",3.47,4.05],["2026-03-05",3.57,4.13],["2026-03-10",3.57,4.15],["2026-03-13",3.73,4.28],["2026-03-18",3.76,4.26],["2026-03-23",3.83,4.34],["2026-03-26",3.96,4.42],["2026-03-31",3.79,4.3],["2026-04-03",3.84,4.35],["2026-04-08",3.79,4.29],["2026-04-13",3.78,4.3],["2026-04-16",3.78,4.32],["2026-04-21",3.78,4.3],["2026-04-24",3.78,4.31],["2026-04-29",3.92,4.42],["2026-05-04",3.95,4.45],["2026-05-07",3.92,4.41],["2026-05-12",4.0,4.46],["2026-05-15",4.09,4.59],["2026-05-20",4.04,4.57],["2026-05-26",4.01,4.5],["2026-05-29",3.98,4.45],["2026-06-03",4.08,4.49],["2026-06-08",4.15,4.56],["2026-06-11",4.05,4.45],["2026-06-16",4.05,4.43],["2026-06-22",4.24,4.51],["2026-06-25",4.09,4.4],["2026-06-30",4.14,4.44],["2026-07-01",4.17,4.48]];
+
+let yieldChartBuilt = false;
+function buildYieldChart(){
+  const svg = document.getElementById('yield-chart');
+  if(!svg || yieldChartBuilt) return;
+  if(svg.clientWidth === 0) return; // panel not visible yet
+  yieldChartBuilt = true;
+
+  const W=700,H=220,padL=34,padR=14,padT=10,padB=22;
+  const plotW=W-padL-padR, plotH=H-padT-padB;
+  const all2 = yieldData.map(d=>d[1]), all10 = yieldData.map(d=>d[2]);
+  const minV = Math.floor(Math.min(...all2,...all10)*10)/10 - 0.1;
+  const maxV = Math.ceil(Math.max(...all2,...all10)*10)/10 + 0.1;
+  const xAt = i => padL + (i/(yieldData.length-1))*plotW;
+  const yAt = v => padT + (1-(v-minV)/(maxV-minV))*plotH;
+
+  const ns='http://www.w3.org/2000/svg';
+  function el(tag, attrs){ const e=document.createElementNS(ns,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); return e; }
+
+  // gridlines + axis labels (3 lines)
+  const steps=3;
+  for(let s=0;s<=steps;s++){
+    const v = minV + (maxV-minV)*s/steps;
+    const y = yAt(v);
+    svg.appendChild(el('line',{class:'grid-line',x1:padL,x2:W-padR,y1:y,y2:y}));
+    const t=el('text',{class:'axis-label',x:4,y:y+3});
+    t.textContent = v.toFixed(1)+'%';
+    svg.appendChild(t);
+  }
+  // a few x-axis date labels
+  [0, Math.floor(yieldData.length/2), yieldData.length-1].forEach(i=>{
+    const t=el('text',{class:'axis-label',x:xAt(i),y:H-4,'text-anchor': i===0?'start':(i===yieldData.length-1?'end':'middle')});
+    const d=new Date(yieldData[i][0]);
+    t.textContent = d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    svg.appendChild(t);
+  });
+
+  function pathFor(idx){
+    return yieldData.map((d,i)=>`${i===0?'M':'L'}${xAt(i).toFixed(1)},${yAt(d[idx]).toFixed(1)}`).join(' ');
+  }
+  const line2 = el('path',{d:pathFor(1),fill:'none',stroke:'#0284c7','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round','vector-effect':'non-scaling-stroke'});
+  const line10 = el('path',{d:pathFor(2),fill:'none',stroke:'#fb3a4a','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round','vector-effect':'non-scaling-stroke'});
+  svg.appendChild(line2); svg.appendChild(line10);
+
+  const lastI = yieldData.length-1;
+  // end markers with surface-color ring
+  [[1,'#0284c7'],[2,'#fb3a4a']].forEach(([idx,color])=>{
+    svg.appendChild(el('circle',{cx:xAt(lastI),cy:yAt(yieldData[lastI][idx]),r:4,fill:color,stroke:'#190f14','stroke-width':2}));
+    const lbl=el('text',{class:'end-label',x:xAt(lastI)-6,y:yAt(yieldData[lastI][idx])+(idx===1?14:-8),'text-anchor':'end',fill:color});
+    lbl.textContent = yieldData[lastI][idx].toFixed(2)+'%';
+    svg.appendChild(lbl);
+  });
+
+  // crosshair
+  const crosshair = el('line',{class:'crosshair',x1:0,x2:0,y1:padT,y2:H-padB});
+  svg.appendChild(crosshair);
+
+  const wrap = document.getElementById('yield-chart-wrap');
+  const tooltip = document.getElementById('yield-tooltip');
+  wrap.addEventListener('pointermove', e=>{
+    const rect = svg.getBoundingClientRect();
+    const relX = (e.clientX-rect.left)/rect.width * W;
+    let idx = Math.round((relX-padL)/plotW*(yieldData.length-1));
+    idx = Math.max(0, Math.min(yieldData.length-1, idx));
+    const px = xAt(idx);
+    crosshair.setAttribute('x1',px); crosshair.setAttribute('x2',px); crosshair.style.opacity='1';
+    const d = yieldData[idx];
+    const dateStr = new Date(d[0]).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    tooltip.innerHTML = `<span class="tt-date">${dateStr}</span><span style="color:#0284c7">● 2-Year: <span class="tt-val">${d[1].toFixed(2)}%</span></span><br><span style="color:#fb3a4a">● 10-Year: <span class="tt-val">${d[2].toFixed(2)}%</span></span>`;
+    tooltip.classList.add('show');
+    const leftPct = (px/W)*100;
+    tooltip.style.left = leftPct > 70 ? (px/W*rect.width - 150)+'px' : (px/W*rect.width + 14)+'px';
+    tooltip.style.top = '4px';
+  });
+  wrap.addEventListener('pointerleave', ()=>{ crosshair.style.opacity='0'; tooltip.classList.remove('show'); });
+}
+
+/* ─────────────────── SPARKLINES ─────────────────── */
+const sparkData = {
+  dff:   [3.64,3.64,3.64,3.64,3.64,3.64,3.64,3.64,3.63,3.62,3.62,3.62,3.63,3.63],
+  cpi:   [320.3,320.6,321.4,322.2,323.3,324.2,325.1,326.0,326.6,327.5,330.3,332.4,334.0],
+  unrate:[4.3,4.1,4.3,4.3,4.4,4.5,4.4,4.3,4.4,4.3,4.3,4.3,4.2],
+};
+document.querySelectorAll('[data-spark]').forEach(container=>{
+  const key = container.dataset.spark;
+  const vals = sparkData[key];
+  if(!vals) return;
+  const min=Math.min(...vals), max=Math.max(...vals);
+  const W=100,H=24;
+  const pts = vals.map((v,i)=>{
+    const x = (i/(vals.length-1))*W;
+    const y = max===min ? H/2 : H - ((v-min)/(max-min))*H;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  const ns='http://www.w3.org/2000/svg';
+  const svg=document.createElementNS(ns,'svg'); svg.setAttribute('viewBox',`0 0 ${W} ${H}`); svg.setAttribute('preserveAspectRatio','none');
+  const poly=document.createElementNS(ns,'polyline');
+  poly.setAttribute('points',pts.join(' '));
+  poly.setAttribute('fill','none'); poly.setAttribute('stroke','var(--muted)'); poly.setAttribute('stroke-width','1.5');
+  poly.setAttribute('stroke-linejoin','round'); poly.setAttribute('stroke-linecap','round'); poly.setAttribute('opacity','0.55');
+  svg.appendChild(poly);
+  const lastPt = pts[pts.length-1].split(',');
+  const dot=document.createElementNS(ns,'circle');
+  dot.setAttribute('cx',lastPt[0]); dot.setAttribute('cy',lastPt[1]); dot.setAttribute('r','2.5'); dot.setAttribute('fill','var(--accent)');
+  svg.appendChild(dot);
+  container.appendChild(svg);
+});
+
+buildSectorChart();
+buildYieldChart();
+window.addEventListener('resize', ()=>{ sectorChartBuilt=false; buildSectorChart(); });
+</script>
+
+</body>
+</html>
