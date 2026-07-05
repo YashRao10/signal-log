@@ -12,9 +12,13 @@
 <meta property="og:url" content="https://yashrao10.github.io/signal-log/">
 <meta property="og:title" content="YR Signal — Trade Log, Market Research & Economic Analysis">
 <meta property="og:description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://yashrao10.github.io/signal-log/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YR Signal — Trade Log, Market Research & Economic Analysis">
 <meta name="twitter:description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
+<meta name="twitter:image" content="https://yashrao10.github.io/signal-log/og-image.png">
 <title>YR Signal — Trade Log, Market Research &amp; Economic Analysis</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -121,6 +125,12 @@ section.panel.active{display:block}
 .perf-item.up strong{color:var(--green)}
 .perf-item.down strong{color:var(--red)}
 .perf-status{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;margin-left:auto;white-space:nowrap}
+
+/* ── Sparklines ── */
+.spark-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
+.spark-item{display:flex;align-items:center;gap:6px}
+.spark-tkr{font-size:10.5px;color:var(--muted);letter-spacing:.5px;font-weight:700}
+.spark-item svg{display:block}
 
 /* ── Glossary / primer ── */
 .primer{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:20px;overflow:hidden}
@@ -307,7 +317,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item">VTI · VOO</span><span class="perf-status">Queued — fills Mon Jul 6 (market closed all Jul 3 for the Jul 4th holiday)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-22">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">GOOGL</span><span class="date">Jun 26, 2026</span></div>
         <p class="thesis">New position — the last Mag7 name I didn't hold. Cloud growing ~63% YoY, reasonable multiple for the growth rate, and Gemini is showing up in the numbers, not just the keynote. Building this slowly over a few months rather than going in all at once.</p>
         <div class="perf-line"><span class="perf-item up">GOOGL <strong>+5.2%</strong> since entry</span><span class="perf-status">Open</span></div>
@@ -319,19 +329,19 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item down">WMT <strong>-6.7%</strong></span><span class="perf-item down">F <strong>-3.3%</strong></span><span class="perf-item down">QQQ <strong>-0.4%</strong></span><span class="perf-item down">SMH <strong>-5.3%</strong></span><span class="perf-status">Closed — since sold</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-22">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">MSFT · META</span><span class="date">Jun 23, 2026</span></div>
         <p class="thesis">Adding to my two most underwater quality holdings ahead of their late-July earnings. Both pulled back hard on broad tech weakness this year with no change to the underlying growth story — Azure and AI ad-load are still doing the work.</p>
         <div class="perf-line"><span class="perf-item up">MSFT <strong>+4.6%</strong></span><span class="perf-item up">META <strong>+3.7%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-22">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">PLTR</span><span class="date">Jun 23, 2026</span></div>
         <p class="thesis">New position. Federal AI/data contracts (Army, and increasingly defense-adjacent "Golden Dome" work) are becoming a real revenue line, not just a narrative. Starting small.</p>
         <div class="perf-line"><span class="perf-item up">PLTR <strong>+8.5%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-22">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">RTX</span><span class="date">Jun 23, 2026</span></div>
         <p class="thesis">New defense position. Missile/interceptor demand tied to the same Golden Dome buildout as PLTR above — pairing a hardware prime with a software integrator.</p>
         <div class="perf-line"><span class="perf-item up">RTX <strong>+7.5%</strong> since entry</span><span class="perf-status">Open</span></div>
@@ -343,19 +353,19 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item up">AAPL <strong>+3.6%</strong></span><span class="perf-item up">META <strong>+3.8%</strong></span><span class="perf-status">Closed — since sold</span></div>
       </div>
 
-      <div class="card trim">
+      <div class="card trim" data-spark-since="2026-06-15">
         <div class="card-top"><span class="badge trim">Trim</span><span class="ticker">BE</span><span class="date">Jun 16, 2026</span></div>
         <p class="thesis">Partial trim after a sharp one-day drop tied to a competitor (fuel cells) losing out on a gas-turbine deal, plus some insider selling. Kept half the position — the AI-power-demand thesis isn't broken, but the news changed my sizing, not my direction.</p>
         <div class="perf-line"><span class="perf-item down">BE <strong>-1.3%</strong> since trim</span><span class="perf-status">Open — remainder held</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-08">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">XLV</span><span class="date">Jun 12 &amp; 16, 2026</span></div>
         <p class="thesis">New healthcare sector position — this was a real gap in the book. Low correlation to the AI trade, defensive characteristics, decent momentum in 2026.</p>
         <div class="perf-line"><span class="perf-item up">XLV <strong>+6.7%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card trim">
+      <div class="card trim" data-spark-since="2026-06-08">
         <div class="card-top"><span class="badge trim">Trim</span><span class="ticker">PANW · GLD · AMD</span><span class="date">Jun 12, 2026</span></div>
         <p class="thesis">Locking in some gains across three big winners in one session — PANW and AMD were both up well over 50% from cost, GLD had run hard too. Kept the core of each; this was profit-taking, not an exit.</p>
         <div class="perf-line"><span class="perf-item up">PANW <strong>+24.4%</strong></span><span class="perf-item down">GLD <strong>-2.6%</strong></span><span class="perf-item up">AMD <strong>+3.5%</strong></span><span class="perf-item">since trim</span><span class="perf-status">Open — remainder held</span></div>
@@ -367,43 +377,43 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item down">AMC <strong>-16.4%</strong> since sold</span><span class="perf-status">Closed</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-08">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">JPM</span><span class="date">Jun 12, 2026</span></div>
         <p class="thesis">New financials position — another sector gap. Steeper yield curve and an active M&amp;A environment both favor big banks here.</p>
         <div class="perf-line"><span class="perf-item up">JPM <strong>+4.3%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-01">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">DELL</span><span class="date">Jun 7, 2026</span></div>
         <p class="thesis">AI infrastructure hardware exposure alongside NVDA/AMD — a different part of the same buildout (servers, not just chips).</p>
         <div class="perf-line"><span class="perf-item down">DELL <strong>-0.8%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-06-01">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">TSLA · BE · AMD</span><span class="date">Jun 5, 2026</span></div>
         <p class="thesis">Adds across existing positions on a pullback — no new thesis, just buying more of what I already believed in at a better price.</p>
         <div class="perf-line"><span class="perf-item up">TSLA <strong>+0.7%</strong></span><span class="perf-item up">BE <strong>+2.3%</strong></span><span class="perf-item up">AMD <strong>+12.7%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-03-23">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">CVX · XOM</span><span class="date">Mar 23–24, 2026</span></div>
         <p class="thesis">Built out a dual-major energy position (both CVX and XOM, deliberately, not either/or). Straightforward hedge against oil-price and inflation surprises the rest of the book doesn't cover.</p>
         <div class="perf-line"><span class="perf-item down">CVX <strong>-18.0%</strong></span><span class="perf-item down">XOM <strong>-15.6%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-03-23">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">LMT · PANW</span><span class="date">Mar 24, 2026</span></div>
         <p class="thesis">Defense budget tailwinds (LMT) and continued conviction in the security name ahead of what turned into a big run (PANW).</p>
         <div class="perf-line"><span class="perf-item down">LMT <strong>-11.1%</strong></span><span class="perf-item up">PANW <strong>+114.9%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-01-26">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">ANET</span><span class="date">Jan 27, 2026</span></div>
         <p class="thesis">Networking hardware for AI data centers — same buildout as DELL/NVDA, different layer of the stack.</p>
         <div class="perf-line"><span class="perf-item up">ANET <strong>+10.7%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-01-26">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">GLD</span><span class="date">Jan 24–31, 2026</span></div>
         <p class="thesis">Building a gold hedge in three tranches. Simple macro hedge against real-rate surprises and dollar weakness — not a trade on gold going up, a hedge for if everything else goes down.</p>
         <div class="perf-line"><span class="perf-item down">GLD <strong>-17.8%</strong> since entry</span><span class="perf-status">Open — held as hedge</span></div>
@@ -623,6 +633,66 @@ document.querySelectorAll('nav.tabs button').forEach(btn=>{
     if(btn.dataset.panel==='econ') buildYieldChart();
   });
 });
+
+/* ─────────────────── SPARKLINE DATA (weekly closes, Jan–Jul 2026) ─────────────────── */
+/* Real Robinhood historicals (get_equity_historicals, interval=week) + Jul 2 official close appended. XOM omitted — no real historical data before Jul 1 in this data source. */
+const SPARK_DATA = {
+  GOOGL:[["2026-01-26",338.00],["2026-02-02",322.86],["2026-02-09",305.72],["2026-02-16",314.98],["2026-02-23",311.76],["2026-03-02",298.52],["2026-03-09",302.28],["2026-03-16",301.00],["2026-03-23",274.34],["2026-03-30",295.77],["2026-04-06",317.24],["2026-04-13",341.68],["2026-04-20",344.40],["2026-04-27",385.69],["2026-05-04",400.80],["2026-05-11",396.78],["2026-05-18",382.97],["2026-05-25",380.34],["2026-06-01",368.53],["2026-06-08",359.68],["2026-06-15",368.03],["2026-06-22",337.39],["2026-07-02",359.53]],
+  MSFT:[["2026-01-26",430.29],["2026-02-02",401.14],["2026-02-09",401.32],["2026-02-16",397.23],["2026-02-23",392.74],["2026-03-02",408.96],["2026-03-09",395.55],["2026-03-16",381.87],["2026-03-23",356.77],["2026-03-30",373.46],["2026-04-06",370.87],["2026-04-13",422.79],["2026-04-20",424.62],["2026-04-27",414.44],["2026-05-04",415.12],["2026-05-11",421.92],["2026-05-18",418.57],["2026-05-25",450.24],["2026-06-01",416.67],["2026-06-08",390.74],["2026-06-15",379.40],["2026-06-22",372.97],["2026-07-02",389.65]],
+  META:[["2026-01-26",716.50],["2026-02-02",661.46],["2026-02-09",639.77],["2026-02-16",655.66],["2026-02-23",648.18],["2026-03-02",644.86],["2026-03-09",613.71],["2026-03-16",593.66],["2026-03-23",525.72],["2026-03-30",574.46],["2026-04-06",629.86],["2026-04-13",688.55],["2026-04-20",675.03],["2026-04-27",608.75],["2026-05-04",609.63],["2026-05-11",614.23],["2026-05-18",610.26],["2026-05-25",632.51],["2026-06-01",593.00],["2026-06-08",566.98],["2026-06-15",577.22],["2026-06-22",550.25],["2026-07-02",582.64]],
+  PLTR:[["2026-01-26",146.59],["2026-02-02",135.90],["2026-02-09",131.41],["2026-02-16",135.24],["2026-02-23",137.19],["2026-03-02",157.16],["2026-03-09",150.95],["2026-03-16",150.68],["2026-03-23",143.06],["2026-03-30",148.46],["2026-04-06",128.06],["2026-04-13",146.39],["2026-04-20",143.09],["2026-04-27",144.07],["2026-05-04",137.80],["2026-05-11",133.99],["2026-05-18",136.88],["2026-05-25",156.54],["2026-06-01",135.53],["2026-06-08",127.99],["2026-06-15",128.47],["2026-06-22",112.93],["2026-07-02",129.17]],
+  RTX:[["2026-01-26",200.93],["2026-02-02",198.66],["2026-02-09",200.06],["2026-02-16",204.92],["2026-02-23",202.62],["2026-03-02",209.76],["2026-03-09",204.52],["2026-03-16",198.16],["2026-03-23",189.71],["2026-03-30",196.21],["2026-04-06",201.56],["2026-04-13",196.42],["2026-04-20",174.26],["2026-04-27",173.99],["2026-05-04",176.09],["2026-05-11",171.18],["2026-05-18",177.01],["2026-05-25",179.66],["2026-06-01",180.99],["2026-06-08",183.53],["2026-06-15",185.60],["2026-06-22",187.99],["2026-07-02",199.105]],
+  BE:[["2026-01-26",151.37],["2026-02-02",143.03],["2026-02-09",139.74],["2026-02-16",147.55],["2026-02-23",155.67],["2026-03-02",135.19],["2026-03-09",154.51],["2026-03-16",150.12],["2026-03-23",133.24],["2026-03-30",135.63],["2026-04-06",166.70],["2026-04-13",207.86],["2026-04-20",231.17],["2026-04-27",290.52],["2026-05-04",261.03],["2026-05-11",275.95],["2026-05-18",302.49],["2026-05-25",285.00],["2026-06-01",263.61],["2026-06-08",260.22],["2026-06-15",328.91],["2026-06-22",252.02],["2026-07-02",270.907]],
+  XLV:[["2026-01-26",154.74],["2026-02-02",157.71],["2026-02-09",157.67],["2026-02-16",156.82],["2026-02-23",160.20],["2026-03-02",152.70],["2026-03-09",149.79],["2026-03-16",145.33],["2026-03-23",143.26],["2026-03-30",146.81],["2026-04-06",147.31],["2026-04-13",148.80],["2026-04-20",144.18],["2026-04-27",145.16],["2026-05-04",143.49],["2026-05-11",145.10],["2026-05-18",149.89],["2026-05-25",149.47],["2026-06-01",153.01],["2026-06-08",153.81],["2026-06-15",149.40],["2026-06-22",160.34],["2026-07-02",163.77]],
+  PANW:[["2026-01-26",176.97],["2026-02-02",159.32],["2026-02-09",166.95],["2026-02-16",148.70],["2026-02-23",148.92],["2026-03-02",165.05],["2026-03-09",167.015],["2026-03-16",162.95],["2026-03-23",147.02],["2026-03-30",163.21],["2026-04-06",155.73],["2026-04-13",167.85],["2026-04-20",178.54],["2026-04-27",181.08],["2026-05-04",207.88],["2026-05-11",242.83],["2026-05-18",260.58],["2026-05-25",281.69],["2026-06-01",272.05],["2026-06-08",279.62],["2026-06-15",287.78],["2026-06-22",304.20],["2026-07-02",347.81]],
+  GLD:[["2026-01-26",444.95],["2026-02-02",455.46],["2026-02-09",462.62],["2026-02-16",468.62],["2026-02-23",483.75],["2026-03-02",473.51],["2026-03-09",460.84],["2026-03-16",413.38],["2026-03-23",414.70],["2026-03-30",429.41],["2026-04-06",437.13],["2026-04-13",445.93],["2026-04-20",433.25],["2026-04-27",423.18],["2026-05-04",433.77],["2026-05-11",417.29],["2026-05-18",413.82],["2026-05-25",417.12],["2026-06-01",396.24],["2026-06-08",386.54],["2026-06-15",387.12],["2026-06-22",373.63],["2026-07-02",378.15]],
+  AMD:[["2026-01-26",236.73],["2026-02-02",208.44],["2026-02-09",207.32],["2026-02-16",200.15],["2026-02-23",200.21],["2026-03-02",192.43],["2026-03-09",193.39],["2026-03-16",201.33],["2026-03-23",201.99],["2026-03-30",217.50],["2026-04-06",245.04],["2026-04-13",278.39],["2026-04-20",347.81],["2026-04-27",360.54],["2026-05-04",455.19],["2026-05-11",424.10],["2026-05-18",467.51],["2026-05-25",516.10],["2026-06-01",466.38],["2026-06-08",511.57],["2026-06-15",537.37],["2026-06-22",521.58],["2026-07-02",518.26]],
+  JPM:[["2026-01-26",305.89],["2026-02-02",322.40],["2026-02-09",302.55],["2026-02-16",310.79],["2026-02-23",300.30],["2026-03-02",289.48],["2026-03-09",283.44],["2026-03-16",286.56],["2026-03-23",282.84],["2026-03-30",294.60],["2026-04-06",309.87],["2026-04-13",310.29],["2026-04-20",308.28],["2026-04-27",312.47],["2026-05-04",302.10],["2026-05-11",297.81],["2026-05-18",306.38],["2026-05-25",299.31],["2026-06-01",312.37],["2026-06-08",320.72],["2026-06-15",325.22],["2026-06-22",329.05],["2026-07-02",334.35]],
+  DELL:[["2026-01-26",114.44],["2026-02-02",121.05],["2026-02-09",117.49],["2026-02-16",122.27],["2026-02-23",148.08],["2026-03-02",146.48],["2026-03-09",151.62],["2026-03-16",157.67],["2026-03-23",171.81],["2026-03-30",174.37],["2026-04-06",177.80],["2026-04-13",196.55],["2026-04-20",216.09],["2026-04-27",210.17],["2026-05-04",260.46],["2026-05-11",241.99],["2026-05-18",295.19],["2026-05-25",420.91],["2026-06-01",394.39],["2026-06-08",395.57],["2026-06-15",409.50],["2026-06-22",399.49],["2026-07-02",394.48]],
+  TSLA:[["2026-01-26",430.41],["2026-02-02",411.11],["2026-02-09",417.44],["2026-02-16",411.82],["2026-02-23",402.51],["2026-03-02",396.73],["2026-03-09",391.20],["2026-03-16",367.96],["2026-03-23",361.83],["2026-03-30",360.59],["2026-04-06",348.95],["2026-04-13",400.62],["2026-04-20",376.30],["2026-04-27",390.82],["2026-05-04",428.35],["2026-05-11",422.24],["2026-05-18",426.01],["2026-05-25",435.79],["2026-06-01",391.00],["2026-06-08",406.43],["2026-06-15",400.49],["2026-06-22",379.71],["2026-07-02",392.8101]],
+  CVX:[["2026-01-26",176.90],["2026-02-02",180.86],["2026-02-09",183.74],["2026-02-16",183.93],["2026-02-23",186.76],["2026-03-02",189.94],["2026-03-09",196.82],["2026-03-16",201.73],["2026-03-23",211.15],["2026-03-30",198.97],["2026-04-06",188.55],["2026-04-13",183.99],["2026-04-20",185.21],["2026-04-27",190.63],["2026-05-04",181.62],["2026-05-11",191.10],["2026-05-18",191.43],["2026-05-25",182.46],["2026-06-01",187.31],["2026-06-08",187.22],["2026-06-15",173.63],["2026-06-22",171.06],["2026-07-02",169.17]],
+  LMT:[["2026-01-26",634.22],["2026-02-02",623.58],["2026-02-09",652.58],["2026-02-16",658.26],["2026-02-23",658.08],["2026-03-02",671.77],["2026-03-09",646.00],["2026-03-16",627.43],["2026-03-23",615.84],["2026-03-30",622.79],["2026-04-06",613.72],["2026-04-13",592.19],["2026-04-20",513.45],["2026-04-27",512.77],["2026-05-04",506.51],["2026-05-11",516.01],["2026-05-18",533.24],["2026-05-25",530.45],["2026-06-01",523.76],["2026-06-08",540.33],["2026-06-15",510.95],["2026-06-22",507.40],["2026-07-02",545.77]],
+  ANET:[["2026-01-26",141.74],["2026-02-02",137.49],["2026-02-09",141.59],["2026-02-16",132.79],["2026-02-23",133.50],["2026-03-02",132.89],["2026-03-09",133.57],["2026-03-16",131.22],["2026-03-23",120.77],["2026-03-30",126.68],["2026-04-06",147.35],["2026-04-13",164.23],["2026-04-20",176.91],["2026-04-27",172.70],["2026-05-04",141.77],["2026-05-11",141.97],["2026-05-18",154.03],["2026-05-25",159.47],["2026-06-01",154.27],["2026-06-08",163.24],["2026-06-15",169.67],["2026-06-22",157.60],["2026-07-02",160.08]],
+};
+
+function buildSparklineSVG(points){
+  const W=68,H=22,pad=2;
+  const vals = points.map(p=>p[1]);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const range = (max-min) || 1;
+  const stepX = (W-pad*2)/(points.length-1);
+  const up = vals[vals.length-1] >= vals[0];
+  const color = up ? '#10b981' : '#f43f5e';
+  const coords = points.map((p,i)=>{
+    const x = pad + i*stepX;
+    const y = pad + (H-pad*2) * (1 - (p[1]-min)/range);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><polyline points="${coords.join(' ')}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+
+function renderSparklines(){
+  document.querySelectorAll('.card[data-spark-since]').forEach(card=>{
+    const since = card.dataset.sparkSince;
+    const tickerEl = card.querySelector('.ticker');
+    if(!tickerEl) return;
+    const tickers = tickerEl.textContent.split('·').map(t=>t.trim()).filter(Boolean);
+    const items = [];
+    tickers.forEach(t=>{
+      const series = SPARK_DATA[t];
+      if(!series) return; // no real historical data for this symbol (e.g. XOM)
+      const points = series.filter(p=>p[0] >= since);
+      if(points.length < 2) return;
+      items.push(`<div class="spark-item"><span class="spark-tkr">${t}</span>${buildSparklineSVG(points)}</div>`);
+    });
+    if(items.length === 0) return;
+    const row = document.createElement('div');
+    row.className = 'spark-row';
+    row.innerHTML = items.join('');
+    card.appendChild(row);
+  });
+}
+renderSparklines();
 
 /* ─────────────────── TRADE LOG FILTER ─────────────────── */
 (function(){
