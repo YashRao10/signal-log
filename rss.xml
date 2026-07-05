@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>YR Signal — Trade Log, Market Research &amp; Economic Analysis</title>
+  <link>https://yashrao10.github.io/signal-log/</link>
+  <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
+  <language>en-us</language>
+  <lastBuildDate>Sat, 04 Jul 2026 12:00:00 -0400</lastBuildDate>
+  <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Market Notes: Records and a Rotation, Heading Into the Holiday Weekend</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-04-post-records-rotation</guid>
+    <pubDate>Sat, 04 Jul 2026 09:00:00 -0400</pubDate>
+    <description><![CDATA[The last session before the July 4th break produced a genuinely odd pairing: the Dow closed at a fresh record — its fourth straight — while the Nasdaq fell for a second consecutive day, on a soft June jobs report (57K vs. ~113K est.) that lowered near-term Fed hike odds. Chips fell for a second straight session (~12% over two days), Tesla dropped ~7% despite beating delivery estimates, and Europe/Japan were mixed. Watch into the Jul 6 reopen: chip stabilization and a tariff court appeal.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: RTX · GOOGL (Building / Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-07-03-buy-rtx-googl</guid>
+    <pubDate>Fri, 03 Jul 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Leaning into the sector rotation playing out this week — money moving out of tech/semis (up 80%+ in H1) into industrials and defense. RTX gets the bigger add: a fresh $1.1B Navy missile contract, raised full-year guidance, and an analyst upgrade to Buy. GOOGL gets a smaller top-up given rising capex guidance has compressed near-term free cash flow margin ahead of earnings. Queued — fills Mon Jul 6 (market closed Jul 3 for the holiday).]]></description>
+  </item>
+
+  <item>
+    <title>Buy: META (Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-07-03-buy-meta</guid>
+    <pubDate>Fri, 03 Jul 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Topping up my most underwater quality holding after a sharp single-day pullback — same ad-monetization + AI thesis as the Jun 23 add, just a cheaper entry. Queued — fills Mon Jul 6 (market closed Jul 3 for the holiday).]]></description>
+  </item>
+
+  <item>
+    <title>Buy: VTI · VOO (Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-07-03-buy-vti-voo</guid>
+    <pubDate>Fri, 03 Jul 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Routine systematic index contribution — no new thesis here, just staying consistent with regular broad-market buying regardless of what else is happening that week. Queued — fills Mon Jul 6 (market closed Jul 3 for the holiday).]]></description>
+  </item>
+
+  <item>
+    <title>Market Notes: A Clean Rotation Day</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-02-post-clean-rotation</guid>
+    <pubDate>Thu, 02 Jul 2026 09:00:00 -0400</pubDate>
+    <description><![CDATA[A textbook rotation session, not a broad selloff — TSLA, DELL, BE, META, AMD, ANET, NVDA sold off while AAPL, LMT, RTX, KO, XLV, and GLD rallied together. Reads as profit-taking funding a rotation, not a thesis break for the names that sold off.]]></description>
+  </item>
+
+  <item>
+    <title>Market Notes: H1 2026 Sector Rotation — What Actually Moved</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-02-post-h1-sector-rotation</guid>
+    <pubDate>Thu, 02 Jul 2026 08:00:00 -0400</pubDate>
+    <description><![CDATA[Tech (XLK) led H1 2026 up ~25%, but Energy (+16.6%) and Industrials (+16.4%) nearly matched it — industrials increasingly a second-order AI-infrastructure play via power, cooling, and physical buildout. Consumer Discretionary was the lone red sector, down ~1%.]]></description>
+  </item>
+
+  <item>
+    <title>Market Notes: The 2s10s Curve and What It's Telling Us</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-07-02-post-2s10s-curve</guid>
+    <pubDate>Thu, 02 Jul 2026 07:00:00 -0400</pubDate>
+    <description><![CDATA[The 2-Year Treasury yield has climbed faster than the 10-Year through H1 2026 — a flattening move that signals the market pricing in less near-term Fed easing, not tighter policy. Long-duration, high-multiple growth names are the most exposed to this kind of repricing.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: GOOGL (Building)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-26-buy-googl</guid>
+    <pubDate>Fri, 26 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[New position — the last Mag7 name I didn't hold. Cloud growing ~63% YoY, reasonable multiple for the growth rate, and Gemini is showing up in the numbers, not just the keynote. Building this slowly over a few months rather than going in all at once.]]></description>
+  </item>
+
+  <item>
+    <title>Sell: WMT · F · QQQ · SMH</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-23-sell-wmt-f-qqq-smh</guid>
+    <pubDate>Tue, 23 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Cleaned out four small, low-conviction positions I'd accumulated without a real thesis behind any of them. Redeployed straight into names I actually wanted to be bigger in (MSFT/META), same day.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: MSFT · META (Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-23-buy-msft-meta</guid>
+    <pubDate>Tue, 23 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Adding to my two most underwater quality holdings ahead of their late-July earnings. Both pulled back hard on broad tech weakness this year with no change to the underlying growth story — Azure and AI ad-load are still doing the work.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: PLTR (Starter)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-23-buy-pltr</guid>
+    <pubDate>Tue, 23 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[New position. Federal AI/data contracts (Army, and increasingly defense-adjacent "Golden Dome" work) are becoming a real revenue line, not just a narrative. Starting small.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: RTX (Starter)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-23-buy-rtx</guid>
+    <pubDate>Tue, 23 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[New defense position. Missile/interceptor demand tied to the same Golden Dome buildout as PLTR — pairing a hardware prime with a software integrator.]]></description>
+  </item>
+
+  <item>
+    <title>Sell: AAPL · META</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-23-sell-aapl-meta</guid>
+    <pubDate>Tue, 23 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Small rebalance in a satellite account, same cleanup day as the WMT/F/QQQ/SMH sells — trimming a couple of tiny, low-conviction odd-lot positions to concentrate further into the names getting added that day.]]></description>
+  </item>
+
+  <item>
+    <title>Trim: BE</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-16-trim-be</guid>
+    <pubDate>Tue, 16 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Partial trim after a sharp one-day drop tied to a competitor (fuel cells) losing out on a gas-turbine deal, plus some insider selling. Kept half the position — the AI-power-demand thesis isn't broken, but the news changed my sizing, not my direction.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: XLV (Starter)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-16-buy-xlv</guid>
+    <pubDate>Tue, 16 Jun 2026 15:00:00 -0400</pubDate>
+    <description><![CDATA[New healthcare sector position — this was a real gap in the book. Low correlation to the AI trade, defensive characteristics, decent momentum in 2026.]]></description>
+  </item>
+
+  <item>
+    <title>Market Notes: AI's Power Bottleneck — Why Compute Isn't the Constraint Anymore</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-06-15-post-power-bottleneck</guid>
+    <pubDate>Mon, 15 Jun 2026 09:00:00 -0400</pubDate>
+    <description><![CDATA[The AI buildout narrative has shifted from compute scarcity to power availability — data center demand is projected to keep climbing sharply through 2030. The trade is no longer just semis and hyperscalers, it's the power producers and grid-adjacent names behind them.]]></description>
+  </item>
+
+  <item>
+    <title>Trim: PANW · GLD · AMD</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-12-trim-panw-gld-amd</guid>
+    <pubDate>Fri, 12 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Locking in some gains across three big winners in one session — PANW and AMD were both up well over 50% from cost, GLD had run hard too. Kept the core of each; this was profit-taking, not an exit.]]></description>
+  </item>
+
+  <item>
+    <title>Sell: AMC</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-12-sell-amc</guid>
+    <pubDate>Fri, 12 Jun 2026 15:00:00 -0400</pubDate>
+    <description><![CDATA[Full exit on a legacy meme-stock position from years ago. No fundamental thesis was ever attached to this one — just cleaning it out.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: JPM (Starter)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-12-buy-jpm</guid>
+    <pubDate>Fri, 12 Jun 2026 14:00:00 -0400</pubDate>
+    <description><![CDATA[New financials position — another sector gap. Steeper yield curve and an active M&A environment both favor big banks here.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: DELL (Building)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-07-buy-dell</guid>
+    <pubDate>Sun, 07 Jun 2026 12:00:00 -0400</pubDate>
+    <description><![CDATA[AI infrastructure hardware exposure alongside NVDA/AMD — a different part of the same buildout (servers, not just chips).]]></description>
+  </item>
+
+  <item>
+    <title>Buy: TSLA · BE · AMD (Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-06-05-buy-tsla-be-amd</guid>
+    <pubDate>Fri, 05 Jun 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Adds across existing positions on a pullback — no new thesis, just buying more of what I already believed in at a better price.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: CVX · XOM (Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-03-24-buy-cvx-xom</guid>
+    <pubDate>Tue, 24 Mar 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[Built out a dual-major energy position (both CVX and XOM, deliberately, not either/or). Straightforward hedge against oil-price and inflation surprises the rest of the book doesn't cover.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: LMT · PANW (Building)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-03-24-buy-lmt-panw</guid>
+    <pubDate>Tue, 24 Mar 2026 15:00:00 -0400</pubDate>
+    <description><![CDATA[Defense budget tailwinds (LMT) and continued conviction in the security name ahead of what turned into a big run (PANW).]]></description>
+  </item>
+
+  <item>
+    <title>Buy: GLD (Core)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-01-31-buy-gld</guid>
+    <pubDate>Sat, 31 Jan 2026 12:00:00 -0500</pubDate>
+    <description><![CDATA[Building a gold hedge in three tranches. Simple macro hedge against real-rate surprises and dollar weakness — not a trade on gold going up, a hedge for if everything else goes down.]]></description>
+  </item>
+
+  <item>
+    <title>Buy: ANET (Starter)</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-01-27-buy-anet</guid>
+    <pubDate>Tue, 27 Jan 2026 16:00:00 -0500</pubDate>
+    <description><![CDATA[Networking hardware for AI data centers — same buildout as DELL/NVDA, different layer of the stack.]]></description>
+  </item>
+
+</channel>
+</rss>

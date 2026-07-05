@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yashrao10.github.io/signal-log/sitemap.xml

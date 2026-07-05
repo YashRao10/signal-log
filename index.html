@@ -6,7 +6,10 @@
 <meta name="description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%97%88%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#070b14">
+<link rel="canonical" href="https://yashrao10.github.io/signal-log/">
+<link rel="alternate" type="application/rss+xml" title="YR Signal RSS Feed" href="https://yashrao10.github.io/signal-log/rss.xml">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yashrao10.github.io/signal-log/">
 <meta property="og:title" content="YR Signal — Trade Log, Market Research & Economic Analysis">
 <meta property="og:description" content="A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.">
 <meta name="twitter:card" content="summary">
@@ -79,6 +82,17 @@ section.panel.active{display:block}
 .stitle{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
 .stitle::before{content:'◈';color:var(--accent)}
 .stitle:first-child{margin-top:0}
+
+/* ── Trade log filter ── */
+.filter-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.filter-types{display:flex;gap:6px}
+.filter-btn{background:none;border:1px solid var(--border);border-radius:6px;color:var(--muted);padding:5px 13px;font-size:11px;font-family:inherit;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .15s}
+.filter-btn:hover:not(.active){color:var(--text);border-color:var(--muted)}
+.filter-btn.active{background:var(--dim);color:var(--accent);border-color:var(--accent)}
+.ticker-search-input{background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:inherit;font-size:12px;padding:6px 12px;flex:1;min-width:140px;max-width:220px}
+.ticker-search-input:focus{outline:none;border-color:var(--accent)}
+.ticker-search-input::placeholder{color:var(--muted)}
+.feed-empty{color:var(--muted);font-size:13px;padding:20px 0;text-align:center;border:1px dashed var(--border);border-radius:10px;margin-bottom:12px}
 
 /* ── Trade cards ── */
 .feed{display:flex;flex-direction:column;gap:12px}
@@ -263,7 +277,17 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     <div class="chart-note" style="margin:0 0 20px">Win rate reflects direction only — current price vs. entry price, not weighted by position size. Excludes recurring background DCA buys (no individually tracked entry) and orders still queued/unfilled.</div>
 
     <div class="stitle">Recent Moves</div>
-    <div class="feed">
+    <div class="filter-bar">
+      <div class="filter-types">
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="buy">Buy</button>
+        <button class="filter-btn" data-type="sell">Sell</button>
+        <button class="filter-btn" data-type="trim">Trim</button>
+      </div>
+      <input type="text" id="ticker-search" class="ticker-search-input" placeholder="Filter by ticker…" autocomplete="off">
+    </div>
+    <div class="feed-empty" id="feed-empty" style="display:none">No trades match that filter.</div>
+    <div class="feed" id="trade-feed">
 
       <div class="card buy">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">RTX · GOOGL</span><span class="date">Jul 3, 2026</span></div>
@@ -599,6 +623,41 @@ document.querySelectorAll('nav.tabs button').forEach(btn=>{
     if(btn.dataset.panel==='econ') buildYieldChart();
   });
 });
+
+/* ─────────────────── TRADE LOG FILTER ─────────────────── */
+(function(){
+  const feed = document.getElementById('trade-feed');
+  const empty = document.getElementById('feed-empty');
+  const search = document.getElementById('ticker-search');
+  const typeBtns = document.querySelectorAll('.filter-btn');
+  if(!feed) return;
+  const cards = Array.from(feed.querySelectorAll('.card'));
+  let activeType = 'all';
+
+  function applyFilters(){
+    const query = search.value.trim().toUpperCase();
+    let visible = 0;
+    cards.forEach(card=>{
+      const typeMatch = activeType==='all' || card.classList.contains(activeType);
+      const tickerEl = card.querySelector('.ticker');
+      const tickerMatch = !query || (tickerEl && tickerEl.textContent.toUpperCase().includes(query));
+      const show = typeMatch && tickerMatch;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    empty.style.display = visible===0 ? '' : 'none';
+  }
+
+  typeBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      typeBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeType = btn.dataset.type;
+      applyFilters();
+    });
+  });
+  search.addEventListener('input', applyFilters);
+})();
 
 /* ─────────────────── SECTOR PERFORMANCE CHART ─────────────────── */
 const sectorData = [
