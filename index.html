@@ -96,6 +96,8 @@ section.panel.active{display:block}
 .ticker-search-input{background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:inherit;font-size:12px;padding:6px 12px;flex:1;min-width:140px;max-width:220px}
 .ticker-search-input:focus{outline:none;border-color:var(--accent)}
 .ticker-search-input::placeholder{color:var(--muted)}
+.conviction-select{background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--muted);font-family:inherit;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 10px;cursor:pointer}
+.conviction-select:focus{outline:none;border-color:var(--accent)}
 .feed-empty{color:var(--muted);font-size:13px;padding:20px 0;text-align:center;border:1px dashed var(--border);border-radius:10px;margin-bottom:12px}
 
 /* ── Trade cards ── */
@@ -294,6 +296,12 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <button class="filter-btn" data-type="sell">Sell</button>
         <button class="filter-btn" data-type="trim">Trim</button>
       </div>
+      <select id="conviction-filter" class="conviction-select">
+        <option value="all">All Tiers</option>
+        <option value="starter">Starter</option>
+        <option value="building">Building</option>
+        <option value="core">Core</option>
+      </select>
       <input type="text" id="ticker-search" class="ticker-search-input" placeholder="Filter by ticker…" autocomplete="off">
     </div>
     <div class="feed-empty" id="feed-empty" style="display:none">No trades match that filter.</div>
@@ -700,18 +708,23 @@ renderSparklines();
   const empty = document.getElementById('feed-empty');
   const search = document.getElementById('ticker-search');
   const typeBtns = document.querySelectorAll('.filter-btn');
+  const convictionSelect = document.getElementById('conviction-filter');
   if(!feed) return;
   const cards = Array.from(feed.querySelectorAll('.card'));
   let activeType = 'all';
 
   function applyFilters(){
     const query = search.value.trim().toUpperCase();
+    const activeConviction = convictionSelect.value;
     let visible = 0;
     cards.forEach(card=>{
       const typeMatch = activeType==='all' || card.classList.contains(activeType);
       const tickerEl = card.querySelector('.ticker');
       const tickerMatch = !query || (tickerEl && tickerEl.textContent.toUpperCase().includes(query));
-      const show = typeMatch && tickerMatch;
+      const convictionEl = card.querySelector('.badge.conviction');
+      const cardConviction = convictionEl ? convictionEl.textContent.trim().toLowerCase() : null;
+      const convictionMatch = activeConviction==='all' || cardConviction===activeConviction;
+      const show = typeMatch && tickerMatch && convictionMatch;
       card.style.display = show ? '' : 'none';
       if(show) visible++;
     });
@@ -727,6 +740,7 @@ renderSparklines();
     });
   });
   search.addEventListener('input', applyFilters);
+  convictionSelect.addEventListener('change', applyFilters);
 })();
 
 /* ─────────────────── SECTOR PERFORMANCE CHART ─────────────────── */
