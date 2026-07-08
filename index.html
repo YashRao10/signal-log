@@ -274,19 +274,29 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
 
   <section class="panel active" id="feed">
     <div class="stitle">Track Record</div>
-    <div class="stat-row" style="margin-bottom:8px">
+    <div class="stat-row" style="margin-bottom:8px" id="track-record-stats">
       <div class="stat-tile">
         <div class="stat-label">Win Rate</div>
-        <div class="stat-value" style="color:var(--green)">71%</div>
-        <div class="stat-delta up">12 of 17 open positions positive since entry</div>
+        <div class="stat-value" id="tr-winrate" style="color:var(--green)">—</div>
+        <div class="stat-delta up" id="tr-winrate-sub">calculating…</div>
       </div>
       <div class="stat-tile">
-        <div class="stat-label">Open Positions Tracked</div>
-        <div class="stat-value">17</div>
-        <div class="stat-delta flat">Since Jan 2026</div>
+        <div class="stat-label">Avg Return / Call</div>
+        <div class="stat-value" id="tr-avgret">—</div>
+        <div class="stat-delta flat" id="tr-avgret-sub">calculating…</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Best Call</div>
+        <div class="stat-value" id="tr-best" style="color:var(--green)">—</div>
+        <div class="stat-delta flat" id="tr-best-sub">calculating…</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-label">Worst Call</div>
+        <div class="stat-value" id="tr-worst" style="color:var(--red)">—</div>
+        <div class="stat-delta flat" id="tr-worst-sub">calculating…</div>
       </div>
     </div>
-    <div class="chart-note" style="margin:0 0 20px">Win rate reflects direction only — current price vs. entry price, not weighted by position size. Excludes recurring background DCA buys (no individually tracked entry) and orders still queued/unfilled.</div>
+    <div class="chart-note" style="margin:0 0 20px">Auto-computed from every scored ticker line in the log below, so it can't go stale as new trades are added. Sell calls are scored inverted — price falling after a sell counts as a correct call. Direction and magnitude only, not weighted by position size. Excludes routine DCA buys with no individually tracked entry and orders still queued/unfilled.</div>
 
     <div class="stitle">Recent Moves</div>
     <div class="filter-bar">
@@ -543,17 +553,17 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
       <div class="stat-tile">
         <div class="stat-label">Fed Funds Rate</div>
         <div class="stat-value">3.63%</div>
-        <div class="stat-delta down">-0.48pp vs 1yr ago</div>
+        <div class="stat-delta down">-0.49pp vs 1yr ago</div>
         <div class="stat-spark" data-spark="dff"></div>
       </div>
       <div class="stat-tile">
         <div class="stat-label">10-Year Yield</div>
-        <div class="stat-value">4.49%</div>
-        <div class="stat-delta up">+0.18pp vs 3mo ago</div>
+        <div class="stat-value">4.55%</div>
+        <div class="stat-delta up">+0.21pp vs 3mo ago</div>
       </div>
       <div class="stat-tile">
         <div class="stat-label">2-Year Yield</div>
-        <div class="stat-value">4.14%</div>
+        <div class="stat-value">4.19%</div>
         <div class="stat-delta up">+0.35pp vs 3mo ago</div>
       </div>
       <div class="stat-tile">
@@ -584,11 +594,11 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     </div>
 
     <div class="post">
-      <div class="post-title">No New Rate Data — Today's Risk Was Sector-Specific</div>
-      <div class="post-meta">Jul 7, 2026 · Economic Briefing</div>
-      <p>None of the tracked macro series updated today — Fed funds (3.63%), the 2-year (4.14%) and 10-year (4.49%) yields, CPI, and unemployment all sit exactly where they did in yesterday's briefing. When there's genuinely nothing new on the rate side, it's worth saying so plainly rather than manufacturing a fresh take on the same numbers.</p>
-      <p>Today's actual driver was sector-specific: a semiconductor selloff tied to soft Samsung earnings and a report that China's DeepSeek is developing its own AI chip, a potential long-term challenge to Nvidia's centrality in the AI buildout. That's a distinct risk from the rate-curve story that's driven most of this year's tech-sector moves — it's a competitive/narrative risk, not a discount-rate one, and it's worth tracking separately from the 2s10s spread this briefing usually centers on.</p>
-      <p><strong>What to watch:</strong> the next CPI print around <strong>July 14</strong> is still the next hard catalyst for the rate side of the growth-stock discount-rate story. Separately, watch whether today's DeepSeek headline develops into a sustained competitive narrative or fades as a one-day story — that distinction matters a lot more to chip-heavy portfolios than anything the Fed does this month.</p>
+      <div class="post-title">Yields Push Higher for a Second Straight Day as the AI Trade Rotation Continues</div>
+      <div class="post-meta">Jul 8, 2026 · Economic Briefing</div>
+      <p>The 10-year Treasury yield climbed to <strong>4.55%</strong> (+0.21pp over three months) and the 2-year to <strong>4.19%</strong> (+0.35pp over three months) — both up roughly five basis points from yesterday's readings. The 10s2s spread held essentially flat around 0.36 points, so this is a parallel shift rather than a curve-shape story: the market keeps pushing out Fed cut expectations even with the funds rate itself unchanged at 3.63%.</p>
+      <p>The bigger driver today was sector-specific, not rate-driven: a broad rotation out of AI and semiconductor names as investors questioned whether fundamentals can keep up with sky-high expectations. Micron, KLA, Marvell, and Broadcom all sold off alongside AMD, and the semiconductor-tracking SMH ETF fell more than 3% in a single session while the Nasdaq slid over 1%. That follows yesterday's DeepSeek-headline-driven selloff in the same names — two straight days of chip-sector pressure that's distinct from, but compounded by, the rising-yield backdrop.</p>
+      <p><strong>What to watch:</strong> whether this is a short-lived valuation air-pocket in AI and semiconductor names or the start of a more sustained re-rating. The mid-July CPI print (~July 14) is still the next hard catalyst that could validate or ease the higher-for-longer yield move currently pressuring long-duration growth names.</p>
     </div>
   </section>
 
@@ -722,6 +732,50 @@ function renderSparklines(){
   });
 }
 renderSparklines();
+
+/* ─────────────────── TRACK RECORD (auto-computed from the log below) ─────────────────── */
+function computeTrackRecord(){
+  const cards = document.querySelectorAll('#trade-feed .card');
+  const scored = [];
+  cards.forEach(card=>{
+    const side = card.classList.contains('sell') ? 'sell' : (card.classList.contains('trim') ? 'trim' : 'buy');
+    const dateEl = card.querySelector('.date');
+    const date = dateEl ? dateEl.textContent.trim() : '';
+    card.querySelectorAll('.perf-item.up, .perf-item.down').forEach(item=>{
+      const strong = item.querySelector('strong');
+      if(!strong) return;
+      const pct = parseFloat(strong.textContent.replace('%','').replace('+',''));
+      if(isNaN(pct)) return;
+      const ticker = (item.childNodes[0].textContent || '').trim();
+      // sells are scored inverted: the price falling after a sell is the correct call
+      const oriented = side === 'sell' ? -pct : pct;
+      scored.push({ticker, side, date, oriented});
+    });
+  });
+  if(scored.length === 0) return;
+
+  const wins = scored.filter(s=>s.oriented > 0).length;
+  const winRate = Math.round(wins/scored.length*100);
+  const avgReturn = scored.reduce((a,s)=>a+s.oriented,0)/scored.length;
+  const best = scored.reduce((a,b)=> b.oriented>a.oriented ? b : a);
+  const worst = scored.reduce((a,b)=> b.oriented<a.oriented ? b : a);
+  const fmt = n => (n>=0?'+':'')+n.toFixed(1)+'%';
+
+  document.getElementById('tr-winrate').textContent = winRate+'%';
+  document.getElementById('tr-winrate').style.color = winRate>=50 ? 'var(--green)' : 'var(--red)';
+  document.getElementById('tr-winrate-sub').textContent = `${wins} of ${scored.length} scored calls correct`;
+
+  document.getElementById('tr-avgret').textContent = fmt(avgReturn);
+  document.getElementById('tr-avgret').style.color = avgReturn>=0 ? 'var(--green)' : 'var(--red)';
+  document.getElementById('tr-avgret-sub').textContent = 'Buys+trims direct, sells inverted';
+
+  document.getElementById('tr-best').textContent = fmt(best.oriented);
+  document.getElementById('tr-best-sub').textContent = `${best.ticker} · ${best.side} · ${best.date}`;
+
+  document.getElementById('tr-worst').textContent = fmt(worst.oriented);
+  document.getElementById('tr-worst-sub').textContent = `${worst.ticker} · ${worst.side} · ${worst.date}`;
+}
+computeTrackRecord();
 
 /* ─────────────────── TRADE LOG FILTER ─────────────────── */
 (function(){
