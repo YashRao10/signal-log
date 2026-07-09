@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 07 Jul 2026 14:30:00 -0400</lastBuildDate>
+  <lastBuildDate>Thu, 09 Jul 2026 14:30:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Market Notes: The Chip Sleeve Bounces Back</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-09-post-chip-bounce</guid>
+    <pubDate>Thu, 09 Jul 2026 14:30:00 -0400</pubDate>
+    <description><![CDATA[Two sessions after the Samsung-earnings/DeepSeek selloff hit semiconductor and AI-adjacent names, most of that move is reversing — the same names leading the decline are leading the bounce back, with no new catalyst behind it beyond the initial scare fading. Read as a headline-driven round-trip rather than a fundamentals shift in either direction; the real signal is whether these names hold the bounce through the next earnings cycle or keep whipsawing on every AI-competition headline.]]></description>
+  </item>
 
   <item>
     <title>Market Notes: A Chip-Specific Selloff, Not a Broad One</title>
