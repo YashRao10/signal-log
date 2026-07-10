@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 09 Jul 2026 14:30:00 -0400</lastBuildDate>
+  <lastBuildDate>Fri, 10 Jul 2026 14:30:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Market Notes: The Fed's Hawkish Pivot — Why "No Rate Cut" Wasn't the Real Story</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-10-post-fed-hawkish-pivot</guid>
+    <pubDate>Fri, 10 Jul 2026 14:30:00 -0400</pubDate>
+    <description><![CDATA[The Fed held rates steady June 17, but the dot plot flipped hawkish — 9 of 18 officials now project a hike by year-end under new Chair Kevin Warsh, with October hike odds now being priced. That reverses the cut-leaning backdrop most of H1 was priced against, and raises the bar for paying up on long-duration growth names that already re-rated higher since June, versus sectors with steadier demand or a direct AI-infrastructure angle (utilities, energy, industrials).]]></description>
+  </item>
 
   <item>
     <title>Market Notes: The Chip Sleeve Bounces Back</title>
