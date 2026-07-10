@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 10 Jul 2026 14:30:00 -0400</lastBuildDate>
+  <lastBuildDate>Fri, 10 Jul 2026 15:30:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Market Notes: Two Different Kinds of "AI Stock Down" — And Why They're Not the Same Risk</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-10-post-two-kinds-ai-risk</guid>
+    <pubDate>Fri, 10 Jul 2026 15:30:00 -0400</pubDate>
+    <description><![CDATA[Three AI-adjacent names moved sharply today for three different reasons: Meta jumped ~6% on a genuinely new cloud-compute business launch and in-house AI chip news; Bloom Energy fell ~6% on a short-seller report alleging misleading supply-chain disclosures (denied by management); Palo Alto Networks fell ~4% on hawkish-Fed valuation compression alone. "AI stocks were mixed" is true but low-information — a demand re-rating, a credibility dispute, and a rate-driven multiple compression are three distinct risks that happened to land on the same day.]]></description>
+  </item>
 
   <item>
     <title>Market Notes: The Fed's Hawkish Pivot — Why "No Rate Cut" Wasn't the Real Story</title>
