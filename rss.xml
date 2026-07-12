@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 11 Jul 2026 12:00:00 -0400</lastBuildDate>
+  <lastBuildDate>Sun, 12 Jul 2026 14:00:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Market Notes: A Short-Seller Report Gets a Formal Rebuttal, and the Week Ahead Has Three Real Catalysts</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-12-post-be-rebuttal-week-ahead</guid>
+    <pubDate>Sun, 12 Jul 2026 14:00:00 -0400</pubDate>
+    <description><![CDATA[Bloom Energy filed a formal SEC 8-K on Jul 9 rebutting last week's short-seller report point by point — a stronger response than a press denial, though still unconfirmed by any third party. Looking ahead: June CPI lands Tuesday (nowcast ~3.96% YoY), big-bank earnings kick off the same morning, and futures-implied Fed hike odds have moved further hawkish this week specifically (July FOMC 31%, up from 17%; September 84%, up from 61%).]]></description>
+  </item>
 
   <item>
     <title>Market Notes: A Weekend Gut-Check — Which Drawdowns Are Real, and Which Are Just Cost-Basis Math</title>
