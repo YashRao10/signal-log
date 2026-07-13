@@ -686,7 +686,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
       </div>
       <div class="sector-ticks" id="regime-sector-ticks"></div>
       <!-- REGIME:NOTE:START -->
-      <div class="chart-note">Average monthly return per Select Sector SPDR during every historical month classified the same regime (2005&ndash;present, 45 months in sample for the current regime). Gold (GLD, not shown above) has averaged +2.62%/mo in this regime historically &mdash; the single strongest performer, sector ETFs alone don't capture it.</div>
+      <div class="chart-note">Average monthly return per Select Sector SPDR during every historical month classified the same regime (1999&ndash;present, 80 months in sample for the current regime). Gold (GLD, not shown above) has averaged +2.62%/mo in this regime historically &mdash; the single strongest performer, sector ETFs alone don't capture it.</div>
       <!-- REGIME:NOTE:END -->
     </div>
     <div class="regime-caveat">
@@ -976,14 +976,14 @@ const regimeDrivers = [
   {label:'Unemployment (6mo chg)', value:'-0.20pp'},
 ];
 const regimeSectorData = [
-  {sym:'XLK', name:'Technology', pct:1.66},
-  {sym:'XLU', name:'Utilities', pct:0.45},
-  {sym:'XLY', name:'Consumer Disc.', pct:0.38},
-  {sym:'XLP', name:'Consumer Staples', pct:0.31},
-  {sym:'XLV', name:'Healthcare', pct:0.09},
-  {sym:'XLI', name:'Industrials', pct:-0.14},
-  {sym:'XLE', name:'Energy', pct:-0.71},
-  {sym:'XLF', name:'Financials', pct:-1.04},
+  {sym:'XLY', name:'Consumer Disc.', pct:0.95},
+  {sym:'XLK', name:'Technology', pct:0.82},
+  {sym:'XLV', name:'Healthcare', pct:0.47},
+  {sym:'XLI', name:'Industrials', pct:0.4},
+  {sym:'XLU', name:'Utilities', pct:0.25},
+  {sym:'XLE', name:'Energy', pct:0.12},
+  {sym:'XLP', name:'Consumer Staples', pct:-0.05},
+  {sym:'XLF', name:'Financials', pct:-0.27},
 ];
 // REGIME:DATA:END
 function buildRegimeDrivers(){
