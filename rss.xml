@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 13 Jul 2026 17:00:00 -0400</lastBuildDate>
+  <lastBuildDate>Tue, 14 Jul 2026 14:00:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Market Notes: Cool CPI Flips Yesterday's Rotation — Growth Rallies, Energy Cools Off</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-14-post-cpi-rotation-flip</guid>
+    <pubDate>Tue, 14 Jul 2026 14:00:00 -0400</pubDate>
+    <description><![CDATA[June CPI fell -0.4% month-over-month, the largest single-month drop since April 2020, on a sharp energy-index decline — core CPI held near +2.85% YoY. Markets flipped Monday's rotation: semiconductor and AI-infrastructure names rallied 3-4% together, a defense-AI software name's rally has now pushed it above its own average analyst target, and a hardware name jumped hardest on AI-server-backlog reports plus a software-to-hardware divergence trade after a peer's revenue warning. Yesterday's winners — energy majors and defensives — cooled off in the mirror image. One data point doesn't reverse a policy stance; the July 28-29 FOMC is the real test.]]></description>
+  </item>
 
   <item>
     <title>Market Notes: A Clean Rotation Day — AI/Growth Sells Off, Energy and Mega-Cap Software Catch a Bid</title>
