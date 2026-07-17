@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 16 Jul 2026 14:12:00 -0400</lastBuildDate>
+  <lastBuildDate>Fri, 17 Jul 2026 16:00:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Semiconductors Post Their Worst Week Since Last Spring on AI-Capex Doubts</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-17-insights-semi-selloff</guid>
+    <pubDate>Fri, 17 Jul 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[A broad, sector-wide selloff hit semiconductors today — down roughly 20% from their recent record on doubts the AI-capex spending spree can keep justifying itself, sharpened by a competitive new open-weight model from a Chinese AI startup. Energy, cybersecurity, and gold held up; the real test is whether Big Tech trims capex guidance at earnings over the next two weeks.]]></description>
+  </item>
 
   <item>
     <title>Buy: XLU (Starter)</title>
