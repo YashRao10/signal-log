@@ -779,6 +779,30 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
       <strong>Read this carefully:</strong> the regime label is a simple, hand-built rule of thumb (Fed funds trend, 2s10s curve slope, CPI/unemployment trend) — not a peer-reviewed model, and not a trading signal on its own. It also runs on a trailing 6-month window, so it can lag a very recent policy pivot by a month or two. Treat it as historical context, not a forecast.
     </div>
 
+    <div class="stitle">Event Study <span style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px">— did the June FOMC pivot actually move Tech?</span></div>
+    <div class="chart-card">
+      <div class="chart-legend">
+        <span class="legend-key"><span class="legend-swatch" style="background:#fb3a4a"></span>Actual XLK</span>
+        <span class="legend-key"><span class="legend-swatch" style="background:#b08a91"></span>Synthetic XLK (counterfactual)</span>
+      </div>
+      <div class="chart-wrap" id="causal-chart-wrap">
+        <svg class="chart-svg" id="causal-chart" viewBox="0 0 700 240" preserveAspectRatio="none"></svg>
+        <div class="chart-tooltip" id="causal-tooltip"></div>
+      </div>
+      <div class="chart-note">Synthetic control: a data-driven "if the Fed pivot never happened" path for XLK, built from a weighted blend of the other 10 GICS sector SPDRs. Weights were fit using only data through the yellow line — everything after that, including the whole run-up before the blue FOMC line, is genuinely out-of-sample. Rebased to 100 at 2024-06-17. Hover for exact weekly values.</div>
+    </div>
+    <div class="regime-caveat">
+      <strong>Honest result, not a good one for the "Fed pivot moved Tech" story:</strong> XLK's actual price breaks away from its synthetic counterfactual <em>a full four months before</em> the June 17 FOMC meeting — the gap was already +31 points by early June, before the Fed did anything. The post-pivot period just holds that pre-existing level; it doesn't grow. Same test run on Industrials (XLI, the #2-ranked sector) found the identical pattern — gap fully built pre-treatment. Utilities (XLU) — the textbook rate-sensitive sector that theory says <em>should</em> react most — showed almost no reaction at all, ranking dead last of 11 sectors tested. Across three sectors and two different tests, this doesn't find a clean pivot-specific effect. The likely real story for XLK/XLI: an ongoing AI-buildout rally that happened to be running through the pivot date, not caused by it — see the summary table below for the full cross-sector comparison.
+    </div>
+    <div class="chart-card" style="padding:0">
+      <table class="history">
+        <tr><th>Sector</th><th>Reaction rank (of 11)</th><th>Confound-check verdict</th></tr>
+        <tr><td class="tkr">XLK &middot; Technology</td><td>#1 (largest)</td><td>Gap already +39 by the pivot date &mdash; pre-existing trend, not a pivot effect</td></tr>
+        <tr><td class="tkr">XLI &middot; Industrials</td><td>#2</td><td>Same pattern &mdash; gap already +16 by the pivot date</td></tr>
+        <tr><td class="tkr">XLU &middot; Utilities</td><td>#11 (smallest)</td><td>No gap to explain &mdash; the "should react most" sector barely moved</td></tr>
+      </table>
+    </div>
+
     <div class="post">
       <div class="post-title">Earnings Season Arrives While the Rate Backdrop Sits Quiet</div>
       <div class="post-meta">Jul 22, 2026 · Economic Briefing</div>
@@ -861,7 +885,7 @@ document.querySelectorAll('nav.tabs button').forEach(btn=>{
     // charts inside a display:none panel report zero size on first paint —
     // (re)build once the panel that owns them actually becomes visible
     if(btn.dataset.panel==='insights') buildSectorChart();
-    if(btn.dataset.panel==='econ'){ buildYieldChart(); buildRegimeChart(); }
+    if(btn.dataset.panel==='econ'){ buildYieldChart(); buildRegimeChart(); buildCausalChart(); }
   });
 });
 
@@ -1125,6 +1149,99 @@ function buildRegimeChart(){
 const yieldData = [["2026-01-02",3.47,4.19],["2026-01-07",3.47,4.15],["2026-01-12",3.54,4.19],["2026-01-15",3.56,4.17],["2026-01-21",3.6,4.26],["2026-01-26",3.56,4.22],["2026-01-29",3.53,4.24],["2026-02-03",3.57,4.28],["2026-02-06",3.5,4.22],["2026-02-11",3.52,4.18],["2026-02-17",3.43,4.05],["2026-02-20",3.48,4.08],["2026-02-25",3.45,4.05],["2026-03-02",3.47,4.05],["2026-03-05",3.57,4.13],["2026-03-10",3.57,4.15],["2026-03-13",3.73,4.28],["2026-03-18",3.76,4.26],["2026-03-23",3.83,4.34],["2026-03-26",3.96,4.42],["2026-03-31",3.79,4.3],["2026-04-03",3.84,4.35],["2026-04-08",3.79,4.29],["2026-04-13",3.78,4.3],["2026-04-16",3.78,4.32],["2026-04-21",3.78,4.3],["2026-04-24",3.78,4.31],["2026-04-29",3.92,4.42],["2026-05-04",3.95,4.45],["2026-05-07",3.92,4.41],["2026-05-12",4.0,4.46],["2026-05-15",4.09,4.59],["2026-05-20",4.04,4.57],["2026-05-26",4.01,4.5],["2026-05-29",3.98,4.45],["2026-06-03",4.08,4.49],["2026-06-08",4.15,4.56],["2026-06-11",4.05,4.45],["2026-06-16",4.05,4.43],["2026-06-22",4.24,4.51],["2026-06-25",4.09,4.4],["2026-06-30",4.14,4.44],["2026-07-01",4.17,4.48]];
 
 let yieldChartBuilt = false;
+
+/* Weekly-resampled XLK actual vs. synthetic-control counterfactual, rebased to 100
+   at 2024-06-17. Source: finance-projects/causal/causal_effect_timeline_XLK_fitend-2026-02-15.csv
+   (weights fit through 2026-02-13 only, so 2026-02-20 onward is genuinely out-of-sample). */
+const causalData = [["2025-11-07",125.92,115.33,"fit"],["2025-11-14",125.91,116.29,"fit"],["2025-11-21",119.38,116.76,"fit"],["2025-11-28",125.07,120.14,"fit"],["2025-12-05",128.12,119.78,"fit"],["2025-12-12",125.58,120.47,"fit"],["2025-12-19",126.37,120.68,"fit"],["2025-12-26",128.25,122.6,"fit"],["2026-01-02",126.3,122.1,"fit"],["2026-01-09",127.92,124.55,"fit"],["2026-01-16",127.46,123.59,"fit"],["2026-01-23",126.99,125.48,"fit"],["2026-01-30",125.93,126.04,"fit"],["2026-02-06",123.53,126.59,"fit"],["2026-02-13",122.15,127.32,"fit"],["2026-02-20",123.31,128.12,"confound"],["2026-02-27",121.45,129.63,"confound"],["2026-03-06",120.17,125.25,"confound"],["2026-03-13",119.74,122.65,"confound"],["2026-03-20",118.42,119.23,"confound"],["2026-03-27",113.86,118.17,"confound"],["2026-04-02",119.18,122.11,"confound"],["2026-04-10",124.99,124.62,"confound"],["2026-04-17",135.27,127.25,"confound"],["2026-04-24",140.41,124.79,"confound"],["2026-05-01",141.86,125.21,"confound"],["2026-05-08",153.82,125.09,"confound"],["2026-05-15",154.47,124.13,"confound"],["2026-05-22",158.09,124.75,"confound"],["2026-05-29",167.4,125.34,"confound"],["2026-06-05",158.01,123.91,"confound"],["2026-06-12",161.95,125.19,"confound"],["2026-06-18",167.77,123.28,"post"],["2026-06-26",158.91,124.11,"post"],["2026-07-02",158.45,126.71,"post"],["2026-07-10",163.0,126.3,"post"],["2026-07-13",159.06,126.13,"post"]];
+const FIT_END_DATE = "2026-02-13";
+const TREATMENT_DATE = "2026-06-18"; // nearest sampled point to the Jun 17 FOMC pivot
+
+let causalChartBuilt = false;
+function buildCausalChart(){
+  const svg = document.getElementById('causal-chart');
+  if(!svg || causalChartBuilt) return;
+  if(svg.clientWidth === 0) return;
+  causalChartBuilt = true;
+
+  const W=700,H=240,padL=34,padR=14,padT=28,padB=22;
+  const plotW=W-padL-padR, plotH=H-padT-padB;
+  const allA = causalData.map(d=>d[1]), allS = causalData.map(d=>d[2]);
+  const minV = Math.floor(Math.min(...allA,...allS)/5)*5 - 3;
+  const maxV = Math.ceil(Math.max(...allA,...allS)/5)*5 + 3;
+  const xAt = i => padL + (i/(causalData.length-1))*plotW;
+  const yAt = v => padT + (1-(v-minV)/(maxV-minV))*plotH;
+  const fitEndIdx = causalData.findIndex(d=>d[0]===FIT_END_DATE);
+  const treatIdx = causalData.findIndex(d=>d[0]===TREATMENT_DATE);
+
+  const ns='http://www.w3.org/2000/svg';
+  function el(tag, attrs){ const e=document.createElementNS(ns,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); return e; }
+
+  const steps=3;
+  for(let s=0;s<=steps;s++){
+    const v = minV + (maxV-minV)*s/steps;
+    const y = yAt(v);
+    svg.appendChild(el('line',{class:'grid-line',x1:padL,x2:W-padR,y1:y,y2:y}));
+    const t=el('text',{class:'axis-label',x:4,y:y+3});
+    t.textContent = v.toFixed(0);
+    svg.appendChild(t);
+  }
+  [0, Math.floor(causalData.length/2), causalData.length-1].forEach(i=>{
+    const t=el('text',{class:'axis-label',x:xAt(i),y:H-4,'text-anchor': i===0?'start':(i===causalData.length-1?'end':'middle')});
+    const d=new Date(causalData[i][0]);
+    t.textContent = d.toLocaleDateString('en-US',{month:'short',year:'2-digit'});
+    svg.appendChild(t);
+  });
+
+  // Reference lines: fit-window cutoff (weights fit on data before this only) and
+  // the FOMC treatment date. Both drawn before the data lines so they sit underneath.
+  [[fitEndIdx,'#fbbf24','fit cutoff'],[treatIdx,'#38bdf8','FOMC pivot']].forEach(([idx,color,label])=>{
+    if(idx<0) return;
+    const x=xAt(idx);
+    svg.appendChild(el('line',{x1:x,x2:x,y1:padT,y2:H-padB,stroke:color,'stroke-width':1,'stroke-dasharray':'3,3',opacity:0.85}));
+    const lbl=el('text',{x:x,y:padT-8,'text-anchor':'middle',fill:color,'font-size':9,'font-weight':700});
+    lbl.textContent = label;
+    svg.appendChild(lbl);
+  });
+
+  function pathFor(idx){
+    return causalData.map((d,i)=>`${i===0?'M':'L'}${xAt(i).toFixed(1)},${yAt(d[idx]).toFixed(1)}`).join(' ');
+  }
+  const synthetic = el('path',{d:pathFor(2),fill:'none',stroke:'#b08a91','stroke-width':2,'stroke-dasharray':'5,4','stroke-linejoin':'round','stroke-linecap':'round','vector-effect':'non-scaling-stroke'});
+  const actual = el('path',{d:pathFor(1),fill:'none',stroke:'#fb3a4a','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round','vector-effect':'non-scaling-stroke'});
+  svg.appendChild(synthetic); svg.appendChild(actual);
+
+  const lastI = causalData.length-1;
+  [[1,'#fb3a4a',-8],[2,'#b08a91',14]].forEach(([idx,color,dy])=>{
+    svg.appendChild(el('circle',{cx:xAt(lastI),cy:yAt(causalData[lastI][idx]),r:4,fill:color,stroke:'#190f14','stroke-width':2}));
+    const lbl=el('text',{class:'end-label',x:xAt(lastI)-6,y:yAt(causalData[lastI][idx])+dy,'text-anchor':'end',fill:color});
+    lbl.textContent = causalData[lastI][idx].toFixed(1);
+    svg.appendChild(lbl);
+  });
+
+  const crosshair = el('line',{class:'crosshair',x1:0,x2:0,y1:padT,y2:H-padB});
+  svg.appendChild(crosshair);
+
+  const wrap = document.getElementById('causal-chart-wrap');
+  const tooltip = document.getElementById('causal-tooltip');
+  const segLabel = {fit:'fit window', confound:'out-of-sample, pre-pivot', post:'post-pivot'};
+  wrap.addEventListener('pointermove', e=>{
+    const rect = svg.getBoundingClientRect();
+    const relX = (e.clientX-rect.left)/rect.width * W;
+    let idx = Math.round((relX-padL)/plotW*(causalData.length-1));
+    idx = Math.max(0, Math.min(causalData.length-1, idx));
+    const px = xAt(idx);
+    crosshair.setAttribute('x1',px); crosshair.setAttribute('x2',px); crosshair.style.opacity='1';
+    const d = causalData[idx];
+    const dateStr = new Date(d[0]).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    tooltip.innerHTML = `<span class="tt-date">${dateStr} &middot; ${segLabel[d[3]]}</span><span style="color:#fb3a4a">&#9679; Actual XLK: <span class="tt-val">${d[1].toFixed(1)}</span></span><br><span style="color:#b08a91">&#9679; Synthetic: <span class="tt-val">${d[2].toFixed(1)}</span></span>`;
+    tooltip.classList.add('show');
+    const leftPct = (px/W)*100;
+    tooltip.style.left = leftPct > 70 ? (px/W*rect.width - 170)+'px' : (px/W*rect.width + 14)+'px';
+    tooltip.style.top = '4px';
+  });
+  wrap.addEventListener('pointerleave', ()=>{ crosshair.style.opacity='0'; tooltip.classList.remove('show'); });
+}
 function buildYieldChart(){
   const svg = document.getElementById('yield-chart');
   if(!svg || yieldChartBuilt) return;
@@ -1234,7 +1351,8 @@ document.querySelectorAll('[data-spark]').forEach(container=>{
 buildSectorChart();
 buildYieldChart();
 buildRegimeChart();
-window.addEventListener('resize', ()=>{ sectorChartBuilt=false; buildSectorChart(); regimeChartBuilt=false; buildRegimeChart(); });
+buildCausalChart();
+window.addEventListener('resize', ()=>{ sectorChartBuilt=false; buildSectorChart(); regimeChartBuilt=false; buildRegimeChart(); causalChartBuilt=false; buildCausalChart(); });
 </script>
 
 </body>
