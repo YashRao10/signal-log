@@ -5,8 +5,24 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 21 Jul 2026 14:20:00 -0400</lastBuildDate>
+  <lastBuildDate>Wed, 22 Jul 2026 13:45:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Earnings Season Arrives While the Rate Backdrop Sits Quiet</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-07-22-econ-earnings-season</guid>
+    <pubDate>Wed, 22 Jul 2026 13:45:00 -0400</pubDate>
+    <description><![CDATA[The macro calendar is quiet — Fed funds unchanged at 3.63%, the 10-Year near 4.60%, unemployment flat at 4.20%. The bigger driver today is corporate: two mega-cap names report after today's close, the first live earnings test of the season for a Technology-heavy allocation, with two defense names following before tomorrow's open.]]></description>
+  </item>
+
+  <item>
+    <title>A Flat Headline Hides a Wide Split — And Two Big Earnings Land After the Bell</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-22-insights-flat-day-earnings</guid>
+    <pubDate>Wed, 22 Jul 2026 13:45:00 -0400</pubDate>
+    <description><![CDATA[A roughly flat index-level day masked real dispersion: a leading server maker jumped nearly 10% on continued AI-infrastructure-demand confirmation, while two mega-cap software names extended pre-earnings drawdowns. A search-and-cloud giant and an EV/energy-storage name both report after today's close — the first live earnings test of the season for this book.]]></description>
+  </item>
 
   <item>
     <title>The Chip Bear Market Reverses Hard on a New Supply Deal and a Bullish Pricing Call</title>
