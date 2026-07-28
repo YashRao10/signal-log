@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 27 Jul 2026 14:45:00 -0400</lastBuildDate>
+  <lastBuildDate>Tue, 28 Jul 2026 12:15:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Coca-Cola Hits a Record High While Chip Names Keep Sliding — Same Split, Different Day</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-28-insights-ko-beat-chip-slide</guid>
+    <pubDate>Tue, 28 Jul 2026 12:15:00 -0400</pubDate>
+    <description><![CDATA[Coca-Cola beat on both lines and raised full-year guidance, jumping ~7% to a fresh 52-week high, while AMD (-3.4%), Dell (-9%, despite not reporting until September), and Palantir (-6%) kept sliding on AI-capex/export-restriction fears and a same-day Japan/Korea semiconductor rout. Despite the chip-sector stress, the VIX actually fell — a sign of sector rotation, not broad risk-off, heading into tomorrow's FOMC decision and MSFT/META earnings.]]></description>
+  </item>
 
   <item>
     <title>A China Lithography Breakthrough Crashes Chip Stocks While Oil Crashes for a Different Reason Entirely</title>
