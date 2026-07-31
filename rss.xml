@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 28 Jul 2026 12:15:00 -0400</lastBuildDate>
+  <lastBuildDate>Thu, 30 Jul 2026 16:30:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>The Fed Holds, Then Microsoft and Meta Split the Room — A Two-Session Catch-Up</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-07-30-insights-fomc-msft-meta-catchup</guid>
+    <pubDate>Thu, 30 Jul 2026 16:30:00 -0400</pubDate>
+    <description><![CDATA[Catch-up covering two skipped-post sessions: the Jul 29 FOMC held rates at 3.5-3.75% (5th straight hold, 3 dissents wanting a hike) and Bloom Energy's Q2 beat resolved its trim-vs-hold question. Jul 30: Microsoft beat cleanly (Azure +43%, RPO +84% to $678B) while Meta missed on EPS despite 28% revenue growth — opposite reactions from the same earnings night. Bloom Energy kept running on a fresh AI-power deal, broad chip/hardware names rallied alongside Microsoft's beat, and the VIX fell sharply confirming a genuine risk-on session.]]></description>
+  </item>
 
   <item>
     <title>Coca-Cola Hits a Record High While Chip Names Keep Sliding — Same Split, Different Day</title>
