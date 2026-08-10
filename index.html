@@ -976,16 +976,23 @@ for(let i=0;i<180;i++){
   starsEl.appendChild(s);
 }
 
+function activatePanel(panelName, updateHash){
+  const btn = document.querySelector(`nav.tabs button[data-panel="${panelName}"]`);
+  if(!btn) return;
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('section.panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelName).classList.add('active');
+  // charts inside a display:none panel report zero size on first paint —
+  // (re)build once the panel that owns them actually becomes visible
+  if(panelName==='insights') buildSectorChart();
+  if(panelName==='econ'){ buildYieldChart(); buildRegimeChart(); buildCausalChart(); }
+  if(updateHash) history.replaceState(null,'','#'+panelName);
+}
+
 document.querySelectorAll('nav.tabs button').forEach(btn=>{
   btn.addEventListener('click', ()=>{
-    document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('section.panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.panel).classList.add('active');
-    // charts inside a display:none panel report zero size on first paint —
-    // (re)build once the panel that owns them actually becomes visible
-    if(btn.dataset.panel==='insights') buildSectorChart();
-    if(btn.dataset.panel==='econ'){ buildYieldChart(); buildRegimeChart(); buildCausalChart(); }
+    activatePanel(btn.dataset.panel, true);
   });
 });
 
@@ -1453,6 +1460,15 @@ buildYieldChart();
 buildRegimeChart();
 buildCausalChart();
 window.addEventListener('resize', ()=>{ sectorChartBuilt=false; buildSectorChart(); regimeChartBuilt=false; buildRegimeChart(); causalChartBuilt=false; buildCausalChart(); });
+
+// deep-link support: #econ, #insights, #watchlist, #about open that tab directly on load
+(function(){
+  const validPanels = ['feed','insights','econ','watchlist','about'];
+  const initial = location.hash.replace('#','');
+  if(validPanels.includes(initial) && initial !== 'feed'){
+    activatePanel(initial, false);
+  }
+})();
 </script>
 
 </body>
