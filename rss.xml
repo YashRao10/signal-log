@@ -5,8 +5,48 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 06 Aug 2026 16:50:00 -0400</lastBuildDate>
+  <lastBuildDate>Tue, 11 Aug 2026 14:35:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>The Three-Name AI-Power Build Is Complete — and a Broad, Unremarkable Red Day Elsewhere</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-08-11-econ-build-complete</guid>
+    <pubDate>Tue, 11 Aug 2026 14:35:00 -0400</pubDate>
+    <description><![CDATA[Intraday read, not an official close — macro backdrop unchanged (Fed funds 3.63%, 10-Year yield 4.63%). The two remaining legs of the three-name AI-power/diversification build started Aug 6 — a healthcare name and a data-center-infrastructure name, both queued as of yesterday — are now confirmed fills, completing the build alongside the nuclear-heavy utility that filled Aug 7. Elsewhere, a broad, unremarkable pullback across several of the book's largest tech names, no single new catalyst behind it; the two newest positions were the standout gainers.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: A Chipmaker-Agnostic Data-Center Infrastructure Name, Third Leg of the AI-Power Build</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-11-trade-vrt-filled</guid>
+    <pubDate>Tue, 11 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[The order queued after Aug 10's close filled at this morning's open — data-center cooling and power delivery, a chipmaker-agnostic way to add more AI-infrastructure exposure. Third and final leg of the planned CEG/UNH/VRT build, filled the same morning as the healthcare leg below.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: A Healthcare Name, Filling a Long-Flagged Diversification Gap</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-11-trade-unh-filled</guid>
+    <pubDate>Tue, 11 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[The order queued after Aug 10's close filled at this morning's open — fills a long-flagged healthcare gap, no single-name exposure in the space before this. Low correlation to the rest of this AI-heavy book is the point, not a growth story. Second leg of the planned CEG/UNH/VRT build.]]></description>
+  </item>
+
+  <item>
+    <title>Energy Leads an Otherwise Mixed Tape, and the AI-Power Starter Position Is Now a Confirmed Fill</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-08-10-econ-energy-ceg-fill</guid>
+    <pubDate>Mon, 10 Aug 2026 14:55:00 -0400</pubDate>
+    <description><![CDATA[Intraday read, not an official close — macro backdrop unchanged (Fed funds 3.63%, 10-Year yield 4.63%). Energy led today's tape, with both energy-major positions up meaningfully since Friday's close, alongside a defense name and a cybersecurity name (now up well over 100% from entry). The AI-power starter position flagged in the last briefing — a nuclear-heavy utility — is now a confirmed fill, not just a queued order; first leg of a planned three-name build, the other two still watchlist-only pending further funding.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: A Nuclear-Power Utility, the Cheapest Way Into the AI-Power Buildout Theme</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-07-trade-ceg-filled</guid>
+    <pubDate>Fri, 07 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[The order queued after Aug 6's close filled at this morning's open — a nuclear-heavy power utility with real current earnings and a multi-year hyperscaler power contract already in place, at the cheapest multiple found among the AI-power/memory-adjacent names researched this week. First leg of a planned build alongside a healthcare name and a data-center-infrastructure name, both still watchlist-only, filling long-flagged gaps in this book.]]></description>
+  </item>
 
   <item>
     <title>New Position: A Nuclear-Power Utility, the Cheapest Way Into the AI-Power Buildout Theme</title>
