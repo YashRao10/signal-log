@@ -5,8 +5,24 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 11 Aug 2026 14:35:00 -0400</lastBuildDate>
+  <lastBuildDate>Wed, 12 Aug 2026 13:50:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Long Rates Keep Climbing While the Fed Holds Still — and Today's Session Showed Exactly Why That Matters</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-08-12-econ-rates-climb</guid>
+    <pubDate>Wed, 12 Aug 2026 13:50:00 -0400</pubDate>
+    <description><![CDATA[Intraday read, not an official close — the 10-Year yield pushed to 4.72% (+0.34pp over three months) while the Fed funds rate held flat, the widening gap the real story for the book's technology-heavy core. Two of the book's largest tech names traded down 2-3% on that rate mechanism, while the clean-energy position bucked the pattern with a double-digit jump on no confirmed news yet. The AI-driven memory-chip shortage theme rallied broadly on the watchlist. What to watch: July's CPI print lands today.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: A Routine Broad-Index Top-Up</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-12-trade-vti-filled</guid>
+    <pubDate>Wed, 12 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[Order queued the evening before, just after the prior close, filled at this morning's open — the mechanical, no-thesis-needed core-index leg of the book.]]></description>
+  </item>
 
   <item>
     <title>The Three-Name AI-Power Build Is Complete — and a Broad, Unremarkable Red Day Elsewhere</title>
