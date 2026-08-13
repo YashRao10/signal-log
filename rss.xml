@@ -5,8 +5,48 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 12 Aug 2026 13:50:00 -0400</lastBuildDate>
+  <lastBuildDate>Thu, 13 Aug 2026 15:00:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>A Broad Rally With Real Names Behind It — Palantir, Tesla, and a Solar-Facility Headline</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-08-13-insights-broad-rally</guid>
+    <pubDate>Thu, 13 Aug 2026 15:00:00 -0400</pubDate>
+    <description><![CDATA[A genuine broad-based rally — S&P 500 +0.7%, Nasdaq-100 close to +1.2% — with real stories behind the leaders: Palantir up nearly 5% on continued Q2 momentum, Tesla up almost 4% on a proposed Texas solar-production facility. A couple of AI-infrastructure names gave back ground with no negative catalyst (one even got a price-target raise the same day), while a large healthcare name declined on an actual catalyst — a new cybersecurity/governance lawsuit plus ongoing Medicare Advantage scrutiny.]]></description>
+  </item>
+
+  <item>
+    <title>Long Rates Finally Ease Off Their Climb, and Tech Catches the Relief</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-08-13-econ-rates-ease</guid>
+    <pubDate>Thu, 13 Aug 2026 14:50:00 -0400</pubDate>
+    <description><![CDATA[Official close — the 10-Year yield eased to 4.68% (down 4bp from the prior print) even as the three-month trend still points up, with the 2-Year easing in step and the Fed funds rate flat. Several of the book's largest technology holdings rallied together, a plausible rate-relief tailwind on top of real stock-specific strength. One session of relief inside a still-rising trend, not a new regime — worth watching whether it holds into next week.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: Dividend Reinvestment</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-13-trade-aapl-drip</guid>
+    <pubDate>Thu, 13 Aug 2026 10:05:00 -0400</pubDate>
+    <description><![CDATA[A fraction-of-a-share dividend reinvestment — logged for completeness rather than significance.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: A Routine Broad-Index Top-Up</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-13-trade-vti-filled</guid>
+    <pubDate>Thu, 13 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[Order queued the evening before, just after the prior close, filled at this morning's open — the mechanical, no-thesis-needed core-index leg of the book.]]></description>
+  </item>
+
+  <item>
+    <title>New Position Filled: Standing Recurring MSFT Buy</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-12-trade-msft-filled</guid>
+    <pubDate>Wed, 12 Aug 2026 15:05:00 -0400</pubDate>
+    <description><![CDATA[The book's own automatic dollar-cost-average schedule into MSFT, running independently of everything else logged here — not a discretionary call.]]></description>
+  </item>
 
   <item>
     <title>Long Rates Keep Climbing While the Fed Holds Still — and Today's Session Showed Exactly Why That Matters</title>
