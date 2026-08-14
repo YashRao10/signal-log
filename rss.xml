@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 13 Aug 2026 15:00:00 -0400</lastBuildDate>
+  <lastBuildDate>Fri, 14 Aug 2026 15:15:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Same Rate Backdrop, Wider Dispersion Underneath It</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-08-14-econ-quiet-macro-dispersion</guid>
+    <pubDate>Fri, 14 Aug 2026 15:15:00 -0400</pubDate>
+    <description><![CDATA[Intraday, not an official close — the rate backdrop didn't move (10-Year still 4.68%, Fed funds flat at 3.63%), but there was real dispersion underneath it: one AI-hardware name jumped over 5% while several others gave back 1-3%, with no single macro headline behind it. No new trades landed this session.]]></description>
+  </item>
 
   <item>
     <title>A Broad Rally With Real Names Behind It — Palantir, Tesla, and a Solar-Facility Headline</title>
