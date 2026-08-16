@@ -96,6 +96,7 @@ section.panel.active{display:block}
 .ticker-search-input{background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:inherit;font-size:12px;padding:6px 12px;flex:1;min-width:140px;max-width:220px}
 .ticker-search-input:focus{outline:none;border-color:var(--accent)}
 .ticker-search-input::placeholder{color:var(--muted)}
+.tr-filtered-badge{display:inline-block;margin-left:10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:2px 8px;vertical-align:middle}
 .conviction-select{background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--muted);font-family:inherit;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 10px;cursor:pointer}
 .conviction-select:focus{outline:none;border-color:var(--accent)}
 .feed-empty{color:var(--muted);font-size:13px;padding:20px 0;text-align:center;border:1px dashed var(--border);border-radius:10px;margin-bottom:12px}
@@ -283,7 +284,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
   </details>
 
   <section class="panel active" id="feed">
-    <div class="stitle">Track Record</div>
+    <div class="stitle">Track Record<span id="tr-filtered-badge" class="tr-filtered-badge" style="display:none">filtered</span></div>
     <div class="stat-row" style="margin-bottom:8px" id="track-record-stats">
       <div class="stat-tile">
         <div class="stat-label">Win Rate</div>
@@ -1151,8 +1152,8 @@ function renderSparklines(){
 renderSparklines();
 
 /* ─────────────────── TRACK RECORD (auto-computed from the log below) ─────────────────── */
-function computeTrackRecord(){
-  const cards = document.querySelectorAll('#trade-feed .card');
+function computeTrackRecord(cardSubset){
+  const cards = cardSubset || document.querySelectorAll('#trade-feed .card');
   const scored = [];
   cards.forEach(card=>{
     const side = card.classList.contains('sell') ? 'sell' : (card.classList.contains('trim') ? 'trim' : 'buy');
@@ -1169,7 +1170,19 @@ function computeTrackRecord(){
       scored.push({ticker, side, date, oriented});
     });
   });
-  if(scored.length === 0) return;
+  if(scored.length === 0){
+    document.getElementById('tr-winrate').textContent = '—';
+    document.getElementById('tr-winrate').style.color = 'var(--muted)';
+    document.getElementById('tr-winrate-sub').textContent = 'no scored calls in filter';
+    document.getElementById('tr-avgret').textContent = '—';
+    document.getElementById('tr-avgret').style.color = 'var(--muted)';
+    document.getElementById('tr-avgret-sub').textContent = 'no scored calls in filter';
+    document.getElementById('tr-best').textContent = '—';
+    document.getElementById('tr-best-sub').textContent = '—';
+    document.getElementById('tr-worst').textContent = '—';
+    document.getElementById('tr-worst-sub').textContent = '—';
+    return;
+  }
 
   const wins = scored.filter(s=>s.oriented > 0).length;
   const winRate = Math.round(wins/scored.length*100);
@@ -1205,10 +1218,12 @@ computeTrackRecord();
   const cards = Array.from(feed.querySelectorAll('.card'));
   let activeType = 'all';
 
+  const filteredBadge = document.getElementById('tr-filtered-badge');
+
   function applyFilters(){
     const query = search.value.trim().toUpperCase();
     const activeConviction = convictionSelect.value;
-    let visible = 0;
+    const visibleCards = [];
     cards.forEach(card=>{
       const typeMatch = activeType==='all' || card.classList.contains(activeType);
       const tickerEl = card.querySelector('.ticker');
@@ -1218,9 +1233,13 @@ computeTrackRecord();
       const convictionMatch = activeConviction==='all' || cardConviction===activeConviction;
       const show = typeMatch && tickerMatch && convictionMatch;
       card.style.display = show ? '' : 'none';
-      if(show) visible++;
+      if(show) visibleCards.push(card);
     });
-    empty.style.display = visible===0 ? '' : 'none';
+    empty.style.display = visibleCards.length===0 ? '' : 'none';
+
+    const isFiltered = activeType!=='all' || !!query || activeConviction!=='all';
+    filteredBadge.style.display = isFiltered ? '' : 'none';
+    computeTrackRecord(visibleCards);
   }
 
   typeBtns.forEach(btn=>{
