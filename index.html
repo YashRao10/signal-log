@@ -250,7 +250,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     </div>
     <div class="header-right">
       <div class="live-badge"><span class="pulse-ring"></span>Public Log</div>
-      <div class="updated-line" id="updated-line">Updated Aug 26, 2026</div>
+      <div class="updated-line" id="updated-line">Updated Aug 27, 2026</div>
     </div>
   </div>
 
@@ -329,9 +329,15 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     <div class="feed" id="trade-feed">
 
       <div class="card buy">
+        <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI · GOOGL</span><span class="date">Aug 27, 2026</span></div>
+        <p class="thesis">Routine daily top-up — the standing small broad-market add in the default account plus the standing small position add in the autonomous account. Mechanical dollar-cost averaging, no fresh thesis. Combined onto one card.</p>
+        <div class="perf-line"><span class="perf-item up">VTI <strong>+7.6%</strong></span><span class="perf-item down">GOOGL <strong>-5.3%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Thu Aug 27, 9:30am ET</span></div>
+      </div>
+
+      <div class="card buy">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">XLU · VTI</span><span class="date">Aug 26, 2026</span></div>
         <p class="thesis">Routine core top-up in the default account — a utilities sector-ETF add plus a broad-market index add, the mechanical no-thesis-needed part of the book, not a reaction to any single-day move.</p>
-        <div class="perf-line"><span class="perf-item down">XLU <strong>-2.8%</strong></span><span class="perf-item up">VTI <strong>+7.3%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Wed Aug 26, 9:30am ET</span></div>
+        <div class="perf-line"><span class="perf-item down">XLU <strong>-3.3%</strong></span><span class="perf-item up">VTI <strong>+7.6%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Wed Aug 26, 9:30am ET</span></div>
       </div>
 
       <div class="card buy">
@@ -659,11 +665,9 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     <div class="stitle">Upcoming Earnings <span style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px">— next 30 days, held names + top watchlist</span></div>
     <table class="history" style="margin-bottom:8px">
       <tr><th>Ticker</th><th>Date</th><th>What to Watch</th></tr>
-      <tr><td class="tkr">CEG <span class="watch-status" style="margin:0 0 0 6px;padding:2px 6px;font-size:9px;background:var(--green);color:#000">REPORTED</span></td><td>Aug 6, before open</td><td>Beat: $2.55 EPS vs. $2.37 estimate — reported the same morning this became a new position</td></tr>
-      <tr><td class="tkr">VST <span class="watch-status" style="margin:0 0 0 6px;padding:2px 6px;font-size:9px">WATCH</span></td><td>Aug 7, before open</td><td>Power-demand thesis — hyperscaler supply agreements</td></tr>
-      <tr><td class="tkr">NVDA</td><td>Aug 26, after close</td><td>Data-center demand pace vs. the $228 trim-trigger level</td></tr>
-      <tr><td class="tkr">PANW</td><td>Sep 1, after close</td><td>Already up 100%+ from cost — watching for any guidance that changes the trim case</td></tr>
-      <tr><td class="tkr">DELL</td><td>Sep 3, after close</td><td>AI-server backlog vs. margin/capex concerns</td></tr>
+      <tr><td class="tkr">NVDA <span class="watch-status" style="margin:0 0 0 6px;padding:2px 6px;font-size:9px;background:var(--green);color:#000">REPORTED</span></td><td>Aug 26, after close</td><td>Clear beat — revenue +106% YoY, data-center revenue the bulk of it, next-year guidance well ahead. Stock +9% the next session; the old $228 pre-earnings trim trigger no longer applies.</td></tr>
+      <tr><td class="tkr">PANW</td><td>Sep 1, after close</td><td>Already up 100%+ from cost, and running further on M&amp;A-mode chatter — watching for guidance that changes the trim case</td></tr>
+      <tr><td class="tkr">DELL</td><td>Sep 1, after close</td><td>AI-server backlog vs. margin/capex concerns</td></tr>
     </table>
     <div class="chart-note" style="margin-bottom:16px">&dagger; Date is a data-provider estimate, not yet confirmed by the company — can shift. Auto-sourced from the market's earnings calendar rather than typed by hand, so it stays current instead of going stale.</div>
 
@@ -674,10 +678,21 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="sector-bars" id="sector-chart"></div>
       </div>
       <div class="sector-ticks" id="sector-ticks"></div>
-      <div class="chart-note">Sector SPDR ETFs (XLK, XLI, XLE, XLP, XLU, XLV, XLF, XLY), Dec 29, 2025 close → Aug 6, 2026 close. Public market data — not portfolio-weighted.</div>
+      <div class="chart-note">Sector SPDR ETFs (XLK, XLI, XLE, XLP, XLU, XLV, XLF, XLY), end-2025 close → Aug 26, 2026 close, dividend-adjusted. Public market data — not portfolio-weighted.</div>
     </div>
 
     <div class="stitle">Market Notes</div>
+
+    <div class="post">
+      <div class="post-title">Nvidia Beats, and the Whole AI-Infrastructure Complex Exhales</div>
+      <div class="post-meta">Aug 27, 2026 · Market Analysis</div>
+      <p><em>Quick note: this tab skipped its usual cadence for about two weeks — catching up here on the one session that actually matters for this book.</em></p>
+      <p>Nvidia reported after Wednesday's close and it was a clear beat on every line that matters: revenue up 106% year-over-year, data-center revenue making up the overwhelming majority of the total, gross margin holding around 75%, and forward guidance for next year running well ahead of expectations — management pointed to roughly 70% revenue growth for the coming fiscal year. The stock rose about 9% the following session. As the single largest position in this book, that move drove most of a +1.7% portfolio day on its own.</p>
+      <p>The bigger point is the read-through. A beat this size from the company at the center of the AI buildout is a demand-signal reassurance for the entire adjacent complex — the networking, server, power, and cooling names that only work if hyperscaler capex keeps climbing. Several of those held in this book moved up in sympathy. It doesn't retire the risk (a capex pause would still show up first in a hyperscaler CFO's comments, not Nvidia's), but it pushes that risk further out.</p>
+      <p>Palo Alto Networks was the day's other big mover, up around 14%, on reporting that it is shifting into acquisition mode — circling two mid-size cybersecurity/data names after being rebuffed on larger targets earlier — amplified by a strong quarter from a cybersecurity peer that lifted the whole group. That's sector sentiment plus a company-specific catalyst stacking, ahead of Palo Alto's own earnings on Sep 1. Palantir added about 5% as well.</p>
+      <p>Underneath the winners, the defensive corners were quiet-to-soft — healthcare, staples, and real estate all lagged on a risk-on day, and volatility eased to the mid-14s. Gold held roughly flat.</p>
+      <p><strong>What to watch:</strong> Palo Alto and Dell both report Sep 1 after the close, and a large semiconductor-infrastructure name follows Sep 2 — the next real test of whether the Nvidia read-through holds across the rest of the supply chain. On the macro side, the September Fed meeting is the bigger event (see the Econ Briefing tab).</p>
+    </div>
 
     <div class="post">
       <div class="post-title">A Broad Rally With Real Names Behind It — Palantir, Tesla, and a Solar-Facility Headline</div>
@@ -1010,6 +1025,16 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     </div>
 
     <div class="post">
+      <div class="post-title">A Steepening Curve, and an Earnings-Driven Session That Ignored It</div>
+      <div class="post-meta">Aug 27, 2026 · Economic Briefing · live intraday, not an official close</div>
+      <p>The 10-Year Treasury yield sits at 4.64% in the latest FRED reading, essentially flat over the past month but still up about 14bp over three months, against a Fed funds rate that hasn't moved in a full month at 3.63%. That slow drift in the long end is the standing headwind for this book — roughly half of equity exposure is in Technology, whose long-duration cash flows are discounted by the 10-Year, and another quarter is in broad-market ETFs that carry the same sensitivity in diluted form.</p>
+      <p>Underneath the flat headline, the curve is steepening: the 2-Year has fallen about 14bp over the month to 4.17% while the 10-Year held, widening the 2s10s spread toward the high-40s in basis points. A short end falling while the long end holds usually reflects firmer expectations of near-term rate cuts — the market pricing in an easier Fed into the September meeting — while the long end staying put says the bond market isn't convinced on the inflation path. For a growth-tilted book, a steepener driven by cut expectations rather than growth fear is the friendlier version.</p>
+      <p>None of that drove today's tape, though. The session was an earnings story: the dominant AI-chip name reported a large beat after Tuesday's close and rose roughly 9%, pulling the rest of the AI-infrastructure complex up with it — the networking, power, and cooling names in this book that depend on hyperscaler spending. A large cybersecurity holding jumped double digits on deal-making chatter plus a strong peer print. Volatility eased to the mid-14s.</p>
+      <p>Inflation and labor are both quiet: CPI is running around a 3.5% annual pace with only a small monthly tick, and unemployment at 4.10% has eased 20bp over three months — cooling gradually, not cracking. Neither is forcing the Fed's hand.</p>
+      <p><strong>What to watch:</strong> the September FOMC decision. July's meeting held with three officials dissenting toward a hike, so the easing now priced into the 2-Year is not a sure thing. If the Fed disappoints that bet, the long end could rise to meet the short end rather than the reverse — the less friendly steepener — and that would land hardest on the roughly three-quarters of this book sitting in Technology plus broad-market ETFs.</p>
+    </div>
+
+    <div class="post">
       <div class="post-title">Yields Eased While Stocks Sold Off — a Real Reversal From Yesterday's Setup</div>
       <div class="post-meta">Aug 20, 2026 · Economic Briefing · official close</div>
       <p>The 10-Year Treasury yield came in at 4.65% in the latest FRED release, down slightly from the 4.72% reading two sessions ago that was flagged here as pressing toward a multi-decade high. The 2-Year is roughly flat at 4.19%, and the Fed funds rate hasn't moved in a full month, still 3.63%. That makes today a long-end-only move, and a bull flattener — the opposite shape from Aug 19's bear-steepening chip selloff.</p>
@@ -1334,14 +1359,14 @@ computeTrackRecord();
 
 /* ─────────────────── SECTOR PERFORMANCE CHART ─────────────────── */
 const sectorData = [
-  {sym:'XLE', name:'Energy',            pct:30.4},
-  {sym:'XLK', name:'Technology',        pct:27.1},
-  {sym:'XLI', name:'Industrials',       pct:17.8},
-  {sym:'XLP', name:'Consumer Staples',  pct:8.8},
-  {sym:'XLV', name:'Healthcare',        pct:5.5},
-  {sym:'XLF', name:'Financials',        pct:4.5},
-  {sym:'XLU', name:'Utilities',         pct:1.2},
-  {sym:'XLY', name:'Consumer Disc.',    pct:-2.3},
+  {sym:'XLE', name:'Energy',            pct:43.7},
+  {sym:'XLK', name:'Technology',        pct:25.1},
+  {sym:'XLI', name:'Industrials',       pct:15.4},
+  {sym:'XLV', name:'Healthcare',        pct:12.1},
+  {sym:'XLP', name:'Consumer Staples',  pct:11.7},
+  {sym:'XLF', name:'Financials',        pct:5.6},
+  {sym:'XLU', name:'Utilities',         pct:3.1},
+  {sym:'XLY', name:'Consumer Disc.',    pct:-3.7},
 ];
 let sectorChartBuilt = false;
 function buildSectorChart(){

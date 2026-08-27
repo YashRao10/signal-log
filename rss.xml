@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 20 Aug 2026 16:30:00 -0400</lastBuildDate>
+  <lastBuildDate>Thu, 27 Aug 2026 16:15:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>Nvidia Beats, and the Whole AI-Infrastructure Complex Exhales</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-08-27-market-nvda-beat</guid>
+    <pubDate>Thu, 27 Aug 2026 16:15:00 -0400</pubDate>
+    <description><![CDATA[Nvidia's post-close beat — revenue +106% YoY, data center the bulk of it, next-year guidance well ahead — sent the stock up ~9% and lifted the adjacent networking/power/cooling names that depend on hyperscaler capex. Palo Alto +14% on acquisition-mode reporting plus a strong cybersecurity-peer print. The read-through, not the single stock, is the point.]]></description>
+  </item>
 
   <item>
     <title>Routine Top-Up Into a Broad, Macro-Driven Selloff — One Filled, One Still Queued</title>
