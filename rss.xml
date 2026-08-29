@@ -5,8 +5,24 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 27 Aug 2026 16:15:00 -0400</lastBuildDate>
+  <lastBuildDate>Sat, 29 Aug 2026 13:20:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>NVDA Sell-the-News, and a Growth Nowcast That Keeps Fading</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-08-29-econ-nvda-sell-the-news</guid>
+    <pubDate>Sat, 29 Aug 2026 13:20:00 -0400</pubDate>
+    <description><![CDATA[Friday was a textbook buy-the-rumor-sell-the-news: the dominant AI-chip name fell ~4.6% the day after strong forward guidance, dragging the second-derivative AI complex (networking, hardware, foundry, cooling, merchant power) down 2-5% while the other mega-caps absorbed the rotation. Gold -3.3%. No new FRED data; the GDP nowcast keeps drifting toward ~1% annualized as inflation quietly rolls over. Regime stays Neutral / Hold.]]></description>
+  </item>
+
+  <item>
+    <title>Routine Daily Top-Up, Two Sessions Running — Mechanically Ignoring the NVDA Selloff</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-28-trade-vti-googl-daily</guid>
+    <pubDate>Fri, 28 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[The standing small broad-market add and the standing small position add filled again at Thursday's and Friday's opens. Friday's leg went in on an Nvidia sell-the-news day — exactly the kind of session this mechanical dollar-cost drip is built to ignore. No fresh thesis.]]></description>
+  </item>
 
   <item>
     <title>Nvidia Beats, and the Whole AI-Infrastructure Complex Exhales</title>
