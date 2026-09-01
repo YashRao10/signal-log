@@ -5,8 +5,24 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 29 Aug 2026 16:40:00 -0400</lastBuildDate>
+  <lastBuildDate>Mon, 31 Aug 2026 19:45:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>A Quiet Rotation Day: Energy Leads, Rate-Sensitives Lag</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-08-31-market-energy-rotation</guid>
+    <pubDate>Mon, 31 Aug 2026 19:45:00 -0400</pubDate>
+    <description><![CDATA[Flat at the index level but a clear rotation underneath: crude +3% carried the oil majors higher while utilities and REITs — the bond-like corners — lagged, on a day yields held their climb. That's a firmer-for-longer rate read, not a growth scare. A large EV maker was the biggest winner (+5%) after a state approved its robotaxi network. Cybersecurity + hardware names report Sep 1 AMC, a semiconductor-infra name Sep 2.]]></description>
+  </item>
+
+  <item>
+    <title>Daily Top-Ups Filled: VTI + VOO, Drip Redirected Off a 38%-Weight Name</title>
+    <link>https://yashrao10.github.io/signal-log/#feed</link>
+    <guid isPermaLink="false">2026-08-31-trade-vti-voo-filled</guid>
+    <pubDate>Mon, 31 Aug 2026 09:35:00 -0400</pubDate>
+    <description><![CDATA[The two standing daily broad-market adds queued over the weekend both filled at Monday's open (VOO ~$705.33, VTI ~$378.48), essentially flat since entry. The autonomous-account leg was a deliberate redirect of that account's daily drip back to the core S&P 500 index fund, away from a single search name that had grown to ~38% of the account.]]></description>
+  </item>
 
   <item>
     <title>Weekend Daily Top-Ups: VTI + VOO, With the Drip Redirected Off a 38%-Weight Name</title>
