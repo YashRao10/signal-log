@@ -5,8 +5,16 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 03 Sep 2026 17:30:00 -0400</lastBuildDate>
+  <lastBuildDate>Sat, 05 Sep 2026 13:00:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>A Hot Jobs Number Splits the Tape</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-09-05-econ-hot-jobs-split</guid>
+    <pubDate>Sat, 05 Sep 2026 13:00:00 -0400</pubDate>
+    <description><![CDATA[The August jobs report came in hot — ~162K vs ~53K expected, unemployment holding 4.1% — putting a September hike back on the table and making next week's CPI the pivot. Friday's index headline was small (S&P 500 -0.4%, Nasdaq-100 +0.2%) but the tape split hard: rate-sensitive mega-caps sold off (a large EV name -6%, a data-analytics name -4.5%, the biggest consumer-hardware and a mega-cap software name -2 to -2.5%) while the AI-hardware/memory/power complex rallied on its own supply-demand story (a memory-chip name +6%, a chip designer +5%, nuclear-utility and cooling names +4 to 5%). No portfolio moves; the book closed flat.]]></description>
+  </item>
 
   <item>
     <title>A Broad Tech Up-Day, and a Book That Changed Shape</title>
