@@ -5,8 +5,24 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 14 Sep 2026 14:30:00 -0400</lastBuildDate>
+  <lastBuildDate>Thu, 17 Sep 2026 16:00:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>A Quiet, All-Green Session — No New Trades, Pure Price Drift</title>
+    <link>https://yashrao10.github.io/signal-log/#econ</link>
+    <guid isPermaLink="false">2026-09-17-econ-quiet-green-session</guid>
+    <pubDate>Thu, 17 Sep 2026 16:00:00 -0400</pubDate>
+    <description><![CDATA[No new trades landed anywhere today — the entire move in the book is price action. A broad, fairly uniform green session across AI-hardware and infrastructure names pushed Technology's share of the book to roughly 49%, purely from price movement, not new buying.]]></description>
+  </item>
+
+  <item>
+    <title>The Windfall Lands — Tech Concentration Pushes to 48.7%</title>
+    <link>https://yashrao10.github.io/signal-log/#trade-log</link>
+    <guid isPermaLink="false">2026-09-16-windfall-sweep-filled</guid>
+    <pubDate>Wed, 16 Sep 2026 16:15:00 -0400</pubDate>
+    <description><![CDATA[The revised windfall sweep filled at this morning's open: the autonomous account added a healthcare name, a data-center-infrastructure dip-add, and a top-up to its mega-cap platform holding, while the default account added a separate top-up to the same mega-cap name. Technology exposure ticked up to roughly 49% of the book — see today's Econ Briefing.]]></description>
+  </item>
 
   <item>
     <title>Idle Cash Deployed Into the Three Largest Holdings</title>
