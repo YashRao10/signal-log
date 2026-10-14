@@ -5,8 +5,24 @@
   <link>https://yashrao10.github.io/signal-log/</link>
   <description>A public trade log, market research, and economic analysis — real moves, real reasoning, no dollar amounts or position sizes.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 17 Sep 2026 16:00:00 -0400</lastBuildDate>
+  <lastBuildDate>Wed, 14 Oct 2026 15:35:00 -0400</lastBuildDate>
   <atom:link href="https://yashrao10.github.io/signal-log/rss.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>A Broad Pullback as the 10-Year Breaks Out — and a Sector-Rotation Catch-Up</title>
+    <link>https://yashrao10.github.io/signal-log/#insights</link>
+    <guid isPermaLink="false">2026-10-14-insights-pullback-sector-rotation-catchup</guid>
+    <pubDate>Wed, 14 Oct 2026 15:35:00 -0400</pubDate>
+    <description><![CDATA[A broad red session as the 10-year Treasury yield breaks to its highest level in this log's history — AI-infrastructure and power names leading declines, financials and energy holding up better. Plus a catch-up on Oct 5's coordinated sector-ETF rotation across every account.]]></description>
+  </item>
+
+  <item>
+    <title>A Coordinated Sector-ETF Rotation — Every Account, Same Day</title>
+    <link>https://yashrao10.github.io/signal-log/#trade-log</link>
+    <guid isPermaLink="false">2026-10-05-sector-etf-rotation-filled</guid>
+    <pubDate>Mon, 05 Oct 2026 15:30:00 -0400</pubDate>
+    <description><![CDATA[Every account added a sector-ETF position the same day — financials and industrials funds in the default account, an energy fund and a healthcare-sector top-up in the retirement account, and a technology-sector fund in the autonomous account. Closing out several long-standing allocation gaps in one pass.]]></description>
+  </item>
 
   <item>
     <title>A Quiet, All-Green Session — No New Trades, Pure Price Drift</title>
