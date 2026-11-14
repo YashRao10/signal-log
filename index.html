@@ -1058,9 +1058,8 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     <div class="chart-card">
       <div class="regime-current">
         <!-- REGIME:CURRENT:START -->
-        <div class="regime-name" id="regime-name">Neutral / Hold</div>
-        <div class="regime-asof" id="regime-asof">as of July 2026 &middot; reporting lag is normal, see note below</div>
-        <div class="regime-pivot-warning">&#9888; Possibly stale: CPI YoY was rising over 6 months but has turned down over the last 3</div>
+        <div class="regime-name" id="regime-name">Hawkish Tightening</div>
+        <div class="regime-asof" id="regime-asof">as of October 2026 &middot; reporting lag is normal, see note below</div>
         <!-- REGIME:CURRENT:END -->
         <div class="regime-drivers" id="regime-drivers"></div>
       </div>
@@ -1070,7 +1069,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
       </div>
       <div class="sector-ticks" id="regime-sector-ticks"></div>
       <!-- REGIME:NOTE:START -->
-      <div class="chart-note">Average monthly return per Select Sector SPDR during every historical month classified the same regime (1999&ndash;present, 101 months in sample for the current regime). Gold (GLD, not shown above) has averaged -0.03%/mo in this regime historically &mdash; sector ETFs alone don't capture it.</div>
+      <div class="chart-note">Average monthly return per Select Sector SPDR during every historical month classified the same regime (1999&ndash;present, 78 months in sample for the current regime). Gold (GLD, not shown above) has averaged +0.61%/mo in this regime historically &mdash; sector ETFs alone don't capture it.</div>
       <!-- REGIME:NOTE:END -->
     </div>
     <div class="regime-caveat">
@@ -1398,20 +1397,20 @@ function buildSectorChart(){
 // data — public FRED + market ETF history only.
 // REGIME:DATA:START
 const regimeDrivers = [
-  {label:'Fed funds (6mo chg)', value:'-0.01pp'},
-  {label:'10y-2y spread', value:'+0.47pp'},
-  {label:'CPI YoY (6mo chg)', value:'+0.71pp'},
+  {label:'Fed funds (6mo chg)', value:'+0.24pp'},
+  {label:'10y-2y spread', value:'+0.38pp'},
+  {label:'CPI YoY (6mo chg)', value:'+0.13pp'},
   {label:'Unemployment (6mo chg)', value:'-0.20pp'},
 ];
 const regimeSectorData = [
-  {sym:'XLE', name:'Energy', pct:1.7},
-  {sym:'XLF', name:'Financials', pct:1.68},
-  {sym:'XLI', name:'Industrials', pct:1.68},
-  {sym:'XLK', name:'Technology', pct:1.41},
-  {sym:'XLY', name:'Consumer Disc.', pct:1.32},
-  {sym:'XLV', name:'Healthcare', pct:1.29},
-  {sym:'XLP', name:'Consumer Staples', pct:1.06},
-  {sym:'XLU', name:'Utilities', pct:0.69},
+  {sym:'XLU', name:'Utilities', pct:1.25},
+  {sym:'XLE', name:'Energy', pct:1.21},
+  {sym:'XLK', name:'Technology', pct:0.71},
+  {sym:'XLV', name:'Healthcare', pct:0.59},
+  {sym:'XLP', name:'Consumer Staples', pct:0.44},
+  {sym:'XLI', name:'Industrials', pct:0.32},
+  {sym:'XLF', name:'Financials', pct:0.29},
+  {sym:'XLY', name:'Consumer Disc.', pct:0.27},
 ];
 // REGIME:DATA:END
 function buildRegimeDrivers(){
