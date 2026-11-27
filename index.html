@@ -62,20 +62,20 @@ body{background:var(--bg);color:var(--text);font-family:'Consolas','Courier New'
 
 /* ── Decorative 3D hero: solar system + market-ticker ring ── */
 .hero3d{
-  position:relative;height:190px;margin-bottom:20px;border-radius:12px;overflow:hidden;
+  position:relative;height:240px;margin-bottom:20px;border-radius:12px;overflow:hidden;
   background:radial-gradient(ellipse at 50% 45%,#2a0e16 0%,var(--bg) 70%);
   border:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;perspective:1100px
 }
 .hero3d-ring{position:absolute;border-radius:50%;transform-style:preserve-3d}
-.hero3d-ring.r1{width:130px;height:130px;border:1.5px solid rgba(251,58,74,.55);box-shadow:0 0 22px rgba(251,58,74,.22);animation:hero-spin1 9s linear infinite}
-.hero3d-ring.r2{width:180px;height:180px;border:1px solid rgba(56,189,248,.4);box-shadow:0 0 18px rgba(56,189,248,.16);animation:hero-spin2 14s linear infinite}
-.hero3d-ring.r3{width:96px;height:96px;border:1px dashed rgba(241,247,255,.28);animation:hero-spin3 20s linear infinite}
-.hero3d-ring.r4{width:210px;height:210px;border:1px dotted rgba(16,185,129,.3);animation:hero-spin2 28s linear infinite reverse}
+.hero3d-ring.r1{width:165px;height:165px;border:2px solid rgba(251,58,74,.55);box-shadow:0 0 28px rgba(251,58,74,.24);animation:hero-spin1 9s linear infinite}
+.hero3d-ring.r2{width:228px;height:228px;border:1.3px solid rgba(56,189,248,.42);box-shadow:0 0 22px rgba(56,189,248,.18);animation:hero-spin2 14s linear infinite}
+.hero3d-ring.r3{width:122px;height:122px;border:1.3px dashed rgba(241,247,255,.3);animation:hero-spin3 20s linear infinite}
+.hero3d-ring.r4{width:266px;height:266px;border:1.3px dotted rgba(16,185,129,.32);animation:hero-spin2 28s linear infinite reverse}
 .hero3d-core{
-  position:relative;z-index:3;width:46px;height:46px;border-radius:50%;
+  position:relative;z-index:3;width:58px;height:58px;border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#ffb4bc 0%,var(--accent) 45%,#7a0f1c 100%);
-  box-shadow:0 0 26px 5px rgba(251,58,74,.4),inset -4px -5px 10px rgba(0,0,0,.35);
+  box-shadow:0 0 34px 7px rgba(251,58,74,.42),inset -5px -6px 13px rgba(0,0,0,.35);
   animation:hero-bob 5s ease-in-out infinite
 }
 
@@ -84,41 +84,41 @@ body{background:var(--bg);color:var(--text);font-family:'Consolas','Courier New'
    matching the rings' own fake-3D tilt. A circle looks the same at any rotation, so this is
    the one shape that's safe to spin continuously without a text-billboard problem. */
 .hero3d-orbit{position:absolute;top:50%;left:50%;width:0;height:0;transform-style:preserve-3d;animation:orbit-spin 17s linear infinite}
-.hero3d-planet-dot{position:absolute;width:9px;height:9px;margin:-4.5px;border-radius:50%;transform:translateX(66px) rotateX(-62deg);box-shadow:0 0 9px currentColor}
+.hero3d-planet-dot{position:absolute;width:13px;height:13px;margin:-6.5px;border-radius:50%;transform:translateX(83px) rotateX(-62deg);box-shadow:0 0 12px currentColor}
 .hero3d-planet-dot.p1{background:var(--green);color:var(--green)}
 .hero3d-planet-dot.p2{background:var(--accent);color:var(--accent)}
 .hero3d-planet-dot.p3{background:var(--accent2);color:var(--accent2)}
 
 /* stat labels: static (never rotate), so the real numbers always read flat and upright */
 .hero3d-chip{
-  position:absolute;font-size:11px;font-weight:700;color:var(--muted);background:var(--card);
-  border:1px solid var(--border);padding:4px 9px;border-radius:7px;white-space:nowrap;
+  position:absolute;font-size:13.5px;font-weight:700;color:var(--muted);background:var(--card);
+  border:1px solid var(--border);padding:6px 12px;border-radius:8px;white-space:nowrap;
   box-shadow:0 8px 16px -6px rgba(0,0,0,.6);animation:hero-bob 6s ease-in-out infinite
 }
-.hero3d-chip.c1{top:14%;left:9%}
-.hero3d-chip.c2{bottom:13%;right:8%;animation-delay:1s}
-.hero3d-chip.c3{top:16%;right:7%;animation-delay:.5s}
+.hero3d-chip.c1{top:13%;left:7%}
+.hero3d-chip.c2{bottom:12%;right:6%;animation-delay:1s}
+.hero3d-chip.c3{top:15%;right:5%;animation-delay:.5s}
 
 /* market-ticker ring: fixed positions evenly spaced around an ellipse matching the rings'
    tilt (precomputed, not rotated) so every symbol always reads flat */
 .hero3d-ticker{
   position:absolute;top:50%;left:50%;
-  font-size:9.5px;font-weight:700;letter-spacing:.3px;color:var(--text);
-  background:rgba(7,11,20,.72);border:1px solid var(--border);padding:3px 8px;border-radius:6px;
+  font-size:12px;font-weight:700;letter-spacing:.3px;color:var(--text);
+  background:rgba(7,11,20,.72);border:1px solid var(--border);padding:4px 10px;border-radius:7px;
   white-space:nowrap;box-shadow:0 6px 14px -5px rgba(0,0,0,.6);
   animation:ticker-glow 4s ease-in-out infinite
 }
-.hero3d-ticker.t1{transform:translate(calc(-50% + 0px),calc(-50% - 44px))}
-.hero3d-ticker.t2{transform:translate(calc(-50% + 95px),calc(-50% - 12px));animation-delay:.6s}
-.hero3d-ticker.t3{transform:translate(calc(-50% + 59px),calc(-50% + 32px));animation-delay:1.2s}
-.hero3d-ticker.t4{transform:translate(calc(-50% - 59px),calc(-50% + 32px));animation-delay:1.8s}
-.hero3d-ticker.t5{transform:translate(calc(-50% - 95px),calc(-50% - 12px));animation-delay:2.4s}
+.hero3d-ticker.t1{transform:translate(calc(-50% + 0px),calc(-50% - 55px))}
+.hero3d-ticker.t2{transform:translate(calc(-50% + 119px),calc(-50% - 15px));animation-delay:.6s}
+.hero3d-ticker.t3{transform:translate(calc(-50% + 74px),calc(-50% + 40px));animation-delay:1.2s}
+.hero3d-ticker.t4{transform:translate(calc(-50% - 74px),calc(-50% + 40px));animation-delay:1.8s}
+.hero3d-ticker.t5{transform:translate(calc(-50% - 119px),calc(-50% - 15px));animation-delay:2.4s}
 
 .hero3d-dot{position:absolute;border-radius:50%;animation:hero-pulse 3.4s ease-in-out infinite}
-.hero3d-dot.d1{width:6px;height:6px;background:var(--text);top:14%;left:42%}
-.hero3d-dot.d2{width:5px;height:5px;background:var(--accent);bottom:20%;left:30%;animation-delay:.7s}
-.hero3d-dot.d3{width:4px;height:4px;background:var(--accent2);top:28%;right:24%;animation-delay:1.2s}
-.hero3d-dot.d4{width:4px;height:4px;background:var(--green);bottom:16%;right:30%;animation-delay:1.8s}
+.hero3d-dot.d1{width:7px;height:7px;background:var(--text);top:14%;left:42%}
+.hero3d-dot.d2{width:6px;height:6px;background:var(--accent);bottom:20%;left:30%;animation-delay:.7s}
+.hero3d-dot.d3{width:5px;height:5px;background:var(--accent2);top:28%;right:24%;animation-delay:1.2s}
+.hero3d-dot.d4{width:5px;height:5px;background:var(--green);bottom:16%;right:30%;animation-delay:1.8s}
 
 @keyframes hero-spin1{from{transform:rotateX(62deg) rotateZ(0deg)}to{transform:rotateX(62deg) rotateZ(360deg)}}
 @keyframes hero-spin2{from{transform:rotateX(62deg) rotateZ(360deg)}to{transform:rotateX(62deg) rotateZ(0deg)}}
@@ -128,16 +128,16 @@ body{background:var(--bg);color:var(--text);font-family:'Consolas','Courier New'
 @keyframes hero-pulse{0%,100%{opacity:.4;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}
 @keyframes ticker-glow{0%,100%{opacity:.7}50%{opacity:1}}
 @media (max-width:640px){
-  .hero3d{height:170px}
-  .hero3d-ring.r4{width:170px;height:170px}
-  .hero3d-planet-dot{transform:translateX(52px) rotateX(-62deg)}
-  .hero3d-chip{font-size:9.5px;padding:3px 7px}
-  .hero3d-ticker{font-size:8px;padding:2px 6px}
-  .hero3d-ticker.t1{transform:translate(calc(-50% + 0px),calc(-50% - 36px))}
-  .hero3d-ticker.t2{transform:translate(calc(-50% + 76px),calc(-50% - 10px))}
-  .hero3d-ticker.t3{transform:translate(calc(-50% + 47px),calc(-50% + 26px))}
-  .hero3d-ticker.t4{transform:translate(calc(-50% - 47px),calc(-50% + 26px))}
-  .hero3d-ticker.t5{transform:translate(calc(-50% - 76px),calc(-50% - 10px))}
+  .hero3d{height:210px}
+  .hero3d-ring.r4{width:210px;height:210px}
+  .hero3d-planet-dot{transform:translateX(64px) rotateX(-62deg)}
+  .hero3d-chip{font-size:11px;padding:4px 9px}
+  .hero3d-ticker{font-size:9.5px;padding:3px 7px}
+  .hero3d-ticker.t1{transform:translate(calc(-50% + 0px),calc(-50% - 44px))}
+  .hero3d-ticker.t2{transform:translate(calc(-50% + 94px),calc(-50% - 12px))}
+  .hero3d-ticker.t3{transform:translate(calc(-50% + 58px),calc(-50% + 32px))}
+  .hero3d-ticker.t4{transform:translate(calc(-50% - 58px),calc(-50% + 32px))}
+  .hero3d-ticker.t5{transform:translate(calc(-50% - 94px),calc(-50% - 12px))}
 }
 @media (prefers-reduced-motion:reduce){.hero3d-ring,.hero3d-core,.hero3d-orbit,.hero3d-dot,.hero3d-chip,.hero3d-ticker{animation:none}}
 
