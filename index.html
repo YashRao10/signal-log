@@ -250,7 +250,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     </div>
     <div class="header-right">
       <div class="live-badge"><span class="pulse-ring"></span>Public Log</div>
-      <div class="updated-line" id="updated-line">Updated Nov 16, 2026</div>
+      <div class="updated-line" id="updated-line">Updated Nov 27, 2026</div>
     </div>
   </div>
 
@@ -309,6 +309,15 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     </div>
     <div class="chart-note" style="margin:0 0 20px">Auto-computed from every scored ticker line in the log below, so it can't go stale as new trades are added. Sell calls are scored inverted — price falling after a sell counts as a correct call. Direction and magnitude only, not weighted by position size. Excludes routine DCA buys with no individually tracked entry and orders still queued/unfilled.</div>
 
+    <div class="chart-card" style="margin-bottom:20px">
+      <div class="chart-legend"><span>Cumulative win rate, oldest scored call &rarr; most recent</span></div>
+      <div class="chart-wrap" id="track-chart-wrap">
+        <svg class="chart-svg" id="track-chart" viewBox="0 0 700 160" preserveAspectRatio="none"></svg>
+        <div class="chart-tooltip" id="track-tooltip"></div>
+      </div>
+      <div class="chart-note">Same scoring as the tiles above, plotted call by call instead of as one snapshot — shows whether the edge has actually been building or fading, not just where it sits today. Hover a point for that call's detail.</div>
+    </div>
+
     <div class="stitle">Recent Moves</div>
     <div class="filter-bar">
       <div class="filter-types">
@@ -328,247 +337,247 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
     <div class="feed-empty" id="feed-empty" style="display:none">No trades match that filter.</div>
     <div class="feed" id="trade-feed">
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-10-21">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VOO · VTI · VST · VIST</span><span class="date">Oct 21, 2026</span></div>
         <p class="thesis">A same-morning round of adds across four accounts, mostly mechanical. The broad-market index funds got their standing top-ups: the total-market fund in the retirement account and the S&amp;P 500 fund in both the autonomous account and the small model-portfolio account. That is the core-building routine, not a view on the day. The two single-name legs are the more interesting part: a power-producer add in the default account, the same name the small account already held and the one on the radar list as the AI power-demand bottleneck, plus a small add to an oil and gas producer already in the small account.</p>
         <div class="perf-line"><span class="perf-item down">VOO <strong>-0.8%</strong></span><span class="perf-item down">VTI <strong>-0.7%</strong></span><span class="perf-item down">VST <strong>-7.5%</strong></span><span class="perf-item up">VIST <strong>+3.4%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Wed Oct 21, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-10-19">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">MU</span><span class="date">Oct 19, 2026</span></div>
         <p class="thesis">A small starter position in the memory-chip leader, in the autonomous account. It had been sitting on the radar list waiting for a pullback into an entry zone, and this filled a bit above that zone, so it is a starter and not a real position. The thesis is AI-driven memory demand, with the usual chip-cycle risk that the price can swing hard in either direction.</p>
         <div class="perf-line"><span class="perf-item down">MU <strong>-1.2%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Mon Oct 19, 9:30am ET (queued Sun Oct 18)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-10-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI · VOO</span><span class="date">Oct 16, 2026</span></div>
         <p class="thesis">Two same-afternoon top-ups: a total-market add in the retirement account and an S&amp;P 500 add in the autonomous account. Routine core building with no new thesis, the mechanical part of the book.</p>
         <div class="perf-line"><span class="perf-item up">VTI <strong>+0.5%</strong></span><span class="perf-item up">VOO <strong>+0.4%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Fri Oct 16, ~3:47-3:51pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-10-05">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">XLF · XLI · XLE · XLV · XLK</span><span class="date">Oct 5, 2026</span></div>
         <p class="thesis">A coordinated sector-ETF rotation across every account on the same day, closing out several long-standing allocation gaps at once: a financials fund and an industrials fund in the default account, an energy fund and a healthcare-sector top-up in the retirement account, and a technology-sector fund in the autonomous account. The point wasn't chasing any one sector's recent move — it was filling in the sector map everywhere it was thin, in one pass instead of piecemeal over months. The autonomous-account agent also added small index and financials-fund top-ups the same week, mechanical DCA, not a new thesis.</p>
         <div class="perf-line"><span class="perf-item up">XLF <strong>+0.8%</strong></span><span class="perf-item down">XLI <strong>-2.4%</strong></span><span class="perf-item up">XLE <strong>+6.6%</strong></span><span class="perf-item up">XLV <strong>+3.7%</strong></span><span class="perf-item down">XLK <strong>-5.5%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Mon Oct 5, ~3:20-3:30pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-22">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI · VOO</span><span class="date">Sep 22, 2026</span></div>
         <p class="thesis">The standing daily/biweekly top-ups landed across four accounts on the same session — a broad-market add in the default account, the retirement account's own broad-market leg, a core index add in the autonomous account, and a small position add in the agentic account. Mechanical dollar-cost averaging, no fresh thesis; the retirement-account leg is a larger step-up than its usual daily size, closing some of the account's long-standing broad-market underweight.</p>
         <div class="perf-line"><span class="perf-item down">VTI <strong>-0.9%</strong></span><span class="perf-item down">VOO <strong>-0.8%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Tue Sep 22, ~3:18-3:30pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-21">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">CEG · RTX · SPCX</span><span class="date">Sep 21, 2026</span></div>
         <p class="thesis">A small laggard/diversifier trio in the autonomous account, sized to the day's full available cash and deliberately avoiding that session's chase names (a social-media platform and a chipmaker both running hot on an AI-agent product story). A utility tied to power demand, a defense name, and a small space-launch position — three different sleeves, no single-name concentration added.</p>
         <div class="perf-line"><span class="perf-item up">CEG <strong>+0.1%</strong></span><span class="perf-item down">RTX <strong>-1.3%</strong></span><span class="perf-item down">SPCX <strong>-2.2%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Mon-Tue Sep 21-22, ~9:30am ET open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">UNH · VRT · GOOGL</span><span class="date">Sep 16, 2026</span></div>
         <p class="thesis">The revised windfall sweep queued Monday evening filled at this morning's open in the autonomous account — three legs on top of an already-building book: a top-up to the healthcare name from the original CEG/UNH/VRT build, a second dip-add to the data-center-cooling name, and another leg of the ongoing GOOGL position. About $291 total, sized roughly even across the three rather than weighted toward any single name.</p>
         <div class="perf-line"><span class="perf-item">fills UNH <strong>$69.99</strong> / VRT <strong>$70.00</strong> / GOOGL <strong>$150.60</strong></span><span class="perf-status">Filled Sep 16, 9:30am ET (queued Sep 15 evening)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">GOOGL</span><span class="date">Sep 16, 2026</span></div>
         <p class="thesis">A separate $50 manual top-up to the default account's GOOGL position, placed the same morning as the autonomous account's windfall sweep above — same name, unrelated order, routine building add.</p>
         <div class="perf-line"><span class="perf-item">fill <strong>$50.00</strong></span><span class="perf-status">Filled Sep 16, morning ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-14">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">MSFT · META · NVDA</span><span class="date">Sep 14, 2026</span></div>
         <p class="thesis">Idle cash in the default account — left over from an earlier deposit, not yet deployed — got put to work this morning. Rather than spreading it thin across the account's full 26-name book, it went into the three largest existing positions: the mega-cap platform holding, the social/AI-agent holding, and the AI-infrastructure GPU holding. No new names, no thesis change — just clearing out cash that was sitting flat while the market moved.</p>
         <div class="perf-line"><span class="perf-item">fills <strong>$509.29 / $664.20 / $212.54</strong></span><span class="perf-status">Filled Sep 14, ~1:47pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-09">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VRT</span><span class="date">Sep 9, 2026</span></div>
         <p class="thesis">Small dip-add to an existing data-center-infrastructure position in the autonomous account. The stock fell about 9.6% on the day — not on any company news, but as part of a broad selloff in the long-duration "AI power and cooling" trade after the 10-year Treasury yield hit a three-year high and oil broke $100. Sector commentary read it as positioning ahead of this week's inflation prints rather than a change in the thesis. This is roughly a $20 add on top of a position built in August; it takes the name to about 9% of that account, still under the ceiling the largest holding there is pushing against.</p>
         <div class="perf-line"><span class="perf-item">fill <strong>$259.40</strong></span><span class="perf-item">since fill <strong>-0.7%</strong></span><span class="perf-status">Filled Sep 10, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-01">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">Model-portfolio sleeve · 16 names</span><span class="date">Sep 1, 2026</span></div>
         <p class="thesis">A separate, small account was linked to a third-party automated model portfolio, and on this date it deployed its opening basket: sixteen positions in one pass. The shape is a barbell — roughly a fifth in a Treasury-bill fund as ballast, a few quality compounders (an exchange operator, a restaurant franchisor, a specialty insurer), and the rest a thematic mix weighted toward power and energy infrastructure, with a couple of beaten-down names bought for a recovery. It is deliberately walled off from the main book and is monitored, not managed, here — the value of it is watching how an automated strategy behaves through a rebalance and a drawdown, not the return. Two trading days in it is up low single digits.</p>
         <div class="perf-line"><span class="perf-item">basket <strong>~+2%</strong></span><span class="perf-item">first 2 sessions</span><span class="perf-status">Filled Tue Sep 1, ~9:52am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-09-01">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VXUS · VTI</span><span class="date">Sep 1, 2026</span></div>
         <p class="thesis">Two manual adds in the default account — a larger international-index buy and a smaller broad-market top-up — plus the retirement account's international leg from the month-end contribution, all filling around the same window. The international tilt is the deliberate part: the book has been underweight ex-US for a long time and new cash keeps getting pointed there to close the gap.</p>
         <div class="perf-line"><span class="perf-item up">VXUS <strong>+1.3%</strong></span><span class="perf-item up">VTI <strong>+1.4%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Tue–Wed Sep 1–2, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-29">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI · VOO</span><span class="date">Aug 29, 2026</span></div>
         <p class="thesis">The two standing daily top-ups placed over the weekend — a broad-market add in the default account plus one in the autonomous account. The autonomous-account leg is a deliberate change: that account's daily drip had been going entirely into a single mega-cap search name, pushing it to roughly 38% of the account, so the mechanical add is being redirected back to the core S&amp;P 500 index fund to stop compounding that single-name concentration.</p>
         <div class="perf-line"><span class="perf-item up">VTI <strong>+0.7%</strong></span><span class="perf-item up">VOO <strong>+0.8%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Mon Aug 31, 9:30am ET — VOO ~$705.33, VTI ~$378.48</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-27">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI · GOOGL</span><span class="date">Aug 27–28, 2026</span></div>
         <p class="thesis">Routine daily top-up, two sessions running — the standing small broad-market add in the default account plus the standing small position add in the autonomous account. Mechanical dollar-cost averaging, no fresh thesis. Friday's leg went in on an Nvidia sell-the-news day, which is exactly the kind of session this mechanical drip is designed to ignore. Combined onto one card.</p>
         <div class="perf-line"><span class="perf-item up">VTI <strong>+6.9%</strong></span><span class="perf-item down">GOOGL <strong>-3.5%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Thu Aug 27 &amp; Fri Aug 28, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-26">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">XLU · VTI</span><span class="date">Aug 26, 2026</span></div>
         <p class="thesis">Routine core top-up in the default account — a utilities sector-ETF add plus a broad-market index add, the mechanical no-thesis-needed part of the book, not a reaction to any single-day move.</p>
         <div class="perf-line"><span class="perf-item down">XLU <strong>-4.4%</strong></span><span class="perf-item up">VTI <strong>+6.9%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Wed Aug 26, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-21">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VOO</span><span class="date">Aug 21, 2026</span></div>
         <p class="thesis">Routine broad-index top-up in the Agentic account — placed after-hours the evening of Aug 21, queued until this fill. Dollar-cost averaging into the core holding, not a dip-buy call on any one name.</p>
         <div class="perf-line"><span class="perf-item up">VOO <strong>+3.0%</strong> since blended entry</span><span class="perf-status">Filled Mon Aug 24, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-20">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VOO</span><span class="date">Aug 20, 2026</span></div>
         <p class="thesis">Routine broad-index top-up in the account that had gotten the least new capital this week. On a broad, macro-driven selloff day, this went into the best-behaved core holding rather than chasing the day's biggest individual decliners — dollar-cost averaging, not a dip-buy call on any one name.</p>
         <div class="perf-line"><span class="perf-item up">VOO <strong>+0.0%</strong> since entry</span><span class="perf-status">Filled Fri Aug 21, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-20">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VOO</span><span class="date">Aug 20, 2026</span></div>
         <p class="thesis">Routine broad-index top-up — the mechanical, no-thesis-needed core of the book. Placed as an extended-hours limit order right after the close on a broad, sector-wide selloff day.</p>
         <div class="perf-line"><span class="perf-item up">VOO <strong>+5.0%</strong> since blended entry</span><span class="perf-status">Filled Thu Aug 20, ~4:12pm ET</span></div>
       </div>
 
-      <div class="card trim">
+      <div class="card trim" data-spark-since="2026-08-19">
         <div class="card-top"><span class="badge trim">Trim</span><span class="ticker">PANW</span><span class="date">Aug 19, 2026</span></div>
         <p class="thesis">Finally acted on a trim call that had been sitting on the table since it first crossed +71% back in June — took a partial gain, kept the core position. No new negative catalyst; a broad chip/cybersecurity-sector selloff on the day (rising long-end rates hitting high-multiple growth names generally) made it a good execution window, not the reason for the call itself.</p>
         <div class="perf-line"><span class="perf-item up">PANW <strong>+115.7%</strong> on the remaining core</span><span class="perf-status">Filled Wed Aug 19, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-18">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">SKHY</span><span class="date">Aug 18, 2026</span></div>
         <p class="thesis">New starter position — the best-valued entry into the AI-driven memory-chip shortage theme that's been on the watchlist since early August. Top-two global memory maker (DRAM+HBM+NAND), trading at roughly a third of the multiple of the more obvious names in the same theme.</p>
         <div class="perf-line"><span class="perf-item down">SKHY <strong>-3.1%</strong> since entry</span><span class="perf-status">Filled Wed Aug 19, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-19">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">VOO · VXUS</span><span class="date">Aug 19, 2026</span></div>
         <p class="thesis">A deliberate diversification move, not a dip-buy. Today's chip-sector selloff (Philadelphia Semiconductor Index -5.4%) reads as rate/valuation-driven — long-end Treasury yields pushing toward multi-decade highs, plus profit-taking after a strong run — rather than anything company-specific. Rather than add to already-concentrated individual AI/semi names into that pressure, this went into broad-market and international index exposure instead.</p>
         <div class="perf-line"><span class="perf-item up">VOO <strong>+0.0%</strong></span><span class="perf-item up">VXUS <strong>+0.0%</strong></span><span class="perf-item">since entry</span><span class="perf-status">Filled Wed Aug 19, ~2:40pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">TSM</span><span class="date">Aug 16, 2026</span></div>
         <p class="thesis">New starter position, timed to a stated Q3 2026 target rather than chasing a dip that never came — 7 straight quarterly EPS beats, 2026 revenue guidance just raised to &gt;40% growth, Strong Buy consensus across the Street. The foundry behind NVDA/AMD/AAPL's chips, trading ~11% off its 52-week high rather than at a fresh one.</p>
         <div class="perf-line"><span class="perf-item down">TSM <strong>-4.1%</strong> since entry</span><span class="perf-status">Filled Mon Aug 17, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">VXUS</span><span class="date">Aug 16, 2026</span></div>
         <p class="thesis">Biweekly windfall top-up through the Roth — a straightforward add to the international-diversification position started back in July, no new thesis beyond continuing the build.</p>
         <div class="perf-line"><span class="perf-item up">VXUS <strong>+1.3%</strong> since blended entry</span><span class="perf-status">Filled Mon Aug 17, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">XLU</span><span class="date">Aug 16, 2026</span></div>
         <p class="thesis">Biweekly windfall top-up in the default account, same utilities position started in July — no new catalyst, just continuing to build out the AI power-demand tailwind.</p>
         <div class="perf-line"><span class="perf-item down">XLU <strong>-1.3%</strong> since blended entry</span><span class="perf-status">Filled Mon Aug 17, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">VNQ</span><span class="date">Aug 16, 2026</span></div>
         <p class="thesis">First position in the one sector gap that had sat on the watchlist for weeks — real estate, passed over repeatedly while waiting for a better entry. This biweekly windfall finally went into it instead of another pass.</p>
         <div class="perf-line"><span class="perf-item down">VNQ <strong>-0.5%</strong> since entry</span><span class="perf-status">Filled Mon Aug 17, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">GOOGL</span><span class="date">Aug 16, 2026</span></div>
         <p class="thesis">Biweekly windfall top-up in the Agentic account, continuing the build started Aug 11 — no new catalyst, just adding to an existing position on schedule.</p>
         <div class="perf-line"><span class="perf-item down">GOOGL <strong>-4.6%</strong> since blended entry</span><span class="perf-status">Filled Mon Aug 17, ~9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-13">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">AAPL</span><span class="date">Aug 13, 2026</span></div>
         <p class="thesis">Dividend reinvestment on the AAPL position — a fraction of a share, logged here for completeness rather than significance.</p>
         <div class="perf-line"><span class="perf-item up">AAPL <strong>+23.3%</strong> since blended entry</span><span class="perf-status">Filled Thu Aug 13, ~10am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-13">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI</span><span class="date">Aug 13, 2026</span></div>
         <p class="thesis">Routine broad-index top-up — the mechanical, no-thesis-needed core of the book. Order was queued the evening before, just after the prior close, and filled at this morning's open.</p>
         <div class="perf-line"><span class="perf-item up">VTI <strong>+10.5%</strong> since blended entry</span><span class="perf-status">Filled Thu Aug 13, 9:30am ET (order queued Aug 12)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-12">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">MSFT</span><span class="date">Aug 12, 2026</span></div>
         <p class="thesis">Standing recurring buy, not a discretionary call — the book's own automatic dollar-cost-average schedule into MSFT, running independently of everything else logged here.</p>
         <div class="perf-line"><span class="perf-item up">MSFT <strong>+27.8%</strong> since blended entry</span><span class="perf-status">Filled Wed Aug 12, 3:00pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-12">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI</span><span class="date">Aug 12, 2026</span></div>
         <p class="thesis">Routine broad-index top-up — the mechanical, no-thesis-needed core of the book. Order was queued the evening before, just after the prior close, and filled at this morning's open.</p>
         <div class="perf-line"><span class="perf-item up">VTI <strong>+10.6%</strong> since blended entry</span><span class="perf-status">Filled Wed Aug 12, 9:30am ET (order queued Aug 11)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-11">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">GOOGL</span><span class="date">Aug 11, 2026</span></div>
         <p class="thesis">Continued build, and a real dip-buy — down sharply more than the rest of the book today on a leadership shakeup at the AI division (a senior exec stepping back to an advisory role, another departing to start a new venture), not a broken thesis. Analysts remain bullish on the longer-term AI/cloud story.</p>
         <div class="perf-line"><span class="perf-item down">GOOGL <strong>-5.5%</strong> since blended entry</span><span class="perf-status">Filled Tue Aug 11, 3:58pm ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-11">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">NVDA</span><span class="date">Aug 11, 2026</span></div>
         <p class="thesis">Small top-up in the Roth — cash was sitting idle in the account, deployed into an existing core position instead of left uninvested. No new thesis, routine.</p>
         <div class="perf-line"><span class="perf-item up">NVDA <strong>+5.3%</strong> since blended entry</span><span class="perf-status">Filled Tue Aug 11, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-11">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">UNH</span><span class="date">Aug 11, 2026</span></div>
         <p class="thesis">Second leg of the planned three-name build started with CEG's Aug 7 fill. Fills a long-flagged healthcare gap — no single-name exposure in the space before this, only broad exposure through an ETF. Low correlation to the rest of this AI-heavy book is the point here, not a growth story.</p>
         <div class="perf-line"><span class="perf-status">Filled Tue Aug 11, 9:30am ET (order queued Aug 10)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-11">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">VRT</span><span class="date">Aug 11, 2026</span></div>
         <p class="thesis">Third and final leg of the planned CEG/UNH/VRT build, filled the same morning as UNH. Data-center cooling and power delivery — wins regardless of which chipmaker ends up leading the AI-hardware race, a chipmaker-agnostic way to add more AI-infrastructure exposure.</p>
         <div class="perf-line"><span class="perf-status">Filled Tue Aug 11, 9:30am ET (order queued Aug 10)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-07">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Starter</span><span class="ticker">CEG</span><span class="date">Aug 7, 2026</span></div>
         <p class="thesis">First position in a nuclear-heavy power utility — the cheapest-multiple way found into the AI-power buildout theme, with real current earnings (not a pre-revenue story) and a multi-year hyperscaler power contract already in place. Reported its own Q2 earnings the morning before this filled: a clean beat, $2.55 EPS vs. $2.37 estimate. Part of a planned build alongside a healthcare name and a data-center-infrastructure name, both still watchlist-only, filling long-flagged gaps in this book.</p>
         <div class="perf-line"><span class="perf-status">Filled Fri Aug 7, 9:30am ET (order queued after Aug 6 close)</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-06">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">AMD · VTI</span><span class="date">Aug 6, 2026</span></div>
         <p class="thesis">Routine — small top-ups to two already-established core positions, both queued the prior evening and filled at this morning's open. No fresh thesis behind either beyond continuing to build.</p>
         <div class="perf-line"><span class="perf-item up">AMD <strong>+3.7%</strong></span><span class="perf-item up">VTI <strong>+10.6%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Thu Aug 6, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-05">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VTI</span><span class="date">Aug 5, 2026</span></div>
         <p class="thesis">Routine broad-index top-up — the mechanical, no-thesis-needed core of the book.</p>
         <div class="perf-line"><span class="perf-item up">VTI <strong>+10.6%</strong> since blended entry</span><span class="perf-status">Filled Wed Aug 5, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-08-03">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">XLU · MSFT · VXUS · GOOGL</span><span class="date">Aug 3, 2026</span></div>
         <p class="thesis">A backlog of pending orders across every account cleared the same day. XLU and MSFT both got top-ups in the default account, sized down from the standard ratio since MSFT had already run up sharply that morning — steered more of the new cash toward the flatter utilities name instead of chasing MSFT higher. VXUS got a top-up funded by a same-day income transfer. GOOGL's fill was actually an order queued after-hours two sessions earlier, landing at this morning's open.</p>
         <div class="perf-line"><span class="perf-item down">XLU <strong>-3.3%</strong></span><span class="perf-item up">MSFT <strong>+14.3%</strong></span><span class="perf-item up">VXUS <strong>+2.2%</strong></span><span class="perf-item down">GOOGL <strong>-1.9%</strong></span><span class="perf-item">since blended entry</span><span class="perf-status">Filled Mon Aug 3</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-30">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">MSFT</span><span class="date">Jul 30, 2026</span></div>
         <p class="thesis">Standing recurring buy, not a discretionary call — the book's own automatic dollar-cost-average schedule into MSFT, running independently of everything else logged here.</p>
         <div class="perf-line"><span class="perf-item up">MSFT <strong>+14.3%</strong> since blended entry</span><span class="perf-status">Filled Thu Jul 30, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-24">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">DELL</span><span class="date">Jul 24, 2026</span></div>
         <p class="thesis">Dividend reinvestment on the DELL position — a fraction of a share, logged here for completeness rather than significance.</p>
         <div class="perf-line"><span class="perf-item up">DELL <strong>+9.9%</strong> since blended entry</span><span class="perf-status">Filled Fri Jul 24</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-22">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VOO</span><span class="date">Jul 22, 2026</span></div>
         <p class="thesis">Routine — leftover buying power deployed into the standard core-index rule rather than left idle. No new thesis.</p>
         <div class="perf-line"><span class="perf-item up">VOO <strong>+4.2%</strong> since blended entry</span><span class="perf-status">Filled Wed Jul 22</span></div>
@@ -586,37 +595,37 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item up">VXUS <strong>+0.8%</strong> since entry</span><span class="perf-status">Filled Jul 16</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">GOOGL</span><span class="date">Jul 16, 2026</span></div>
         <p class="thesis">Continued build — still working toward a full-size position. Sized down from an originally larger planned add after deciding to hold back part of this round's new money for a near-term cash need, same reasoning applied to the MSFT add below.</p>
         <div class="perf-line"><span class="perf-item down">GOOGL <strong>-6.4%</strong> since this add</span><span class="perf-status">Filled Jul 16</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-16">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">MSFT</span><span class="date">Jul 16, 2026</span></div>
         <p class="thesis">Continued DCA into one of the book's most underwater quality holdings, ahead of the late-July earnings window. Sized down from an originally larger planned add — held back part of this round's new money for a near-term cash need instead.</p>
         <div class="perf-line"><span class="perf-item down">MSFT <strong>-3.7%</strong> since this add</span><span class="perf-status">Filled Jul 16</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-06">
         <div class="card-top"><span class="badge buy">Buy</span><span class="ticker">VOO · VTI</span><span class="date">Jul 6, 2026</span></div>
         <p class="thesis">Routine — leftover buying power in two accounts was too small for a new single-name position, so it went to the standard $5/day broad-index rule instead of a fresh allocation call. No new thesis here, just staying consistent.</p>
         <div class="perf-line"><span class="perf-item">VOO · VTI</span><span class="perf-status">Filled Tue Jul 7, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-03">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Building</span><span class="ticker">RTX · GOOGL</span><span class="date">Jul 3, 2026</span></div>
         <p class="thesis">Leaning into the sector rotation playing out this week — money moving out of tech/semis (up 80%+ in H1) into industrials and defense. RTX gets the bigger add: a fresh $1.1B Navy missile contract, raised full-year guidance, and an analyst upgrade to Buy. GOOGL gets a smaller top-up — still building the position, but sized down given rising capex guidance has compressed near-term free cash flow margin ahead of this month's earnings.</p>
         <div class="perf-line"><span class="perf-item down">RTX <strong>-2.4%</strong></span><span class="perf-item down">GOOGL <strong>-1.3%</strong></span><span class="perf-item">since this add</span><span class="perf-status">Filled Mon Jul 6, 9:30am ET</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-03">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">META</span><span class="date">Jul 3, 2026</span></div>
         <p class="thesis">Topping up my most underwater quality holding after a sharp single-day pullback — same ad-monetization + AI thesis as the Jun 23 add, just a cheaper entry.</p>
         <div class="perf-line"><span class="perf-item up">META <strong>+1.0%</strong> since this add</span><span class="perf-status">Filled Mon Jul 6 open</span></div>
       </div>
 
-      <div class="card buy">
+      <div class="card buy" data-spark-since="2026-07-03">
         <div class="card-top"><span class="badge buy">Buy</span><span class="badge conviction">Core</span><span class="ticker">VTI · VOO</span><span class="date">Jul 3, 2026</span></div>
         <p class="thesis">Routine systematic index contribution — no new thesis here, just staying consistent with regular broad-market buying regardless of what else is happening that week.</p>
         <div class="perf-line"><span class="perf-item">VTI · VOO</span><span class="perf-status">Filled Mon Jul 6 open</span></div>
@@ -628,7 +637,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item up">GOOGL <strong>+7.9%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card sell">
+      <div class="card sell" data-spark-since="2026-06-23">
         <div class="card-top"><span class="badge sell">Sell</span><span class="ticker">WMT · F · QQQ · SMH</span><span class="date">Jun 23, 2026</span></div>
         <p class="thesis">Cleaned out four small, low-conviction positions I'd accumulated without a real thesis behind any of them. Redeployed straight into names I actually wanted to be bigger in (see MSFT/META below, same day).</p>
         <div class="perf-line"><span class="perf-item down">WMT <strong>-6.7%</strong></span><span class="perf-item down">F <strong>-3.3%</strong></span><span class="perf-item down">QQQ <strong>-0.4%</strong></span><span class="perf-item down">SMH <strong>-5.3%</strong></span><span class="perf-status">Closed — since sold</span></div>
@@ -652,7 +661,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item up">RTX <strong>+7.5%</strong> since entry</span><span class="perf-status">Open</span></div>
       </div>
 
-      <div class="card sell">
+      <div class="card sell" data-spark-since="2026-06-23">
         <div class="card-top"><span class="badge sell">Sell</span><span class="ticker">AAPL · META</span><span class="date">Jun 23, 2026</span></div>
         <p class="thesis">Small rebalance in a satellite account, same cleanup day as the WMT/F/QQQ/SMH sells above — trimming a couple of tiny, low-conviction odd-lot positions to concentrate further into the names getting added that day (MSFT, GOOGL, PLTR, RTX).</p>
         <div class="perf-line"><span class="perf-item up">AAPL <strong>+3.6%</strong></span><span class="perf-item up">META <strong>+3.8%</strong></span><span class="perf-status">Closed — since sold</span></div>
@@ -676,7 +685,7 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
         <div class="perf-line"><span class="perf-item up">PANW <strong>+24.4%</strong></span><span class="perf-item down">GLD <strong>-2.6%</strong></span><span class="perf-item up">AMD <strong>+3.5%</strong></span><span class="perf-item">since trim</span><span class="perf-status">Open — remainder held</span></div>
       </div>
 
-      <div class="card sell">
+      <div class="card sell" data-spark-since="2026-06-12">
         <div class="card-top"><span class="badge sell">Sell</span><span class="ticker">AMC</span><span class="date">Jun 12, 2026</span></div>
         <p class="thesis">Full exit on a legacy meme-stock position from years ago. No fundamental thesis was ever attached to this one — just cleaning it out.</p>
         <div class="perf-line"><span class="perf-item down">AMC <strong>-16.4%</strong> since sold</span><span class="perf-status">Closed</span></div>
@@ -1202,41 +1211,71 @@ document.querySelectorAll('nav.tabs button').forEach(btn=>{
   });
 });
 
-/* ─────────────────── SPARKLINE DATA (weekly closes, Jan–Jul 2026) ─────────────────── */
-/* Real Robinhood historicals (get_equity_historicals, interval=week) + Jul 2 official close appended. XOM omitted — no real historical data before Jul 1 in this data source. */
+/* ─────────────────── SPARKLINE DATA (weekly closes, Jan 2026 – Nov 25, 2026) ─────────────────── */
+/* Real Robinhood historicals (get_equity_historicals, interval=week) + Nov 25, 2026 official close appended. Refreshed 2026-11-27 (was stale at Jul 2). */
 const SPARK_DATA = {
-  GOOGL:[["2026-01-26",338.00],["2026-02-02",322.86],["2026-02-09",305.72],["2026-02-16",314.98],["2026-02-23",311.76],["2026-03-02",298.52],["2026-03-09",302.28],["2026-03-16",301.00],["2026-03-23",274.34],["2026-03-30",295.77],["2026-04-06",317.24],["2026-04-13",341.68],["2026-04-20",344.40],["2026-04-27",385.69],["2026-05-04",400.80],["2026-05-11",396.78],["2026-05-18",382.97],["2026-05-25",380.34],["2026-06-01",368.53],["2026-06-08",359.68],["2026-06-15",368.03],["2026-06-22",337.39],["2026-07-02",359.53]],
-  MSFT:[["2026-01-26",430.29],["2026-02-02",401.14],["2026-02-09",401.32],["2026-02-16",397.23],["2026-02-23",392.74],["2026-03-02",408.96],["2026-03-09",395.55],["2026-03-16",381.87],["2026-03-23",356.77],["2026-03-30",373.46],["2026-04-06",370.87],["2026-04-13",422.79],["2026-04-20",424.62],["2026-04-27",414.44],["2026-05-04",415.12],["2026-05-11",421.92],["2026-05-18",418.57],["2026-05-25",450.24],["2026-06-01",416.67],["2026-06-08",390.74],["2026-06-15",379.40],["2026-06-22",372.97],["2026-07-02",389.65]],
-  META:[["2026-01-26",716.50],["2026-02-02",661.46],["2026-02-09",639.77],["2026-02-16",655.66],["2026-02-23",648.18],["2026-03-02",644.86],["2026-03-09",613.71],["2026-03-16",593.66],["2026-03-23",525.72],["2026-03-30",574.46],["2026-04-06",629.86],["2026-04-13",688.55],["2026-04-20",675.03],["2026-04-27",608.75],["2026-05-04",609.63],["2026-05-11",614.23],["2026-05-18",610.26],["2026-05-25",632.51],["2026-06-01",593.00],["2026-06-08",566.98],["2026-06-15",577.22],["2026-06-22",550.25],["2026-07-02",582.64]],
-  PLTR:[["2026-01-26",146.59],["2026-02-02",135.90],["2026-02-09",131.41],["2026-02-16",135.24],["2026-02-23",137.19],["2026-03-02",157.16],["2026-03-09",150.95],["2026-03-16",150.68],["2026-03-23",143.06],["2026-03-30",148.46],["2026-04-06",128.06],["2026-04-13",146.39],["2026-04-20",143.09],["2026-04-27",144.07],["2026-05-04",137.80],["2026-05-11",133.99],["2026-05-18",136.88],["2026-05-25",156.54],["2026-06-01",135.53],["2026-06-08",127.99],["2026-06-15",128.47],["2026-06-22",112.93],["2026-07-02",129.17]],
-  RTX:[["2026-01-26",200.93],["2026-02-02",198.66],["2026-02-09",200.06],["2026-02-16",204.92],["2026-02-23",202.62],["2026-03-02",209.76],["2026-03-09",204.52],["2026-03-16",198.16],["2026-03-23",189.71],["2026-03-30",196.21],["2026-04-06",201.56],["2026-04-13",196.42],["2026-04-20",174.26],["2026-04-27",173.99],["2026-05-04",176.09],["2026-05-11",171.18],["2026-05-18",177.01],["2026-05-25",179.66],["2026-06-01",180.99],["2026-06-08",183.53],["2026-06-15",185.60],["2026-06-22",187.99],["2026-07-02",199.105]],
-  BE:[["2026-01-26",151.37],["2026-02-02",143.03],["2026-02-09",139.74],["2026-02-16",147.55],["2026-02-23",155.67],["2026-03-02",135.19],["2026-03-09",154.51],["2026-03-16",150.12],["2026-03-23",133.24],["2026-03-30",135.63],["2026-04-06",166.70],["2026-04-13",207.86],["2026-04-20",231.17],["2026-04-27",290.52],["2026-05-04",261.03],["2026-05-11",275.95],["2026-05-18",302.49],["2026-05-25",285.00],["2026-06-01",263.61],["2026-06-08",260.22],["2026-06-15",328.91],["2026-06-22",252.02],["2026-07-02",270.907]],
-  XLV:[["2026-01-26",154.74],["2026-02-02",157.71],["2026-02-09",157.67],["2026-02-16",156.82],["2026-02-23",160.20],["2026-03-02",152.70],["2026-03-09",149.79],["2026-03-16",145.33],["2026-03-23",143.26],["2026-03-30",146.81],["2026-04-06",147.31],["2026-04-13",148.80],["2026-04-20",144.18],["2026-04-27",145.16],["2026-05-04",143.49],["2026-05-11",145.10],["2026-05-18",149.89],["2026-05-25",149.47],["2026-06-01",153.01],["2026-06-08",153.81],["2026-06-15",149.40],["2026-06-22",160.34],["2026-07-02",163.77]],
-  PANW:[["2026-01-26",176.97],["2026-02-02",159.32],["2026-02-09",166.95],["2026-02-16",148.70],["2026-02-23",148.92],["2026-03-02",165.05],["2026-03-09",167.015],["2026-03-16",162.95],["2026-03-23",147.02],["2026-03-30",163.21],["2026-04-06",155.73],["2026-04-13",167.85],["2026-04-20",178.54],["2026-04-27",181.08],["2026-05-04",207.88],["2026-05-11",242.83],["2026-05-18",260.58],["2026-05-25",281.69],["2026-06-01",272.05],["2026-06-08",279.62],["2026-06-15",287.78],["2026-06-22",304.20],["2026-07-02",347.81]],
-  GLD:[["2026-01-26",444.95],["2026-02-02",455.46],["2026-02-09",462.62],["2026-02-16",468.62],["2026-02-23",483.75],["2026-03-02",473.51],["2026-03-09",460.84],["2026-03-16",413.38],["2026-03-23",414.70],["2026-03-30",429.41],["2026-04-06",437.13],["2026-04-13",445.93],["2026-04-20",433.25],["2026-04-27",423.18],["2026-05-04",433.77],["2026-05-11",417.29],["2026-05-18",413.82],["2026-05-25",417.12],["2026-06-01",396.24],["2026-06-08",386.54],["2026-06-15",387.12],["2026-06-22",373.63],["2026-07-02",378.15]],
-  AMD:[["2026-01-26",236.73],["2026-02-02",208.44],["2026-02-09",207.32],["2026-02-16",200.15],["2026-02-23",200.21],["2026-03-02",192.43],["2026-03-09",193.39],["2026-03-16",201.33],["2026-03-23",201.99],["2026-03-30",217.50],["2026-04-06",245.04],["2026-04-13",278.39],["2026-04-20",347.81],["2026-04-27",360.54],["2026-05-04",455.19],["2026-05-11",424.10],["2026-05-18",467.51],["2026-05-25",516.10],["2026-06-01",466.38],["2026-06-08",511.57],["2026-06-15",537.37],["2026-06-22",521.58],["2026-07-02",518.26]],
-  JPM:[["2026-01-26",305.89],["2026-02-02",322.40],["2026-02-09",302.55],["2026-02-16",310.79],["2026-02-23",300.30],["2026-03-02",289.48],["2026-03-09",283.44],["2026-03-16",286.56],["2026-03-23",282.84],["2026-03-30",294.60],["2026-04-06",309.87],["2026-04-13",310.29],["2026-04-20",308.28],["2026-04-27",312.47],["2026-05-04",302.10],["2026-05-11",297.81],["2026-05-18",306.38],["2026-05-25",299.31],["2026-06-01",312.37],["2026-06-08",320.72],["2026-06-15",325.22],["2026-06-22",329.05],["2026-07-02",334.35]],
-  DELL:[["2026-01-26",114.44],["2026-02-02",121.05],["2026-02-09",117.49],["2026-02-16",122.27],["2026-02-23",148.08],["2026-03-02",146.48],["2026-03-09",151.62],["2026-03-16",157.67],["2026-03-23",171.81],["2026-03-30",174.37],["2026-04-06",177.80],["2026-04-13",196.55],["2026-04-20",216.09],["2026-04-27",210.17],["2026-05-04",260.46],["2026-05-11",241.99],["2026-05-18",295.19],["2026-05-25",420.91],["2026-06-01",394.39],["2026-06-08",395.57],["2026-06-15",409.50],["2026-06-22",399.49],["2026-07-02",394.48]],
-  TSLA:[["2026-01-26",430.41],["2026-02-02",411.11],["2026-02-09",417.44],["2026-02-16",411.82],["2026-02-23",402.51],["2026-03-02",396.73],["2026-03-09",391.20],["2026-03-16",367.96],["2026-03-23",361.83],["2026-03-30",360.59],["2026-04-06",348.95],["2026-04-13",400.62],["2026-04-20",376.30],["2026-04-27",390.82],["2026-05-04",428.35],["2026-05-11",422.24],["2026-05-18",426.01],["2026-05-25",435.79],["2026-06-01",391.00],["2026-06-08",406.43],["2026-06-15",400.49],["2026-06-22",379.71],["2026-07-02",392.8101]],
-  CVX:[["2026-01-26",176.90],["2026-02-02",180.86],["2026-02-09",183.74],["2026-02-16",183.93],["2026-02-23",186.76],["2026-03-02",189.94],["2026-03-09",196.82],["2026-03-16",201.73],["2026-03-23",211.15],["2026-03-30",198.97],["2026-04-06",188.55],["2026-04-13",183.99],["2026-04-20",185.21],["2026-04-27",190.63],["2026-05-04",181.62],["2026-05-11",191.10],["2026-05-18",191.43],["2026-05-25",182.46],["2026-06-01",187.31],["2026-06-08",187.22],["2026-06-15",173.63],["2026-06-22",171.06],["2026-07-02",169.17]],
-  LMT:[["2026-01-26",634.22],["2026-02-02",623.58],["2026-02-09",652.58],["2026-02-16",658.26],["2026-02-23",658.08],["2026-03-02",671.77],["2026-03-09",646.00],["2026-03-16",627.43],["2026-03-23",615.84],["2026-03-30",622.79],["2026-04-06",613.72],["2026-04-13",592.19],["2026-04-20",513.45],["2026-04-27",512.77],["2026-05-04",506.51],["2026-05-11",516.01],["2026-05-18",533.24],["2026-05-25",530.45],["2026-06-01",523.76],["2026-06-08",540.33],["2026-06-15",510.95],["2026-06-22",507.40],["2026-07-02",545.77]],
-  ANET:[["2026-01-26",141.74],["2026-02-02",137.49],["2026-02-09",141.59],["2026-02-16",132.79],["2026-02-23",133.50],["2026-03-02",132.89],["2026-03-09",133.57],["2026-03-16",131.22],["2026-03-23",120.77],["2026-03-30",126.68],["2026-04-06",147.35],["2026-04-13",164.23],["2026-04-20",176.91],["2026-04-27",172.70],["2026-05-04",141.77],["2026-05-11",141.97],["2026-05-18",154.03],["2026-05-25",159.47],["2026-06-01",154.27],["2026-06-08",163.24],["2026-06-15",169.67],["2026-06-22",157.60],["2026-07-02",160.08]],
+  VOO:[["2025-12-29",628.3],["2026-01-05",638.31],["2026-01-12",636.09],["2026-01-19",633.83],["2026-01-26",636.22],["2026-02-02",635.24],["2026-02-09",626.89],["2026-02-16",634.02],["2026-02-23",631.04],["2026-03-02",618.43],["2026-03-09",609.09],["2026-03-16",597.94],["2026-03-23",582.96],["2026-03-30",602.99],["2026-04-06",624.6],["2026-04-13",652.78],["2026-04-20",656.42],["2026-04-27",662.52],["2026-05-04",678.04],["2026-05-11",679.44],["2026-05-18",685.55],["2026-05-25",695.49],["2026-06-01",678.0],["2026-06-08",681.95],["2026-06-15",688.11],["2026-06-22",670.26],["2026-06-29",684.84],["2026-07-06",693.86],["2026-07-13",683.17],["2026-07-20",679.14],["2026-07-27",686.65],["2026-08-03",710.71],["2026-08-10",713.61],["2026-08-17",703.71],["2026-08-24",707.24],["2026-08-31",708.01],["2026-09-07",702.56],["2026-09-14",701.78],["2026-09-21",710.79],["2026-09-28",707.54],["2026-10-05",715.59],["2026-10-12",701.61],["2026-10-19",698.58],["2026-10-26",694.81],["2026-11-02",675.99],["2026-11-09",693.38],["2026-11-16",635.54],["2026-11-25",658.87]],
+  VTI:[["2025-12-29",336.31],["2026-01-05",342.4],["2026-01-12",341.85],["2026-01-19",340.56],["2026-01-26",340.57],["2026-02-02",340.96],["2026-02-09",336.65],["2026-02-16",340.27],["2026-02-23",338.77],["2026-03-02",331.41],["2026-03-09",326.13],["2026-03-16",320.34],["2026-03-23",313.09],["2026-03-30",323.76],["2026-04-06",335.05],["2026-04-13",350.53],["2026-04-20",352.05],["2026-04-27",355.29],["2026-05-04",362.87],["2026-05-11",362.74],["2026-05-18",366.79],["2026-05-25",372.54],["2026-06-01",363.38],["2026-06-08",366.36],["2026-06-15",369.99],["2026-06-22",362.22],["2026-06-29",368.76],["2026-07-06",372.69],["2026-07-13",367.01],["2026-07-20",364.8],["2026-07-27",368.21],["2026-08-03",381.78],["2026-08-10",383.85],["2026-08-17",378.24],["2026-08-24",379.36],["2026-08-31",379.73],["2026-09-07",376.31],["2026-09-14",375.43],["2026-09-21",379.77],["2026-09-28",377.99],["2026-10-05",381.94],["2026-10-12",374.07],["2026-10-19",373.01],["2026-10-26",371.57],["2026-11-02",361.93],["2026-11-09",371.11],["2026-11-16",340.02],["2026-11-25",353.2]],
+  VST:[["2025-12-29",165.23],["2026-01-05",166.37],["2026-01-12",166.6],["2026-01-19",160.12],["2026-01-26",158.35],["2026-02-02",149.65],["2026-02-09",171.49],["2026-02-16",171.4],["2026-02-23",173.89],["2026-03-02",158.65],["2026-03-09",158.95],["2026-03-16",146.02],["2026-03-23",155.48],["2026-03-30",151.18],["2026-04-06",154.73],["2026-04-13",163.46],["2026-04-20",164.35],["2026-04-27",155.28],["2026-05-04",147.72],["2026-05-11",139.68],["2026-05-18",156.27],["2026-05-25",160.23],["2026-06-01",148.76],["2026-06-08",148.02],["2026-06-15",163.75],["2026-06-22",163.49],["2026-06-29",151.05],["2026-07-06",158.86],["2026-07-13",155.44],["2026-07-20",163.38],["2026-07-27",148.19],["2026-08-03",140.59],["2026-08-10",148.13],["2026-08-17",136.21],["2026-08-24",137.09],["2026-08-31",149.3],["2026-09-07",148.38],["2026-09-14",140.67],["2026-09-21",138.46],["2026-09-28",140.02],["2026-10-05",161.48],["2026-10-12",152.02],["2026-10-19",140.16],["2026-10-26",138.37],["2026-11-02",124.8],["2026-11-09",133.01],["2026-11-16",115.25],["2026-11-25",121.32]],
+  VIST:[["2025-12-29",48.81],["2026-01-05",46.17],["2026-01-12",49.04],["2026-01-19",52.9],["2026-01-26",60.49],["2026-02-02",55.94],["2026-02-09",54.11],["2026-02-16",59.02],["2026-02-23",57.74],["2026-03-02",62.59],["2026-03-09",64.74],["2026-03-16",72.06],["2026-03-23",74.21],["2026-03-30",71.62],["2026-04-06",66.08],["2026-04-13",64.98],["2026-04-20",70.89],["2026-04-27",71.64],["2026-05-04",65.21],["2026-05-11",72.29],["2026-05-18",75.41],["2026-05-25",74.2],["2026-06-01",74.42],["2026-06-08",72.14],["2026-06-15",68.55],["2026-06-22",64.64],["2026-06-29",60.36],["2026-07-06",64.81],["2026-07-13",64.02],["2026-07-20",69.5],["2026-07-27",70.45],["2026-08-03",65.96],["2026-08-10",68.31],["2026-08-17",69.58],["2026-08-24",70.14],["2026-08-31",73.73],["2026-09-07",76.27],["2026-09-14",72.27],["2026-09-21",67.43],["2026-09-28",64.25],["2026-10-05",66.26],["2026-10-12",71.95],["2026-10-19",74.84],["2026-10-26",70.45],["2026-11-02",57.42],["2026-11-09",55.84],["2026-11-16",49.58],["2026-11-25",50.16]],
+  MU:[["2025-12-29",315.42],["2026-01-05",345.09],["2026-01-12",362.75],["2026-01-19",399.65],["2026-01-26",414.88],["2026-02-02",394.69],["2026-02-09",411.66],["2026-02-16",428.17],["2026-02-23",412.37],["2026-03-02",370.3],["2026-03-09",426.13],["2026-03-16",422.9],["2026-03-23",357.22],["2026-03-30",366.24],["2026-04-06",420.59],["2026-04-13",455.07],["2026-04-20",496.72],["2026-04-27",542.21],["2026-05-04",746.81],["2026-05-11",724.66],["2026-05-18",751.0],["2026-05-25",971.0],["2026-06-01",864.01],["2026-06-08",981.61],["2026-06-15",1133.99],["2026-06-22",1132.33],["2026-06-29",975.56],["2026-07-06",979.3],["2026-07-13",848.95],["2026-07-20",920.95],["2026-07-27",823.03],["2026-08-03",877.57],["2026-08-10",971.66],["2026-08-17",966.78],["2026-08-24",932.86],["2026-08-31",1016.59],["2026-09-07",975.26],["2026-09-14",1015.8],["2026-09-21",1082.28],["2026-09-28",1074.89],["2026-10-05",1029.0],["2026-10-12",878.84],["2026-10-19",877.55],["2026-10-26",884.74],["2026-11-02",690.0],["2026-11-09",778.31],["2026-11-16",594.51],["2026-11-25",601.25]],
+  XLF:[["2025-12-29",54.93],["2026-01-05",55.73],["2026-01-12",54.44],["2026-01-19",53.07],["2026-01-26",53.44],["2026-02-02",54.26],["2026-02-09",51.65],["2026-02-16",52.49],["2026-02-23",51.43],["2026-03-02",50.57],["2026-03-09",48.89],["2026-03-16",49.08],["2026-03-23",47.81],["2026-03-30",49.53],["2026-04-06",50.77],["2026-04-13",52.43],["2026-04-20",51.42],["2026-04-27",51.92],["2026-05-04",51.24],["2026-05-11",51.1],["2026-05-18",51.94],["2026-05-25",51.58],["2026-06-01",52.3],["2026-06-08",53.34],["2026-06-15",53.57],["2026-06-22",53.57],["2026-06-29",55.62],["2026-07-06",55.71],["2026-07-13",56.26],["2026-07-20",56.31],["2026-07-27",56.94],["2026-08-03",57.6],["2026-08-10",58.16],["2026-08-17",57.48],["2026-08-24",58.1],["2026-08-31",58.1],["2026-09-07",57.25],["2026-09-14",55.86],["2026-09-21",54.84],["2026-09-28",53.49],["2026-10-05",54.73],["2026-10-12",55.52],["2026-10-19",55.9],["2026-10-26",56.51],["2026-11-02",57.16],["2026-11-09",58.68],["2026-11-16",54.57],["2026-11-25",56.51]],
+  XLI:[["2025-12-29",157.98],["2026-01-05",161.93],["2026-01-12",166.9],["2026-01-19",164.22],["2026-01-26",165.44],["2026-02-02",173.18],["2026-02-09",174.17],["2026-02-16",177.23],["2026-02-23",177.14],["2026-03-02",169.94],["2026-03-09",164.65],["2026-03-16",161.67],["2026-03-23",159.2],["2026-03-30",163.77],["2026-04-06",171.52],["2026-04-13",173.51],["2026-04-20",172.47],["2026-04-27",172.96],["2026-05-04",173.2],["2026-05-11",171.4],["2026-05-18",171.77],["2026-05-25",173.13],["2026-06-01",174.18],["2026-06-08",176.18],["2026-06-15",180.91],["2026-06-22",181.2],["2026-06-29",183.91],["2026-07-06",181.92],["2026-07-13",179.41],["2026-07-20",182.66],["2026-07-27",179.84],["2026-08-03",185.18],["2026-08-10",186.51],["2026-08-17",180.25],["2026-08-24",177.14],["2026-08-31",175.27],["2026-09-07",172.37],["2026-09-14",169.75],["2026-09-21",170.43],["2026-09-28",169.95],["2026-10-05",169.25],["2026-10-12",167.76],["2026-10-19",164.62],["2026-10-26",167.4],["2026-11-02",162.67],["2026-11-09",168.78],["2026-11-16",156.37],["2026-11-25",162.95]],
+  XLE:[["2025-12-29",45.65],["2026-01-05",46.67],["2026-01-12",47.69],["2026-01-19",49.19],["2026-01-26",51.05],["2026-02-02",53.25],["2026-02-09",54.35],["2026-02-16",54.88],["2026-02-23",55.92],["2026-03-02",56.57],["2026-03-09",57.7],["2026-03-16",59.31],["2026-03-23",62.56],["2026-03-30",59.25],["2026-04-06",56.94],["2026-04-13",55.02],["2026-04-20",56.87],["2026-04-27",58.85],["2026-05-04",55.7],["2026-05-11",59.44],["2026-05-18",59.49],["2026-05-25",56.29],["2026-06-01",57.67],["2026-06-08",57.55],["2026-06-15",53.77],["2026-06-22",53.84],["2026-06-29",53.22],["2026-07-06",55.08],["2026-07-13",57.68],["2026-07-20",59.62],["2026-07-27",59.55],["2026-08-03",57.5],["2026-08-10",61.91],["2026-08-17",63.64],["2026-08-24",62.68],["2026-08-31",64.06],["2026-09-07",65.14],["2026-09-14",64.31],["2026-09-21",62.04],["2026-09-28",62.82],["2026-10-05",65.08],["2026-10-12",68.24],["2026-10-19",69.33],["2026-10-26",70.02],["2026-11-02",61.62],["2026-11-09",64.96],["2026-11-16",60.51],["2026-11-25",60.9]],
+  XLV:[["2025-12-29",155.51],["2026-01-05",157.31],["2026-01-12",155.74],["2026-01-19",157.48],["2026-01-26",154.74],["2026-02-02",157.71],["2026-02-09",157.67],["2026-02-16",156.82],["2026-02-23",160.2],["2026-03-02",152.7],["2026-03-09",149.79],["2026-03-16",145.33],["2026-03-23",143.26],["2026-03-30",146.81],["2026-04-06",147.31],["2026-04-13",148.8],["2026-04-20",144.18],["2026-04-27",145.16],["2026-05-04",143.49],["2026-05-11",145.1],["2026-05-18",149.89],["2026-05-25",149.47],["2026-06-01",153.01],["2026-06-08",153.81],["2026-06-15",149.4],["2026-06-22",160.34],["2026-06-29",163.74],["2026-07-06",160.84],["2026-07-13",161.09],["2026-07-20",162.57],["2026-07-27",162.55],["2026-08-03",165.68],["2026-08-10",167.37],["2026-08-17",174.62],["2026-08-24",171.16],["2026-08-31",171.45],["2026-09-07",165.36],["2026-09-14",168.39],["2026-09-21",170.7],["2026-09-28",166.18],["2026-10-05",170.81],["2026-10-12",176.71],["2026-10-19",179.28],["2026-10-26",184.87],["2026-11-02",184.8],["2026-11-09",188.85],["2026-11-16",177.24],["2026-11-25",183.68]],
+  XLK:[["2025-12-29",144.3],["2026-01-05",146.15],["2026-01-12",145.62],["2026-01-19",145.09],["2026-01-26",143.88],["2026-02-02",141.13],["2026-02-09",139.56],["2026-02-16",140.88],["2026-02-23",138.76],["2026-03-02",137.29],["2026-03-09",136.8],["2026-03-16",135.29],["2026-03-23",129.92],["2026-03-30",135.99],["2026-04-06",142.62],["2026-04-13",154.35],["2026-04-20",160.22],["2026-04-27",161.87],["2026-05-04",175.52],["2026-05-11",176.26],["2026-05-18",180.39],["2026-05-25",191.02],["2026-06-01",180.3],["2026-06-08",184.8],["2026-06-15",191.44],["2026-06-22",181.11],["2026-06-29",180.59],["2026-07-06",185.78],["2026-07-13",175.59],["2026-07-20",175.88],["2026-07-27",175.35],["2026-08-03",187.97],["2026-08-10",190.01],["2026-08-17",183.31],["2026-08-24",185.69],["2026-08-31",187.28],["2026-09-07",187.67],["2026-09-14",189.6],["2026-09-21",196.27],["2026-09-28",199.81],["2026-10-05",198.78],["2026-10-12",183.47],["2026-10-19",183.23],["2026-10-26",179.51],["2026-11-02",164.74],["2026-11-09",170.28],["2026-11-16",149.01],["2026-11-25",155.79]],
+  CEG:[["2025-12-29",366.25],["2026-01-05",342.52],["2026-01-12",307.71],["2026-01-19",289.06],["2026-01-26",280.68],["2026-02-02",261.42],["2026-02-09",288.43],["2026-02-16",294.84],["2026-02-23",329.88],["2026-03-02",319.06],["2026-03-09",301.77],["2026-03-16",281.99],["2026-03-23",301.49],["2026-03-30",272.82],["2026-04-06",286.5],["2026-04-13",296.21],["2026-04-20",313.53],["2026-04-27",307.81],["2026-05-04",303.63],["2026-05-11",267.2],["2026-05-18",294.07],["2026-05-25",287.75],["2026-06-01",254.83],["2026-06-08",253.76],["2026-06-15",274.06],["2026-06-22",264.02],["2026-06-29",239.25],["2026-07-06",251.38],["2026-07-13",252.39],["2026-07-20",274.35],["2026-07-27",262.75],["2026-08-03",269.89],["2026-08-10",282.5],["2026-08-17",272.88],["2026-08-24",276.75],["2026-08-31",298.96],["2026-09-07",284.75],["2026-09-14",254.71],["2026-09-21",263.27],["2026-09-28",257.49],["2026-10-05",298.07],["2026-10-12",271.37],["2026-10-19",253.45],["2026-10-26",262.38],["2026-11-02",249.95],["2026-11-09",280.2],["2026-11-16",237.41],["2026-11-25",235.28]],
+  RTX:[["2025-12-29",187.25],["2026-01-05",188.5],["2026-01-12",201.92],["2026-01-19",195.93],["2026-01-26",200.93],["2026-02-02",198.66],["2026-02-09",200.06],["2026-02-16",204.92],["2026-02-23",202.62],["2026-03-02",209.76],["2026-03-09",204.52],["2026-03-16",198.16],["2026-03-23",189.71],["2026-03-30",196.21],["2026-04-06",201.56],["2026-04-13",196.42],["2026-04-20",174.26],["2026-04-27",173.99],["2026-05-04",176.09],["2026-05-11",171.18],["2026-05-18",177.01],["2026-05-25",179.66],["2026-06-01",180.99],["2026-06-08",183.53],["2026-06-15",185.6],["2026-06-22",187.99],["2026-06-29",199.25],["2026-07-06",195.93],["2026-07-13",193.51],["2026-07-20",212.79],["2026-07-27",215.22],["2026-08-03",223.03],["2026-08-10",222.97],["2026-08-17",209.91],["2026-08-24",211.71],["2026-08-31",200.79],["2026-09-07",197.68],["2026-09-14",194.0],["2026-09-21",189.4],["2026-09-28",184.68],["2026-10-05",185.97],["2026-10-12",193.92],["2026-10-19",191.01],["2026-10-26",199.8],["2026-11-02",189.53],["2026-11-09",198.58],["2026-11-16",190.17],["2026-11-25",196.19]],
+  SPCX:[["2026-06-08",160.95],["2026-06-15",185.0],["2026-06-22",153.23],["2026-06-29",162.0],["2026-07-06",145.3],["2026-07-13",123.99],["2026-07-20",115.07],["2026-07-27",108.37],["2026-08-03",133.11],["2026-08-10",139.98],["2026-08-17",136.97],["2026-08-24",141.5],["2026-08-31",147.95],["2026-09-07",151.21],["2026-09-14",152.71],["2026-09-21",148.68],["2026-09-28",158.96],["2026-10-05",162.57],["2026-10-12",146.03],["2026-10-19",147.49],["2026-10-26",134.72],["2026-11-02",134.27],["2026-11-09",139.11],["2026-11-16",127.79],["2026-11-25",127.44]],
+  UNH:[["2025-12-29",336.4],["2026-01-05",343.98],["2026-01-12",331.02],["2026-01-19",356.26],["2026-01-26",286.93],["2026-02-02",276.65],["2026-02-09",293.19],["2026-02-16",290.0],["2026-02-23",293.27],["2026-03-02",286.48],["2026-03-09",282.09],["2026-03-16",275.59],["2026-03-23",259.02],["2026-03-30",277.26],["2026-04-06",304.33],["2026-04-13",324.63],["2026-04-20",354.92],["2026-04-27",368.78],["2026-05-04",379.98],["2026-05-11",393.85],["2026-05-18",388.47],["2026-05-25",380.31],["2026-06-01",399.47],["2026-06-08",408.52],["2026-06-15",400.96],["2026-06-22",427.89],["2026-06-29",425.36],["2026-07-06",424.62],["2026-07-13",426.09],["2026-07-20",420.74],["2026-07-27",414.4],["2026-08-03",407.08],["2026-08-10",401.73],["2026-08-17",390.11],["2026-08-24",392.95],["2026-08-31",397.14],["2026-09-07",379.09],["2026-09-14",376.9],["2026-09-21",376.59],["2026-09-28",371.9],["2026-10-05",379.3],["2026-10-12",401.43],["2026-10-19",418.09],["2026-10-26",406.97],["2026-11-02",394.15],["2026-11-09",407.46],["2026-11-16",339.85],["2026-11-25",346.19]],
+  VRT:[["2025-12-29",175.61],["2026-01-05",163.58],["2026-01-12",176.93],["2026-01-19",182.49],["2026-01-26",186.18],["2026-02-02",195.58],["2026-02-09",234.53],["2026-02-16",243.75],["2026-02-23",254.89],["2026-03-02",241.78],["2026-03-09",258.88],["2026-03-16",255.88],["2026-03-23",251.07],["2026-03-30",261.29],["2026-04-06",295.11],["2026-04-13",307.34],["2026-04-20",323.46],["2026-04-27",328.31],["2026-05-04",339.97],["2026-05-11",370.94],["2026-05-18",327.46],["2026-05-25",315.71],["2026-06-01",300.51],["2026-06-08",302.87],["2026-06-15",333.05],["2026-06-22",303.95],["2026-06-29",300.53],["2026-07-06",318.86],["2026-07-13",289.56],["2026-07-20",290.36],["2026-07-27",241.57],["2026-08-03",272.4],["2026-08-10",293.84],["2026-08-17",261.95],["2026-08-24",257.08],["2026-08-31",280.53],["2026-09-07",257.06],["2026-09-14",249.39],["2026-09-21",253.28],["2026-09-28",252.18],["2026-10-05",242.78],["2026-10-12",206.42],["2026-10-19",194.32],["2026-10-26",232.5],["2026-11-02",182.86],["2026-11-09",202.07],["2026-11-16",166.24],["2026-11-25",173.37]],
+  GOOGL:[["2025-12-29",315.15],["2026-01-05",328.57],["2026-01-12",330.0],["2026-01-19",327.93],["2026-01-26",338.0],["2026-02-02",322.86],["2026-02-09",305.72],["2026-02-16",314.98],["2026-02-23",311.76],["2026-03-02",298.52],["2026-03-09",302.28],["2026-03-16",301.0],["2026-03-23",274.34],["2026-03-30",295.77],["2026-04-06",317.24],["2026-04-13",341.68],["2026-04-20",344.4],["2026-04-27",385.69],["2026-05-04",400.8],["2026-05-11",396.78],["2026-05-18",382.97],["2026-05-25",380.34],["2026-06-01",368.53],["2026-06-08",359.68],["2026-06-15",368.03],["2026-06-22",337.39],["2026-06-29",359.91],["2026-07-06",357.18],["2026-07-13",346.77],["2026-07-20",319.74],["2026-07-27",356.13],["2026-08-03",354.3],["2026-08-10",345.9],["2026-08-17",344.82],["2026-08-24",346.59],["2026-08-31",338.46],["2026-09-07",338.5],["2026-09-14",349.54],["2026-09-21",343.92],["2026-09-28",343.5],["2026-10-05",351.66],["2026-10-12",340.59],["2026-10-19",320.21],["2026-10-26",279.84],["2026-11-02",284.78],["2026-11-09",295.77],["2026-11-16",265.29],["2026-11-25",273.1]],
+  VXUS:[["2025-12-29",76.54],["2026-01-05",77.83],["2026-01-12",78.64],["2026-01-19",79.53],["2026-01-26",79.66],["2026-02-02",81.05],["2026-02-09",82.4],["2026-02-16",83.37],["2026-02-23",83.81],["2026-03-02",77.98],["2026-03-09",76.74],["2026-03-16",74.71],["2026-03-23",74.69],["2026-03-30",77.48],["2026-04-06",81.27],["2026-04-13",83.75],["2026-04-20",82.49],["2026-04-27",82.97],["2026-05-04",85.43],["2026-05-11",83.11],["2026-05-18",84.46],["2026-05-25",86.06],["2026-06-01",83.03],["2026-06-08",85.68],["2026-06-15",86.77],["2026-06-22",84.48],["2026-06-29",84.84],["2026-07-06",85.34],["2026-07-13",83.37],["2026-07-20",83.4],["2026-07-27",84.59],["2026-08-03",87.21],["2026-08-10",87.7],["2026-08-17",87.71],["2026-08-24",87.52],["2026-08-31",88.41],["2026-09-07",87.14],["2026-09-14",85.88],["2026-09-21",86.35],["2026-09-28",85.43],["2026-10-05",84.82],["2026-10-12",83.43],["2026-10-19",82.53],["2026-10-26",82.37],["2026-11-02",80.92],["2026-11-09",82.64],["2026-11-16",75.38],["2026-11-25",78.02]],
+  XLU:[["2025-12-29",43.18],["2026-01-05",42.51],["2026-01-12",43.39],["2026-01-19",42.56],["2026-01-26",43.25],["2026-02-02",43.35],["2026-02-09",46.5],["2026-02-16",46.33],["2026-02-23",47.73],["2026-03-02",46.74],["2026-03-09",46.96],["2026-03-16",44.65],["2026-03-23",45.59],["2026-03-30",46.34],["2026-04-06",46.96],["2026-04-13",46.16],["2026-04-20",46.18],["2026-04-27",46.55],["2026-05-04",44.72],["2026-05-11",43.87],["2026-05-18",45.35],["2026-05-25",44.42],["2026-06-01",44.35],["2026-06-08",44.53],["2026-06-15",44.76],["2026-06-22",46.2],["2026-06-29",45.76],["2026-07-06",45.41],["2026-07-13",45.17],["2026-07-20",46.29],["2026-07-27",44.35],["2026-08-03",43.61],["2026-08-10",44.31],["2026-08-17",42.77],["2026-08-24",42.73],["2026-08-31",43.08],["2026-09-07",42.39],["2026-09-14",41.1],["2026-09-21",39.51],["2026-09-28",39.83],["2026-10-05",41.41],["2026-10-12",42.21],["2026-10-19",42.56],["2026-10-26",43.43],["2026-11-02",43.13],["2026-11-09",44.04],["2026-11-16",42.69],["2026-11-25",43.61]],
+  PANW:[["2025-12-29",179.37],["2026-01-05",189.02],["2026-01-12",187.66],["2026-01-19",180.18],["2026-01-26",176.97],["2026-02-02",159.32],["2026-02-09",166.95],["2026-02-16",148.7],["2026-02-23",148.92],["2026-03-02",165.05],["2026-03-09",167.01],["2026-03-16",162.95],["2026-03-23",147.02],["2026-03-30",163.21],["2026-04-06",155.73],["2026-04-13",167.85],["2026-04-20",178.54],["2026-04-27",181.08],["2026-05-04",207.88],["2026-05-11",242.83],["2026-05-18",260.58],["2026-05-25",281.69],["2026-06-01",272.05],["2026-06-08",279.62],["2026-06-15",287.78],["2026-06-22",304.2],["2026-06-29",348.06],["2026-07-06",325.91],["2026-07-13",358.68],["2026-07-20",323.79],["2026-07-27",331.83],["2026-08-03",363.86],["2026-08-10",384.27],["2026-08-17",357.87],["2026-08-24",371.59],["2026-08-31",333.26],["2026-09-07",330.65],["2026-09-14",363.58],["2026-09-21",374.74],["2026-09-28",403.24],["2026-10-05",418.78],["2026-10-12",342.0],["2026-10-19",380.55],["2026-10-26",365.87],["2026-11-02",313.84],["2026-11-09",322.24],["2026-11-16",343.32],["2026-11-25",356.14]],
+  SKHY:[["2026-07-06",168.01],["2026-07-13",154.03],["2026-07-20",154.57],["2026-07-27",143.73],["2026-08-03",137.91],["2026-08-10",166.5],["2026-08-17",163.41],["2026-08-24",161.04],["2026-08-31",177.0],["2026-09-07",190.07],["2026-09-14",187.5],["2026-09-21",191.56],["2026-09-28",195.13],["2026-10-05",169.03],["2026-10-12",136.49],["2026-10-19",137.02],["2026-10-26",149.21],["2026-11-02",127.34],["2026-11-09",131.79],["2026-11-16",103.57],["2026-11-25",111.14]],
+  TSM:[["2025-12-29",319.61],["2026-01-05",323.63],["2026-01-12",342.4],["2026-01-19",334.87],["2026-01-26",330.56],["2026-02-02",348.85],["2026-02-09",366.36],["2026-02-16",370.54],["2026-02-23",374.58],["2026-03-02",338.89],["2026-03-09",338.31],["2026-03-16",329.24],["2026-03-23",326.74],["2026-03-30",339.04],["2026-04-06",370.6],["2026-04-13",370.5],["2026-04-20",402.46],["2026-04-27",397.67],["2026-05-04",411.68],["2026-05-11",404.35],["2026-05-18",404.52],["2026-05-25",418.45],["2026-06-01",415.17],["2026-06-08",423.93],["2026-06-15",462.12],["2026-06-22",432.35],["2026-06-29",434.16],["2026-07-06",434.11],["2026-07-13",398.37],["2026-07-20",403.41],["2026-07-27",404.25],["2026-08-03",420.04],["2026-08-10",426.35],["2026-08-17",418.95],["2026-08-24",417.52],["2026-08-31",428.91],["2026-09-07",433.24],["2026-09-14",434.67],["2026-09-21",450.61],["2026-09-28",472.78],["2026-10-05",453.31],["2026-10-12",412.61],["2026-10-19",418.51],["2026-10-26",406.13],["2026-11-02",375.44],["2026-11-09",398.73],["2026-11-16",318.71],["2026-11-25",342.34]],
+  AAPL:[["2025-12-29",271.01],["2026-01-05",259.37],["2026-01-12",255.53],["2026-01-19",248.04],["2026-01-26",259.48],["2026-02-02",278.12],["2026-02-09",255.78],["2026-02-16",264.58],["2026-02-23",264.18],["2026-03-02",257.46],["2026-03-09",250.12],["2026-03-16",247.99],["2026-03-23",248.8],["2026-03-30",255.92],["2026-04-06",260.48],["2026-04-13",270.23],["2026-04-20",271.06],["2026-04-27",280.14],["2026-05-04",293.32],["2026-05-11",300.23],["2026-05-18",308.82],["2026-05-25",312.06],["2026-06-01",307.34],["2026-06-08",291.13],["2026-06-15",298.01],["2026-06-22",283.78],["2026-06-29",308.63],["2026-07-06",315.32],["2026-07-13",333.74],["2026-07-20",333.02],["2026-07-27",308.91],["2026-08-03",313.33],["2026-08-10",305.93],["2026-08-17",309.35],["2026-08-24",319.7],["2026-08-31",319.97],["2026-09-07",332.27],["2026-09-14",336.13],["2026-09-21",341.07],["2026-09-28",333.69],["2026-10-05",336.64],["2026-10-12",343.46],["2026-10-19",347.73],["2026-10-26",344.63],["2026-11-02",342.37],["2026-11-09",356.27],["2026-11-16",342.56],["2026-11-25",355.58]],
+  MSFT:[["2025-12-29",472.94],["2026-01-05",479.28],["2026-01-12",459.86],["2026-01-19",465.95],["2026-01-26",430.29],["2026-02-02",401.14],["2026-02-09",401.32],["2026-02-16",397.23],["2026-02-23",392.74],["2026-03-02",408.96],["2026-03-09",395.55],["2026-03-16",381.87],["2026-03-23",356.77],["2026-03-30",373.46],["2026-04-06",370.87],["2026-04-13",422.79],["2026-04-20",424.62],["2026-04-27",414.44],["2026-05-04",415.12],["2026-05-11",421.92],["2026-05-18",418.57],["2026-05-25",450.24],["2026-06-01",416.67],["2026-06-08",390.74],["2026-06-15",379.4],["2026-06-22",372.97],["2026-06-29",390.49],["2026-07-06",385.1],["2026-07-13",393.82],["2026-07-20",381.7],["2026-07-27",464.72],["2026-08-03",499.99],["2026-08-10",495.4],["2026-08-17",483.24],["2026-08-24",513.53],["2026-08-31",499.7],["2026-09-07",495.63],["2026-09-14",493.78],["2026-09-21",516.17],["2026-09-28",517.53],["2026-10-05",535.07],["2026-10-12",529.05],["2026-10-19",524.51],["2026-10-26",521.91],["2026-11-02",530.61],["2026-11-09",523.88],["2026-11-16",484.52],["2026-11-25",489.93]],
+  META:[["2025-12-29",650.41],["2026-01-05",653.06],["2026-01-12",620.25],["2026-01-19",658.76],["2026-01-26",716.5],["2026-02-02",661.46],["2026-02-09",639.77],["2026-02-16",655.66],["2026-02-23",648.18],["2026-03-02",644.86],["2026-03-09",613.71],["2026-03-16",593.66],["2026-03-23",525.72],["2026-03-30",574.46],["2026-04-06",629.86],["2026-04-13",688.55],["2026-04-20",675.03],["2026-04-27",608.75],["2026-05-04",609.63],["2026-05-11",614.23],["2026-05-18",610.26],["2026-05-25",632.51],["2026-06-01",593.0],["2026-06-08",566.98],["2026-06-15",577.22],["2026-06-22",550.25],["2026-06-29",582.9],["2026-07-06",669.21],["2026-07-13",646.01],["2026-07-20",595.19],["2026-07-27",556.71],["2026-08-03",592.1],["2026-08-10",589.85],["2026-08-17",549.9],["2026-08-24",578.02],["2026-08-31",616.77],["2026-09-07",648.03],["2026-09-14",665.75],["2026-09-21",751.66],["2026-09-28",728.08],["2026-10-05",718.67],["2026-10-12",709.33],["2026-10-19",642.62],["2026-10-26",614.99],["2026-11-02",610.15],["2026-11-09",641.69],["2026-11-16",560.84],["2026-11-25",609.89]],
+  NVDA:[["2025-12-29",188.85],["2026-01-05",184.86],["2026-01-12",186.23],["2026-01-19",187.67],["2026-01-26",191.13],["2026-02-02",185.41],["2026-02-09",182.81],["2026-02-16",189.82],["2026-02-23",177.19],["2026-03-02",177.82],["2026-03-09",180.25],["2026-03-16",172.7],["2026-03-23",167.52],["2026-03-30",177.39],["2026-04-06",188.63],["2026-04-13",201.68],["2026-04-20",208.27],["2026-04-27",198.45],["2026-05-04",215.2],["2026-05-11",225.32],["2026-05-18",215.33],["2026-05-25",211.14],["2026-06-01",205.1],["2026-06-08",205.19],["2026-06-15",210.69],["2026-06-22",192.53],["2026-06-29",194.83],["2026-07-06",210.96],["2026-07-13",202.81],["2026-07-20",206.84],["2026-07-27",200.75],["2026-08-03",223.96],["2026-08-10",225.16],["2026-08-17",214.72],["2026-08-24",217.55],["2026-08-31",230.36],["2026-09-07",218.29],["2026-09-14",222.27],["2026-09-21",225.07],["2026-09-28",233.95],["2026-10-05",229.28],["2026-10-12",214.13],["2026-10-19",210.96],["2026-10-26",204.64],["2026-11-02",186.64],["2026-11-09",162.85],["2026-11-16",125.53],["2026-11-25",149.3]],
+  AMD:[["2025-12-29",223.47],["2026-01-05",203.17],["2026-01-12",231.83],["2026-01-19",259.68],["2026-01-26",236.73],["2026-02-02",208.44],["2026-02-09",207.32],["2026-02-16",200.15],["2026-02-23",200.21],["2026-03-02",192.43],["2026-03-09",193.39],["2026-03-16",201.33],["2026-03-23",201.99],["2026-03-30",217.5],["2026-04-06",245.04],["2026-04-13",278.39],["2026-04-20",347.81],["2026-04-27",360.54],["2026-05-04",455.19],["2026-05-11",424.1],["2026-05-18",467.51],["2026-05-25",516.1],["2026-06-01",466.38],["2026-06-08",511.57],["2026-06-15",537.37],["2026-06-22",521.58],["2026-06-29",517.82],["2026-07-06",557.89],["2026-07-13",495.76],["2026-07-20",521.95],["2026-07-27",476.15],["2026-08-03",483.36],["2026-08-10",514.39],["2026-08-17",473.25],["2026-08-24",465.58],["2026-08-31",477.57],["2026-09-07",516.13],["2026-09-14",559.82],["2026-09-21",630.63],["2026-09-28",633.91],["2026-10-05",608.1],["2026-10-12",528.75],["2026-10-19",516.79],["2026-10-26",504.8],["2026-11-02",449.04],["2026-11-09",534.06],["2026-11-16",424.39],["2026-11-25",406.03]],
+  DELL:[["2025-12-29",127.8],["2026-01-05",120.62],["2026-01-12",120.53],["2026-01-19",115.43],["2026-01-26",114.44],["2026-02-02",121.05],["2026-02-09",117.49],["2026-02-16",122.27],["2026-02-23",148.08],["2026-03-02",146.48],["2026-03-09",151.62],["2026-03-16",157.67],["2026-03-23",171.81],["2026-03-30",174.37],["2026-04-06",177.8],["2026-04-13",196.55],["2026-04-20",216.09],["2026-04-27",210.17],["2026-05-04",260.46],["2026-05-11",241.99],["2026-05-18",295.19],["2026-05-25",420.91],["2026-06-01",394.39],["2026-06-08",395.57],["2026-06-15",409.5],["2026-06-22",399.49],["2026-06-29",394.32],["2026-07-06",434.97],["2026-07-13",396.34],["2026-07-20",437.5],["2026-07-27",405.37],["2026-08-03",453.77],["2026-08-10",490.81],["2026-08-17",442.08],["2026-08-24",456.24],["2026-08-31",524.14],["2026-09-07",567.29],["2026-09-14",568.06],["2026-09-21",562.89],["2026-09-28",562.52],["2026-10-05",586.06],["2026-10-12",451.71],["2026-10-19",456.44],["2026-10-26",424.3],["2026-11-02",328.53],["2026-11-09",344.53],["2026-11-16",278.02],["2026-11-25",297.06]],
+  TSLA:[["2025-12-29",438.07],["2026-01-05",445.01],["2026-01-12",437.5],["2026-01-19",449.06],["2026-01-26",430.41],["2026-02-02",411.11],["2026-02-09",417.44],["2026-02-16",411.82],["2026-02-23",402.51],["2026-03-02",396.73],["2026-03-09",391.2],["2026-03-16",367.96],["2026-03-23",361.83],["2026-03-30",360.59],["2026-04-06",348.95],["2026-04-13",400.62],["2026-04-20",376.3],["2026-04-27",390.82],["2026-05-04",428.35],["2026-05-11",422.24],["2026-05-18",426.01],["2026-05-25",435.79],["2026-06-01",391.0],["2026-06-08",406.43],["2026-06-15",400.49],["2026-06-22",379.71],["2026-06-29",393.45],["2026-07-06",407.76],["2026-07-13",380.84],["2026-07-20",313.03],["2026-07-27",311.21],["2026-08-03",328.58],["2026-08-10",342.27],["2026-08-17",362.86],["2026-08-24",348.75],["2026-08-31",354.08],["2026-09-07",365.44],["2026-09-14",364.27],["2026-09-21",372.11],["2026-09-28",370.59],["2026-10-05",382.7],["2026-10-12",354.72],["2026-10-19",372.22],["2026-10-26",399.81],["2026-11-02",358.22],["2026-11-09",390.22],["2026-11-16",345.82],["2026-11-25",380.14]],
+  BE:[["2025-12-29",98.69],["2026-01-05",134.07],["2026-01-12",149.5],["2026-01-19",144.89],["2026-01-26",151.37],["2026-02-02",143.03],["2026-02-09",139.74],["2026-02-16",147.55],["2026-02-23",155.67],["2026-03-02",135.19],["2026-03-09",154.51],["2026-03-16",150.12],["2026-03-23",133.24],["2026-03-30",135.63],["2026-04-06",166.7],["2026-04-13",207.86],["2026-04-20",231.17],["2026-04-27",290.52],["2026-05-04",261.03],["2026-05-11",275.95],["2026-05-18",302.49],["2026-05-25",285.0],["2026-06-01",263.61],["2026-06-08",260.22],["2026-06-15",328.91],["2026-06-22",252.02],["2026-06-29",270.89],["2026-07-06",244.61],["2026-07-13",214.96],["2026-07-20",184.89],["2026-07-27",205.81],["2026-08-03",219.34],["2026-08-10",229.94],["2026-08-17",201.45],["2026-08-24",210.77],["2026-08-31",252.87],["2026-09-07",275.75],["2026-09-14",265.63],["2026-09-21",288.7],["2026-09-28",289.15],["2026-10-05",280.5],["2026-10-12",221.31],["2026-10-19",193.3],["2026-10-26",203.17],["2026-11-02",173.24],["2026-11-09",191.99],["2026-11-16",142.39],["2026-11-25",152.89]],
+  LMT:[["2025-12-29",497.07],["2026-01-05",542.92],["2026-01-12",582.43],["2026-01-19",590.82],["2026-01-26",634.22],["2026-02-02",623.58],["2026-02-09",652.58],["2026-02-16",658.26],["2026-02-23",658.08],["2026-03-02",671.77],["2026-03-09",646.0],["2026-03-16",627.43],["2026-03-23",615.84],["2026-03-30",622.79],["2026-04-06",613.72],["2026-04-13",592.19],["2026-04-20",513.45],["2026-04-27",512.77],["2026-05-04",506.51],["2026-05-11",516.01],["2026-05-18",533.24],["2026-05-25",530.45],["2026-06-01",523.76],["2026-06-08",540.33],["2026-06-15",510.95],["2026-06-22",507.4],["2026-06-29",545.91],["2026-07-06",523.22],["2026-07-13",508.77],["2026-07-20",582.6],["2026-07-27",582.74],["2026-08-03",587.95],["2026-08-10",608.68],["2026-08-17",563.57],["2026-08-24",563.85],["2026-08-31",525.28],["2026-09-07",524.19],["2026-09-14",533.38],["2026-09-21",519.56],["2026-09-28",505.41],["2026-10-05",509.59],["2026-10-12",552.09],["2026-10-19",604.18],["2026-10-26",636.95],["2026-11-02",567.08],["2026-11-09",596.04],["2026-11-16",565.5],["2026-11-25",599.24]],
+  CVX:[["2025-12-29",155.9],["2026-01-05",162.11],["2026-01-12",166.26],["2026-01-19",166.72],["2026-01-26",176.9],["2026-02-02",180.86],["2026-02-09",183.74],["2026-02-16",183.93],["2026-02-23",186.76],["2026-03-02",189.94],["2026-03-09",196.82],["2026-03-16",201.73],["2026-03-23",211.15],["2026-03-30",198.97],["2026-04-06",188.55],["2026-04-13",183.99],["2026-04-20",185.21],["2026-04-27",190.63],["2026-05-04",181.62],["2026-05-11",191.1],["2026-05-18",191.43],["2026-05-25",182.46],["2026-06-01",187.31],["2026-06-08",187.22],["2026-06-15",173.63],["2026-06-22",171.06],["2026-06-29",169.2],["2026-07-06",176.4],["2026-07-13",187.38],["2026-07-20",194.79],["2026-07-27",196.83],["2026-08-03",186.56],["2026-08-10",200.0],["2026-08-17",205.27],["2026-08-24",201.86],["2026-08-31",208.6],["2026-09-07",214.06],["2026-09-14",209.51],["2026-09-21",204.45],["2026-09-28",206.69],["2026-10-05",211.98],["2026-10-12",224.99],["2026-10-19",233.21],["2026-10-26",235.52],["2026-11-02",212.61],["2026-11-09",219.89],["2026-11-16",208.37],["2026-11-25",210.95]],
+  XOM:[["2025-12-29",122.65],["2026-01-05",124.61],["2026-01-12",129.89],["2026-01-19",134.97],["2026-01-26",141.4],["2026-02-02",149.05],["2026-02-09",148.45],["2026-02-16",147.28],["2026-02-23",152.5],["2026-03-02",151.21],["2026-03-09",156.12],["2026-03-16",159.67],["2026-03-23",170.99],["2026-03-30",160.69],["2026-04-06",152.51],["2026-04-13",146.44],["2026-04-20",148.91],["2026-04-27",152.75],["2026-05-04",144.57],["2026-05-11",157.92],["2026-05-18",154.92],["2026-05-25",145.26],["2026-06-01",149.92],["2026-06-08",147.01],["2026-06-15",137.81],["2026-06-22",136.54],["2026-06-29",137.09],["2026-07-06",138.88],["2026-07-13",147.36],["2026-07-20",156.94],["2026-07-27",155.44],["2026-08-03",153.04],["2026-08-10",160.1],["2026-08-17",165.11],["2026-08-24",156.71],["2026-08-31",159.47],["2026-09-07",165.99],["2026-09-14",163.54],["2026-09-21",160.59],["2026-09-28",164.01],["2026-10-05",168.94],["2026-10-12",178.98],["2026-10-19",183.21],["2026-10-26",187.25],["2026-11-02",165.87],["2026-11-09",170.59],["2026-11-16",159.99],["2026-11-25",158.08]],
+  ANET:[["2025-12-29",133.6],["2026-01-05",122.89],["2026-01-12",129.83],["2026-01-19",136.34],["2026-01-26",141.74],["2026-02-02",137.49],["2026-02-09",141.59],["2026-02-16",132.79],["2026-02-23",133.5],["2026-03-02",132.89],["2026-03-09",133.57],["2026-03-16",131.22],["2026-03-23",120.77],["2026-03-30",126.68],["2026-04-06",147.35],["2026-04-13",164.23],["2026-04-20",176.91],["2026-04-27",172.7],["2026-05-04",141.77],["2026-05-11",141.97],["2026-05-18",154.03],["2026-05-25",159.47],["2026-06-01",154.27],["2026-06-08",163.24],["2026-06-15",169.67],["2026-06-22",157.6],["2026-06-29",159.99],["2026-07-06",186.96],["2026-07-13",168.61],["2026-07-20",173.99],["2026-07-27",180.35],["2026-08-03",188.67],["2026-08-10",198.82],["2026-08-17",188.65],["2026-08-24",195.38],["2026-08-31",193.78],["2026-09-07",199.59],["2026-09-14",199.39],["2026-09-21",206.55],["2026-09-28",207.35],["2026-10-05",216.74],["2026-10-12",176.98],["2026-10-19",172.37],["2026-10-26",168.86],["2026-11-02",170.8],["2026-11-09",197.29],["2026-11-16",167.62],["2026-11-25",163.99]],
+  GLD:[["2025-12-29",398.28],["2026-01-05",414.47],["2026-01-12",421.29],["2026-01-19",458.0],["2026-01-26",444.95],["2026-02-02",455.46],["2026-02-09",462.62],["2026-02-16",468.62],["2026-02-23",483.75],["2026-03-02",473.51],["2026-03-09",460.84],["2026-03-16",413.38],["2026-03-23",414.7],["2026-03-30",429.41],["2026-04-06",437.13],["2026-04-13",445.93],["2026-04-20",433.25],["2026-04-27",423.18],["2026-05-04",433.77],["2026-05-11",417.29],["2026-05-18",413.82],["2026-05-25",417.12],["2026-06-01",396.24],["2026-06-08",386.54],["2026-06-15",387.12],["2026-06-22",373.63],["2026-06-29",378.13],["2026-07-06",377.01],["2026-07-13",368.41],["2026-07-20",371.9],["2026-07-27",371.54],["2026-08-03",398.47],["2026-08-10",401.48],["2026-08-17",423.36],["2026-08-24",408.89],["2026-08-31",406.77],["2026-09-07",398.77],["2026-09-14",401.17],["2026-09-21",393.41],["2026-09-28",380.14],["2026-10-05",384.58],["2026-10-12",382.01],["2026-10-19",366.61],["2026-10-26",355.78],["2026-11-02",372.52],["2026-11-09",355.45],["2026-11-16",322.87],["2026-11-25",327.45]],
+  JPM:[["2025-12-29",325.48],["2026-01-05",329.19],["2026-01-12",312.47],["2026-01-19",297.72],["2026-01-26",305.89],["2026-02-02",322.4],["2026-02-09",302.55],["2026-02-16",310.79],["2026-02-23",300.3],["2026-03-02",289.48],["2026-03-09",283.44],["2026-03-16",286.56],["2026-03-23",282.84],["2026-03-30",294.6],["2026-04-06",309.87],["2026-04-13",310.29],["2026-04-20",308.28],["2026-04-27",312.47],["2026-05-04",302.1],["2026-05-11",297.81],["2026-05-18",306.38],["2026-05-25",299.31],["2026-06-01",312.37],["2026-06-08",320.72],["2026-06-15",325.22],["2026-06-22",329.05],["2026-06-29",334.47],["2026-07-06",336.47],["2026-07-13",341.1],["2026-07-20",353.21],["2026-07-27",351.79],["2026-08-03",357.52],["2026-08-10",362.84],["2026-08-17",351.58],["2026-08-24",357.62],["2026-08-31",358.64],["2026-09-07",356.23],["2026-09-14",349.67],["2026-09-21",343.06],["2026-09-28",332.38],["2026-10-05",332.99],["2026-10-12",339.72],["2026-10-19",331.58],["2026-10-26",337.04],["2026-11-02",334.49],["2026-11-09",346.19],["2026-11-16",310.53],["2026-11-25",316.74]],
+  PLTR:[["2025-12-29",167.86],["2026-01-05",177.49],["2026-01-12",170.96],["2026-01-19",169.6],["2026-01-26",146.59],["2026-02-02",135.9],["2026-02-09",131.41],["2026-02-16",135.24],["2026-02-23",137.19],["2026-03-02",157.16],["2026-03-09",150.95],["2026-03-16",150.68],["2026-03-23",143.06],["2026-03-30",148.46],["2026-04-06",128.06],["2026-04-13",146.39],["2026-04-20",143.09],["2026-04-27",144.07],["2026-05-04",137.8],["2026-05-11",133.99],["2026-05-18",136.88],["2026-05-25",156.54],["2026-06-01",135.53],["2026-06-08",127.99],["2026-06-15",128.47],["2026-06-22",112.93],["2026-06-29",129.3],["2026-07-06",126.79],["2026-07-13",132.38],["2026-07-20",122.92],["2026-07-27",123.06],["2026-08-03",172.01],["2026-08-10",174.04],["2026-08-17",179.94],["2026-08-24",186.29],["2026-08-31",174.33],["2026-09-07",167.23],["2026-09-14",177.64],["2026-09-21",189.67],["2026-09-28",188.75],["2026-10-05",209.05],["2026-10-12",186.03],["2026-10-19",196.75],["2026-10-26",184.11],["2026-11-02",160.38],["2026-11-09",167.99],["2026-11-16",143.49],["2026-11-25",163.59]],
 };
 
 function buildSparklineSVG(points){
-  const W=68,H=22,pad=2;
+  const W=96,H=32,pad=3;
   const vals = points.map(p=>p[1]);
   const min = Math.min(...vals), max = Math.max(...vals);
   const range = (max-min) || 1;
   const stepX = (W-pad*2)/(points.length-1);
-  const up = vals[vals.length-1] >= vals[0];
+  const retPct = (vals[vals.length-1]-vals[0])/vals[0]*100;
+  const up = retPct >= 0;
   const color = up ? '#10b981' : '#f43f5e';
-  const coords = points.map((p,i)=>{
-    const x = pad + i*stepX;
-    const y = pad + (H-pad*2) * (1 - (p[1]-min)/range);
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  });
-  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><polyline points="${coords.join(' ')}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+  const xy = points.map((p,i)=>({
+    x: pad + i*stepX,
+    y: pad + (H-pad*2) * (1 - (p[1]-min)/range)
+  }));
+  const coords = xy.map(p=>`${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+  const areaPts = `${pad.toFixed(1)},${(H-pad).toFixed(1)} ${coords} ${(W-pad).toFixed(1)},${(H-pad).toFixed(1)}`;
+  const entry = xy[0], exit = xy[xy.length-1];
+  const fmt = n => (n>=0?'+':'')+n.toFixed(1)+'%';
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" class="spark-svg">`
+    + `<polygon points="${areaPts}" fill="${color}" opacity="0.12"/>`
+    + `<polyline points="${coords}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>`
+    + `<circle cx="${entry.x.toFixed(1)}" cy="${entry.y.toFixed(1)}" r="2" fill="var(--muted)"/>`
+    + `<circle cx="${exit.x.toFixed(1)}" cy="${exit.y.toFixed(1)}" r="2.3" fill="${color}"/>`
+    + `<text x="${(W-pad).toFixed(1)}" y="${Math.max(9,Math.min(H-3,exit.y-5)).toFixed(1)}" text-anchor="end" font-size="8.5" font-weight="700" fill="${color}">${fmt(retPct)}</text>`
+    + `</svg>`;
 }
 
 function renderSparklines(){
@@ -1318,6 +1357,83 @@ function computeTrackRecord(cardSubset){
 }
 computeTrackRecord();
 
+/* ─────────────────── CUMULATIVE CALL ACCURACY CHART ─────────────────── */
+function buildTrackChart(cardSubset){
+  const cards = cardSubset || document.querySelectorAll('#trade-feed .card');
+  const scored = [];
+  Array.from(cards).reverse().forEach(card=>{ // DOM is newest-first; reverse for chronological
+    const side = card.classList.contains('sell') ? 'sell' : (card.classList.contains('trim') ? 'trim' : 'buy');
+    const dateEl = card.querySelector('.date');
+    const date = dateEl ? dateEl.textContent.trim() : '';
+    card.querySelectorAll('.perf-item.up, .perf-item.down').forEach(item=>{
+      const strong = item.querySelector('strong');
+      if(!strong) return;
+      const pct = parseFloat(strong.textContent.replace('%','').replace('+',''));
+      if(isNaN(pct)) return;
+      const ticker = (item.childNodes[0].textContent || '').trim();
+      const oriented = side === 'sell' ? -pct : pct;
+      scored.push({ticker, side, date, oriented});
+    });
+  });
+
+  const svg = document.getElementById('track-chart');
+  const wrap = document.getElementById('track-chart-wrap');
+  const tooltip = document.getElementById('track-tooltip');
+  if(!svg) return;
+  svg.innerHTML = '';
+  const W=700,H=160,padL=34,padR=10,padT=12,padB=18;
+
+  if(scored.length < 2){
+    const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x', W/2); t.setAttribute('y', H/2); t.setAttribute('text-anchor','middle');
+    t.setAttribute('class','axis-label'); t.textContent = 'Not enough scored calls in this filter yet.';
+    svg.appendChild(t);
+    return;
+  }
+
+  const plotW=W-padL-padR, plotH=H-padT-padB;
+  let wins=0;
+  const cum = scored.map((s,i)=>{ if(s.oriented>0) wins++; return wins/(i+1)*100; });
+  const xAt = i => padL + (scored.length===1 ? 0 : (i/(scored.length-1))*plotW);
+  const yAt = v => padT + (1-v/100)*plotH;
+
+  const ns='http://www.w3.org/2000/svg';
+  function el(tag, attrs){ const e=document.createElementNS(ns,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); return e; }
+
+  [0,25,50,75,100].forEach(v=>{
+    const y=yAt(v);
+    const attrs={class:'grid-line',x1:padL,x2:W-padR,y1:y,y2:y};
+    if(v===50) attrs['stroke-dasharray']='4,3';
+    svg.appendChild(el('line',attrs));
+    const t=el('text',{class:'axis-label',x:4,y:y+3}); t.textContent=v+'%'; svg.appendChild(t);
+  });
+
+  const path = cum.map((v,i)=>`${i===0?'M':'L'}${xAt(i).toFixed(1)},${yAt(v).toFixed(1)}`).join(' ');
+  const finalColor = cum[cum.length-1] >= 50 ? '#10b981' : '#f43f5e';
+  svg.appendChild(el('path',{d:path, fill:'none', stroke:finalColor, 'stroke-width':2, 'stroke-linejoin':'round', 'stroke-linecap':'round', 'vector-effect':'non-scaling-stroke'}));
+  svg.appendChild(el('circle',{cx:xAt(cum.length-1), cy:yAt(cum[cum.length-1]), r:4, fill:finalColor, stroke:'#190f14','stroke-width':2}));
+
+  const crosshair = el('line',{class:'crosshair',x1:0,x2:0,y1:padT,y2:H-padB});
+  svg.appendChild(crosshair);
+
+  wrap.onpointermove = e=>{
+    const rect = svg.getBoundingClientRect();
+    const relX = (e.clientX-rect.left)/rect.width * W;
+    let idx = Math.round((relX-padL)/plotW*(scored.length-1));
+    idx = Math.max(0, Math.min(scored.length-1, idx));
+    const px = xAt(idx);
+    crosshair.setAttribute('x1',px); crosshair.setAttribute('x2',px); crosshair.style.opacity='1';
+    const s = scored[idx];
+    tooltip.innerHTML = `<span class="tt-date">${s.date} &middot; ${s.ticker}</span>Call #${idx+1} of ${scored.length} &middot; ${s.side} &middot; <span class="tt-val">${cum[idx].toFixed(0)}%</span> cumulative`;
+    tooltip.classList.add('show');
+    const leftPct = (px/W)*100;
+    tooltip.style.left = leftPct > 70 ? (px/W*rect.width - 170)+'px' : (px/W*rect.width + 14)+'px';
+    tooltip.style.top = '4px';
+  };
+  wrap.onpointerleave = ()=>{ crosshair.style.opacity='0'; tooltip.classList.remove('show'); };
+}
+buildTrackChart();
+
 /* ─────────────────── TRADE LOG FILTER ─────────────────── */
 (function(){
   const feed = document.getElementById('trade-feed');
@@ -1351,6 +1467,7 @@ computeTrackRecord();
     const isFiltered = activeType!=='all' || !!query || activeConviction!=='all';
     filteredBadge.style.display = isFiltered ? '' : 'none';
     computeTrackRecord(visibleCards);
+    buildTrackChart(visibleCards);
   }
 
   typeBtns.forEach(btn=>{
