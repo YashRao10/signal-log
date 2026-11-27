@@ -60,6 +60,43 @@ body{background:var(--bg);color:var(--text);font-family:'Consolas','Courier New'
 .pulse-ring::after{width:200%;height:200%;border:1px solid var(--green);top:-50%;left:-50%;animation:ring 1.8s ease-out infinite}
 @keyframes ring{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.5);opacity:0}}
 
+/* ── Decorative 3D hero ── */
+.hero3d{
+  position:relative;height:150px;margin-bottom:20px;border-radius:12px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 45%,#2a0e16 0%,var(--bg) 70%);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;perspective:1100px
+}
+.hero3d-ring{position:absolute;border-radius:50%;transform-style:preserve-3d}
+.hero3d-ring.r1{width:130px;height:130px;border:1.5px solid rgba(251,58,74,.55);box-shadow:0 0 22px rgba(251,58,74,.22);animation:hero-spin1 9s linear infinite}
+.hero3d-ring.r2{width:180px;height:180px;border:1px solid rgba(56,189,248,.4);box-shadow:0 0 18px rgba(56,189,248,.16);animation:hero-spin2 14s linear infinite}
+.hero3d-ring.r3{width:96px;height:96px;border:1px dashed rgba(241,247,255,.28);animation:hero-spin3 20s linear infinite}
+.hero3d-core{
+  position:relative;z-index:3;width:46px;height:46px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffb4bc 0%,var(--accent) 45%,#7a0f1c 100%);
+  box-shadow:0 0 26px 5px rgba(251,58,74,.4),inset -4px -5px 10px rgba(0,0,0,.35);
+  animation:hero-bob 5s ease-in-out infinite
+}
+.hero3d-chip{
+  position:absolute;font-size:11px;font-weight:700;color:var(--muted);background:var(--card);
+  border:1px solid var(--border);padding:4px 9px;border-radius:7px;white-space:nowrap;
+  box-shadow:0 8px 16px -6px rgba(0,0,0,.6);animation:hero-bob 6s ease-in-out infinite
+}
+.hero3d-chip.c1{top:16%;left:10%}
+.hero3d-chip.c2{bottom:14%;right:9%;animation-delay:1s}
+.hero3d-chip.c3{top:18%;right:8%;animation-delay:.5s}
+.hero3d-dot{position:absolute;border-radius:50%;animation:hero-pulse 3.4s ease-in-out infinite}
+.hero3d-dot.d1{width:6px;height:6px;background:var(--text);top:14%;left:42%}
+.hero3d-dot.d2{width:5px;height:5px;background:var(--accent);bottom:20%;left:30%;animation-delay:.7s}
+.hero3d-dot.d3{width:4px;height:4px;background:var(--accent2);top:28%;right:24%;animation-delay:1.2s}
+@keyframes hero-spin1{from{transform:rotateX(62deg) rotateZ(0deg)}to{transform:rotateX(62deg) rotateZ(360deg)}}
+@keyframes hero-spin2{from{transform:rotateX(62deg) rotateZ(360deg)}to{transform:rotateX(62deg) rotateZ(0deg)}}
+@keyframes hero-spin3{from{transform:rotateX(62deg) rotateZ(120deg)}to{transform:rotateX(62deg) rotateZ(480deg)}}
+@keyframes hero-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes hero-pulse{0%,100%{opacity:.4;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}
+@media (max-width:640px){.hero3d{height:120px}.hero3d-chip{font-size:9.5px;padding:3px 7px}}
+@media (prefers-reduced-motion:reduce){.hero3d-ring,.hero3d-core,.hero3d-chip,.hero3d-dot{animation:none}}
+
 /* ── Disclaimer banner ── */
 .disclaimer{
   display:flex;align-items:flex-start;gap:8px;background:var(--card);
@@ -105,13 +142,21 @@ section.panel.active{display:block}
 .feed{display:flex;flex-direction:column;gap:12px}
 .card{
   background:var(--card);border:1px solid var(--border);border-radius:10px;
-  padding:16px 20px;position:relative;overflow:hidden;transition:border-color .15s
+  padding:16px 20px;position:relative;overflow:hidden;
+  box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 14px 30px -18px rgba(0,0,0,.6),0 4px 10px -6px rgba(251,58,74,.1);
+  transition:border-color .15s,transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;
+  transform-style:preserve-3d
 }
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
 .card.buy::before{background:linear-gradient(90deg,transparent,var(--green),transparent)}
 .card.sell::before{background:linear-gradient(90deg,transparent,var(--red),transparent)}
 .card.trim::before{background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
-.card:hover{border-color:var(--accent)}
+.card:hover{
+  border-color:var(--accent);
+  transform:perspective(900px) translateY(-4px) rotateX(2.5deg) rotateY(-2deg);
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 26px 48px -18px rgba(0,0,0,.7),0 8px 18px -8px rgba(251,58,74,.22)
+}
+@media (prefers-reduced-motion:reduce){.card{transition:border-color .15s}.card:hover{transform:none}}
 .card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
 .badge{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:5px}
 .badge.buy{background:var(--glow-g);color:var(--green)}
@@ -168,7 +213,13 @@ table.history td.side-sell{color:var(--red);font-weight:700}
 .about strong{color:var(--text)}
 
 /* ── Chart card (shared) ── */
-.chart-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px}
+.chart-card{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;
+  box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 12px 26px -16px rgba(0,0,0,.55);
+  transition:transform .3s ease,box-shadow .3s ease
+}
+.chart-card:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 20px 38px -16px rgba(0,0,0,.65)}
+@media (prefers-reduced-motion:reduce){.chart-card{transition:none}.chart-card:hover{transform:none}}
 .chart-note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
 .chart-legend{display:flex;gap:18px;margin-bottom:12px;font-size:12px;color:var(--muted);letter-spacing:.3px}
 .legend-key{display:inline-flex;align-items:center;gap:7px}
@@ -252,6 +303,19 @@ footer{margin-top:50px;color:var(--dim);font-size:12px;text-align:center;letter-
       <div class="live-badge"><span class="pulse-ring"></span>Public Log</div>
       <div class="updated-line" id="updated-line">Updated Nov 27, 2026</div>
     </div>
+  </div>
+
+  <div class="hero3d" aria-hidden="true">
+    <div class="hero3d-ring r1"></div>
+    <div class="hero3d-ring r2"></div>
+    <div class="hero3d-ring r3"></div>
+    <div class="hero3d-core"></div>
+    <div class="hero3d-chip c1" id="hero-chip-winrate">Win Rate —</div>
+    <div class="hero3d-chip c2" id="hero-chip-best">Best Call —</div>
+    <div class="hero3d-chip c3" id="hero-chip-avg">Avg/Call —</div>
+    <div class="hero3d-dot d1"></div>
+    <div class="hero3d-dot d2"></div>
+    <div class="hero3d-dot d3"></div>
   </div>
 
   <div class="disclaimer">
@@ -1390,6 +1454,20 @@ function computeTrackRecord(cardSubset){
   document.getElementById('tr-worst-sub').textContent = `${worst.ticker} · ${worst.side} · ${worst.date}`;
 }
 computeTrackRecord();
+
+/* ─────────────────── HERO CHIPS (real data, decorative ring is not) ─────────────────── */
+function updateHeroChips(){
+  const wr = document.getElementById('tr-winrate');
+  const best = document.getElementById('tr-best');
+  const avg = document.getElementById('tr-avgret');
+  const wrChip = document.getElementById('hero-chip-winrate');
+  const bestChip = document.getElementById('hero-chip-best');
+  const avgChip = document.getElementById('hero-chip-avg');
+  if(wr && wrChip && wr.textContent !== '—') wrChip.textContent = 'Win Rate ' + wr.textContent;
+  if(best && bestChip && best.textContent !== '—') bestChip.textContent = 'Best Call ' + best.textContent;
+  if(avg && avgChip && avg.textContent !== '—') avgChip.textContent = 'Avg/Call ' + avg.textContent;
+}
+updateHeroChips();
 
 /* ─────────────────── CUMULATIVE CALL ACCURACY CHART ─────────────────── */
 function buildTrackChart(cardSubset){
